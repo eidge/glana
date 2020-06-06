@@ -13,7 +13,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test",
+    "test": "yarn jest",
     "lint": "tsdx lint",
     "prepare": "tsdx build"
   },
@@ -37,5 +37,25 @@
     "tsdx": "^0.13.2",
     "tslib": "^2.0.0",
     "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "geolib": "^3.3.1",
+    "igc-parser": "^0.5.0"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)$": "/Users/hugoribeira/src/glana/node_modules/ts-jest/dist/index.js",
+      ".(js|jsx)$": "/Users/hugoribeira/src/glana/node_modules/babel-jest/build/index.js"
+    },
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+    "collectCoverageFrom": ["src/**/*.{ts,tsx,js,jsx}"],
+    "testMatch": ["<rootDir>/**/*.(spec|test).{ts,tsx,js,jsx}"],
+    "testURL": "http://localhost",
+    "watchPlugins": [
+      "/Users/hugoribeira/src/glana/node_modules/jest-watch-typeahead/filename.js",
+      "/Users/hugoribeira/src/glana/node_modules/jest-watch-typeahead/testname.js"
+    ],
+    "moduleDirectories": ["node_modules", "src"]
   }
 }
