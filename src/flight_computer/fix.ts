@@ -1,4 +1,5 @@
 import Position from './position';
+import { Meter } from 'units/length';
 
 class Fix {
   updatedAt: Date;
@@ -19,7 +20,7 @@ class Fix {
     this.position = new Position(
       latitude,
       longitude,
-      pressureAltitude || gpsAltitude
+      new Meter(pressureAltitude || gpsAltitude)
     );
   }
 }

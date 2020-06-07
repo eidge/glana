@@ -1,0 +1,48 @@
+import Vario from './vario';
+import Fix from '../fix';
+
+describe('Vario', () => {
+  it('returns null when it has not yet received a fix', () => {
+    const verticalSpeed = new Vario();
+    expect(verticalSpeed.getValue()).toBeNull();
+  });
+
+  it('returns 0 after first fix', () => {
+    const verticalSpeed = new Vario();
+    const fix = new Fix(new Date(), 40.0, 8, 1200);
+    verticalSpeed.update(fix);
+    expect(verticalSpeed.getValue()?.value).toEqual(0);
+  });
+
+  it('returns positive verticalSpeed', () => {
+    const verticalSpeed = new Vario();
+    const fix1 = new Fix(new Date('2020-06-06T14:01:00.000Z'), 40.0, 8, 1200);
+    const fix2 = new Fix(
+      new Date('2020-06-06T14:01:01.000Z'),
+      40.0,
+      8.001,
+      1202
+    );
+
+    verticalSpeed.update(fix1);
+    verticalSpeed.update(fix2);
+
+    expect(verticalSpeed.getValue()?.value).toEqual(2);
+  });
+
+  it('returns negative verticalSpeed', () => {
+    const verticalSpeed = new Vario();
+    const fix1 = new Fix(new Date('2020-06-06T14:01:00.000Z'), 40.0, 8, 1200);
+    const fix2 = new Fix(
+      new Date('2020-06-06T14:01:01.000Z'),
+      40.0,
+      8.001,
+      1198
+    );
+
+    verticalSpeed.update(fix1);
+    verticalSpeed.update(fix2);
+
+    expect(verticalSpeed.getValue()?.value).toEqual(-2);
+  });
+});

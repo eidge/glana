@@ -4,9 +4,9 @@ import { Meter } from 'units/length';
 class Position {
   latitude: number;
   longitude: number;
-  altitude: number;
+  altitude: Meter;
 
-  constructor(latitude: number, longitude: number, altitude: number) {
+  constructor(latitude: number, longitude: number, altitude: Meter) {
     this.latitude = latitude;
     this.longitude = longitude;
     this.altitude = altitude;

@@ -1,24 +1,26 @@
 import Calculator from './calculator';
 import Fix from 'flight_computer/fix';
-import { Millisecond, Second } from 'units/time';
-import { Meter } from 'units/length';
 import { Speed } from 'units/speed';
+import { Second, Millisecond } from 'units/time';
+import { Meter } from 'units/length';
 
-class GPSSpeed extends Calculator {
-  speed: Speed | null = null;
+class Vario extends Calculator {
+  verticalSpeed: Speed | null = null;
   lastFix: Fix | null = null;
 
   name(): string {
-    return 'GPS Speed';
+    return 'Vario';
   }
 
   update(fix: Fix): void {
     if (this.lastFix) {
       const ellapsedTime = this.ellapsedTime(fix, this.lastFix);
-      const distanceCovered = this.lastFix.position.distance2DTo(fix.position);
-      this.speed = new Speed(distanceCovered, Second.from(ellapsedTime));
+      const altitudeGain = fix.position.altitude.subtract(
+        this.lastFix.position.altitude
+      );
+      this.verticalSpeed = new Speed(altitudeGain, Second.from(ellapsedTime));
     } else {
-      this.speed = new Speed(new Meter(0), new Second(1));
+      this.verticalSpeed = new Speed(new Meter(0), new Second(1));
     }
 
     this.lastFix = fix;
@@ -30,8 +32,8 @@ class GPSSpeed extends Calculator {
   }
 
   getValue() {
-    return this.speed;
+    return this.verticalSpeed;
   }
 }
 
-export default GPSSpeed;
+export default Vario;
