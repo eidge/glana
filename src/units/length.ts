@@ -1,4 +1,5 @@
 import Unit from './unit';
+import { makeQuantityFactory } from './quantity_factory';
 
 abstract class Length extends Unit {}
 
@@ -30,7 +31,7 @@ class Kilometer extends Length {
   }
 }
 
-const meters = new Meter();
-const kilometers = new Kilometer();
+const meters = makeQuantityFactory(new Meter());
+const kilometers = makeQuantityFactory(new Kilometer());
 
 export { Length, Meter, Kilometer, meters, kilometers };

@@ -2,14 +2,15 @@ import Unit from './unit';
 import { Length, meters, kilometers } from './length';
 import { Duration, seconds, hours } from './duration';
 import Quantity from './quantity';
+import { makeQuantityFactory } from './quantity_factory';
 
 class Speed extends Unit {
   private lengthUnit: Length;
   private durationUnit: Duration;
 
   static create(dx: Quantity<Length>, dt: Quantity<Duration>) {
-    const speed = new Speed(dx.unit, dt.unit);
-    return speed.create(dx.value / dt.value);
+    const speedUnit = new Speed(dx.unit, dt.unit);
+    return new Quantity(dx.value / dt.value, speedUnit);
   }
 
   constructor(lengthUnit: Length, durationUnit: Duration) {
@@ -37,7 +38,11 @@ class Speed extends Unit {
   }
 }
 
-const metersPerSecond = new Speed(meters, seconds);
-const kilometersPerHour = new Speed(kilometers, hours);
+const metersPerSecond = makeQuantityFactory(
+  new Speed(meters.unit, seconds.unit)
+);
+const kilometersPerHour = makeQuantityFactory(
+  new Speed(kilometers.unit, hours.unit)
+);
 
 export { Speed, metersPerSecond, kilometersPerHour };

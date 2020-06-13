@@ -1,5 +1,6 @@
 import Position from './position';
 import { meters } from 'units/length';
+import { degrees } from 'units/angle';
 
 class Fix {
   updatedAt: Date;
@@ -18,9 +19,9 @@ class Fix {
     this.gpsAltitude = gpsAltitude;
     this.pressureAltitude = pressureAltitude;
     this.position = new Position(
-      latitude,
-      longitude,
-      meters.create(pressureAltitude || gpsAltitude)
+      degrees(latitude),
+      degrees(longitude),
+      meters(pressureAltitude || gpsAltitude)
     );
   }
 }

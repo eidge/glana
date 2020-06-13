@@ -1,5 +1,3 @@
-import Quantity from './quantity';
-
 abstract class Unit {
   readonly name: string;
   readonly symbol: string;
@@ -11,10 +9,6 @@ abstract class Unit {
 
   abstract toStandardUnit(value: number): number;
   abstract fromStandardUnit(value: number): number;
-
-  create(value: number) {
-    return new Quantity(value, this);
-  }
 }
 
 export default Unit;

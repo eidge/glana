@@ -1,4 +1,5 @@
 import Unit from './unit';
+import { QuantityFactory } from './quantity_factory';
 
 class Quantity<U extends Unit> {
   value: number;
@@ -9,7 +10,15 @@ class Quantity<U extends Unit> {
     this.unit = unit;
   }
 
-  convertTo(newUnit: Unit) {
+  convertTo(newUnitOrFactory: Unit | QuantityFactory) {
+    let newUnit;
+
+    if (newUnitOrFactory instanceof Unit) {
+      newUnit = newUnitOrFactory;
+    } else {
+      newUnit = newUnitOrFactory.unit;
+    }
+
     const standardValue = this.unit.toStandardUnit(this.value);
     const valueInNewUnit = newUnit.fromStandardUnit(standardValue);
     return new Quantity(valueInNewUnit, newUnit);
@@ -19,6 +28,10 @@ class Quantity<U extends Unit> {
     const newQuantity = Object.assign({}, this);
     newQuantity.value = this.value - rhs.convertTo(this.unit).value;
     return newQuantity;
+  }
+
+  equals(rhs: Quantity<Unit>) {
+    return this.value === rhs.convertTo(this.unit).value;
   }
 
   toString() {

@@ -15,7 +15,7 @@ abstract class AbstractSpeedCalculator extends Calculator {
       const distanceDelta = this.distanceDelta(fix, this.lastFix);
       this.speed = Speed.create(distanceDelta, ellapsedTime);
     } else {
-      this.speed = Speed.create(meters.create(0), milliseconds.create(1));
+      this.speed = Speed.create(meters(0), milliseconds(1));
     }
 
     this.lastFix = fix;
@@ -25,7 +25,7 @@ abstract class AbstractSpeedCalculator extends Calculator {
 
   private ellapsedTime(fix: Fix, lastFix: Fix) {
     const millis = fix.updatedAt.getTime() - lastFix.updatedAt.getTime();
-    return milliseconds.create(millis);
+    return milliseconds(millis);
   }
 
   getValue() {
