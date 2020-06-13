@@ -1,19 +1,19 @@
-function subtract<U extends Unit>(quantity1: U, quantity2: U) {
-  return quantity1.value - quantity2.value;
-}
+import Quantity from './quantity';
 
 abstract class Unit {
-  abstract value: any;
-  abstract unit: string;
+  readonly name: string;
+  readonly symbol: string;
 
-  toString() {
-    return `${this.value} ${this.unit}`;
+  constructor(name: string, symbol: string) {
+    this.name = name;
+    this.symbol = symbol;
   }
 
-  subtract(otherQuantity: Unit) {
-    const newQuantity = Object.assign({}, this);
-    newQuantity.value = subtract(this, otherQuantity);
-    return newQuantity;
+  abstract toStandardUnit(value: number): number;
+  abstract fromStandardUnit(value: number): number;
+
+  create(value: number) {
+    return new Quantity(value, this);
   }
 }
 

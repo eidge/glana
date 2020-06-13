@@ -1,5 +1,6 @@
 import GPSSpeed from './gps_speed';
 import Fix from '../fix';
+import { metersPerSecond } from 'units/speed';
 
 describe('GPS Speed', () => {
   it('returns null when it has not yet received a fix', () => {
@@ -27,6 +28,8 @@ describe('GPS Speed', () => {
     speed.update(fix1);
     speed.update(fix2);
 
-    expect(speed.getValue()?.value).toBeCloseTo(85.3);
+    expect(speed.getValue()?.convertTo(metersPerSecond).value).toBeCloseTo(
+      85.3
+    );
   });
 });

@@ -1,19 +1,20 @@
 import { getDistance } from 'geolib';
-import { Meter } from 'units/length';
+import { meters, Meter } from 'units/length';
+import Quantity from 'units/quantity';
 
 class Position {
   latitude: number;
   longitude: number;
-  altitude: Meter;
+  altitude: Quantity<Meter>;
 
-  constructor(latitude: number, longitude: number, altitude: Meter) {
+  constructor(latitude: number, longitude: number, altitude: Quantity<Meter>) {
     this.latitude = latitude;
     this.longitude = longitude;
     this.altitude = altitude;
   }
 
   distance2DTo(otherPosition: Position, accuracy: number = 0.1) {
-    return new Meter(getDistance(this, otherPosition, accuracy));
+    return meters.create(getDistance(this, otherPosition, accuracy));
   }
 }
 

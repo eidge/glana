@@ -1,5 +1,6 @@
 import Vario from './vario';
 import Fix from '../fix';
+import { metersPerSecond } from 'units/speed';
 
 describe('Vario', () => {
   it('returns null when it has not yet received a fix', () => {
@@ -27,7 +28,9 @@ describe('Vario', () => {
     verticalSpeed.update(fix1);
     verticalSpeed.update(fix2);
 
-    expect(verticalSpeed.getValue()?.value).toEqual(2);
+    expect(verticalSpeed.getValue()?.convertTo(metersPerSecond)?.value).toEqual(
+      2
+    );
   });
 
   it('returns negative verticalSpeed', () => {
@@ -43,6 +46,8 @@ describe('Vario', () => {
     verticalSpeed.update(fix1);
     verticalSpeed.update(fix2);
 
-    expect(verticalSpeed.getValue()?.value).toEqual(-2);
+    expect(verticalSpeed.getValue()?.convertTo(metersPerSecond)?.value).toEqual(
+      -2
+    );
   });
 });

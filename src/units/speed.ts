@@ -1,44 +1,43 @@
 import Unit from './unit';
-import { Time } from './time';
-import { Length } from './length';
+import { Length, meters, kilometers } from './length';
+import { Duration, seconds, hours } from './duration';
+import Quantity from './quantity';
 
 class Speed extends Unit {
-  unit!: string;
-  value!: number;
+  private lengthUnit: Length;
+  private durationUnit: Duration;
 
-  private dx: Length;
-  private dt: Time;
-
-  constructor(dx: Length, dt: Time) {
-    super();
-
-    this.dx = dx;
-    this.dt = dt;
-    this.setUnitAndValue();
+  static create(dx: Quantity<Length>, dt: Quantity<Duration>) {
+    const speed = new Speed(dx.unit, dt.unit);
+    return speed.create(dx.value / dt.value);
   }
 
-  private setUnitAndValue() {
-    this.unit = `${this.dx.unit}/${this.dt.unit}`;
-    this.value = this.dx.value / this.dt.value;
+  constructor(lengthUnit: Length, durationUnit: Duration) {
+    super(
+      `${lengthUnit.name} per ${durationUnit.name}`,
+      `${lengthUnit.symbol}/${durationUnit.symbol}`
+    );
+
+    this.lengthUnit = lengthUnit;
+    this.durationUnit = durationUnit;
   }
 
-  getDx() {
-    return this.dx;
+  toStandardUnit(value: number): number {
+    return (
+      this.lengthUnit.toStandardUnit(value) /
+      this.durationUnit.toStandardUnit(1)
+    );
   }
 
-  setDx(dx: Length) {
-    this.dx = dx;
-    this.setUnitAndValue();
-  }
-
-  getDt() {
-    return this.dt;
-  }
-
-  setDt(dt: Time) {
-    this.dt = dt;
-    this.setUnitAndValue();
+  fromStandardUnit(value: number): number {
+    return (
+      this.lengthUnit.fromStandardUnit(value) /
+      this.durationUnit.fromStandardUnit(1)
+    );
   }
 }
 
-export { Speed };
+const metersPerSecond = new Speed(meters, seconds);
+const kilometersPerHour = new Speed(kilometers, hours);
+
+export { Speed, metersPerSecond, kilometersPerHour };

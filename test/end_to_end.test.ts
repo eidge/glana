@@ -4,9 +4,7 @@ import Computer from '../src/flight_computer/computer';
 import Calculator from '../src/flight_computer/calculators/calculator';
 import GPSSpeed from '../src/flight_computer/calculators/gps_speed';
 import Vario from '../src/flight_computer/calculators/vario';
-import { Kilometer } from '../src/units/length';
-import { Hour } from '../src/units/time';
-import { Speed } from '../src/units/speed';
+import { kilometersPerHour, metersPerSecond } from '../src/units/speed';
 import Fix from '../src/flight_computer/fix';
 
 describe('end to end', () => {
@@ -37,15 +35,14 @@ describe('end to end', () => {
       computer.update(fix);
 
       const speed = computer.calculators.get('gpsSpeed')?.getValue();
-
-      if (!speed || !(speed instanceof Speed)) {
-        return;
-      }
-
-      speed.setDx(Kilometer.from(speed.getDx()));
-      speed.setDt(Hour.from(speed.getDt()));
-      console.log(speed.toString());
-      console.log(computer.calculators.get('vario')?.toString());
+      console.log(speed?.convertTo(kilometersPerHour).toString());
+      console.log(
+        computer.calculators
+          .get('vario')
+          ?.getValue()
+          ?.convertTo(metersPerSecond)
+          .toString()
+      );
     });
   });
 });
