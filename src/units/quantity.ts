@@ -35,7 +35,7 @@ class Quantity<U extends Unit> {
   }
 
   toString() {
-    return `${this.value} ${this.unit.symbol}`;
+    return `${this.value}${this.unit.symbol}`;
   }
 }
 
