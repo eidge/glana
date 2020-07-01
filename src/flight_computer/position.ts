@@ -1,7 +1,7 @@
 import { getDistance, getRhumbLineBearing } from 'geolib';
-import { meters, Meter } from 'units/length';
-import Quantity from 'units/quantity';
-import { degrees, Degree } from 'units/angle';
+import { meters, Meter } from '../units/length';
+import Quantity from '../units/quantity';
+import { degrees, Degree } from '../units/angle';
 
 class Position {
   latitude: Quantity<Degree>;

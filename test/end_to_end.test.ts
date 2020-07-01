@@ -6,7 +6,6 @@ import GPSSpeed from '../src/flight_computer/calculators/gps_speed';
 import Vario from '../src/flight_computer/calculators/vario';
 import Heading from '../src/flight_computer/calculators/heading';
 import { kilometersPerHour, metersPerSecond } from '../src/units/speed';
-import Fix from '../src/flight_computer/fix';
 import { QuantityFactory } from '../src/units/quantity_factory';
 
 function printCalculator(
@@ -35,21 +34,9 @@ describe('end to end', () => {
 
     const igc = fs.readFileSync(`${__dirname}/fixtures/9bsx8lc1.igc`, 'utf8');
     const parser = new Parser();
-    const track = parser.parse(igc);
-    const brecords = track.fixes.slice(5490, 5510);
-    brecords.forEach(brecord => {
-      if (!brecord.gpsAltitude) {
-        return;
-      }
-
-      const fix = new Fix(
-        new Date(brecord.timestamp),
-        brecord.latitude,
-        brecord.longitude,
-        brecord.gpsAltitude,
-        brecord.pressureAltitude
-      );
-
+    const flight = parser.parse(igc);
+    const fixes = flight.fixes.slice(5490, 5510);
+    fixes.forEach(fix => {
       computer.update(fix);
 
       console.log(fix.updatedAt);

@@ -1,8 +1,8 @@
 import Calculator from './calculator';
-import { Degree, degrees } from 'units/angle';
-import Quantity from 'units/quantity';
-import Fix from 'flight_computer/fix';
-import Position from 'flight_computer/position';
+import { Degree, degrees } from '../../units/angle';
+import Quantity from '../../units/quantity';
+import Fix from '../fix';
+import Position from '../position';
 
 class Heading extends Calculator {
   heading: Quantity<Degree> | null = null;

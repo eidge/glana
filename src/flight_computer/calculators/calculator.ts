@@ -1,6 +1,6 @@
 import Fix from '../fix';
-import Quantity from 'units/quantity';
-import Unit from 'units/unit';
+import Quantity from '../../units/quantity';
+import Unit from '../../units/unit';
 
 abstract class Calculator {
   abstract name(): string;

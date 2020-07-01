@@ -1,4 +1,4 @@
-import Fix from 'flight_computer/fix';
+import Fix from '../fix';
 import AbstractSpeedCalculator from './abstract_speed_calculator';
 
 class GPSSpeed extends AbstractSpeedCalculator {

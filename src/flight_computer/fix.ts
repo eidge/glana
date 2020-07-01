@@ -1,6 +1,6 @@
 import Position from './position';
-import { meters } from 'units/length';
-import { degrees } from 'units/angle';
+import { meters } from '../units/length';
+import { degrees } from '../units/angle';
 
 class Fix {
   updatedAt: Date;

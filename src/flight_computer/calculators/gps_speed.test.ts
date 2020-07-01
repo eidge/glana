@@ -1,6 +1,6 @@
 import GPSSpeed from './gps_speed';
 import Fix from '../fix';
-import { metersPerSecond } from 'units/speed';
+import { metersPerSecond } from '../../units/speed';
 
 describe('GPS Speed', () => {
   it('returns null when it has not yet received a fix', () => {

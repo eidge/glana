@@ -1,9 +1,9 @@
 import Calculator from './calculator';
-import Fix from 'flight_computer/fix';
-import { meters, Meter } from 'units/length';
-import { milliseconds } from 'units/duration';
-import { Speed } from 'units/speed';
-import Quantity from 'units/quantity';
+import Fix from '../fix';
+import { meters, Meter } from '../../units/length';
+import { milliseconds } from '../../units/duration';
+import { Speed } from '../../units/speed';
+import Quantity from '../../units/quantity';
 
 abstract class AbstractSpeedCalculator extends Calculator {
   speed: Quantity<Speed> | null = null;
