@@ -10,7 +10,7 @@ class Quantity<U extends Unit> {
     this.unit = unit;
   }
 
-  convertTo(newUnitOrFactory: U | QuantityFactory) {
+  convertTo(newUnitOrFactory: U | QuantityFactory<U>) {
     let newUnit;
 
     if (newUnitOrFactory instanceof Unit) {
@@ -24,14 +24,56 @@ class Quantity<U extends Unit> {
     return new Quantity(valueInNewUnit, newUnit);
   }
 
-  subtract(rhs: Quantity<U>) {
-    const newQuantity = Object.assign({}, this);
-    newQuantity.value = this.value - rhs.convertTo(this.unit).value;
+  private clone() {
+    return new Quantity(this.value, this.unit);
+  }
+
+  normalise() {
+    const newQuantity = this.clone();
+    newQuantity.value = this.unit.normalise(this.value);
+    return newQuantity;
+  }
+
+  add(rhs: Quantity<U>) {
+    const newQuantity = this.clone();
+    newQuantity.value = this.unit.add(
+      this.value,
+      rhs.convertTo(this.unit).value
+    );
+    return newQuantity;
+  }
+
+  subtract(rhs: Quantity<U>): Quantity<U> {
+    const newQuantity = this.clone();
+    newQuantity.value = this.unit.subtract(
+      this.value,
+      rhs.convertTo(this.unit).value
+    );
+    return newQuantity;
+  }
+
+  multiply(rhs: number) {
+    const newQuantity = this.clone();
+    newQuantity.value = this.unit.multiply(this.value, rhs);
+    return newQuantity;
+  }
+
+  divide(rhs: number) {
+    const newQuantity = this.clone();
+    newQuantity.value = this.unit.divide(this.value, rhs);
     return newQuantity;
   }
 
   equals(rhs: Quantity<U>) {
-    return this.value === rhs.convertTo(this.unit).value;
+    return this.unit.equals(this.value, rhs.convertTo(this.unit).value);
+  }
+
+  greaterThan(rhs: Quantity<U>) {
+    return this.unit.greaterThan(this.value, rhs.convertTo(this.unit).value);
+  }
+
+  lessThan(rhs: Quantity<U>) {
+    return this.unit.lessThan(this.value, rhs.convertTo(this.unit).value);
   }
 
   toString() {

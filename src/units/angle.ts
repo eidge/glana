@@ -15,6 +15,12 @@ class Degree extends Angle {
   fromStandardUnit(value: number) {
     return value;
   }
+
+  normalise(value: number) {
+    value = value % 360;
+    if (value < 0) value += 360;
+    return value;
+  }
 }
 
 const degrees = makeQuantityFactory(new Degree());

@@ -38,10 +38,10 @@ class Speed extends Unit {
   }
 }
 
-const metersPerSecond = makeQuantityFactory(
+const metersPerSecond = makeQuantityFactory<Speed>(
   new Speed(meters.unit, seconds.unit)
 );
-const kilometersPerHour = makeQuantityFactory(
+const kilometersPerHour = makeQuantityFactory<Speed>(
   new Speed(kilometers.unit, hours.unit)
 );
 

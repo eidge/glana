@@ -31,6 +31,20 @@ class Second extends Duration {
   }
 }
 
+class Minute extends Duration {
+  constructor() {
+    super('second', 's');
+  }
+
+  toStandardUnit(value: number) {
+    return value * 60;
+  }
+
+  fromStandardUnit(value: number) {
+    return value / 60;
+  }
+}
+
 class Hour extends Duration {
   constructor() {
     super('hour', 'h');
@@ -47,6 +61,17 @@ class Hour extends Duration {
 
 const milliseconds = makeQuantityFactory(new Millisecond());
 const seconds = makeQuantityFactory(new Second());
+const minutes = makeQuantityFactory(new Minute());
 const hours = makeQuantityFactory(new Hour());
 
-export { Duration, milliseconds, seconds, hours };
+export {
+  Duration,
+  Millisecond,
+  milliseconds,
+  Second,
+  seconds,
+  Minute,
+  minutes,
+  Hour,
+  hours,
+};

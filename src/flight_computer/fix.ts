@@ -2,7 +2,7 @@ import Position from './position';
 import { meters } from '../units/length';
 import { degrees } from '../units/angle';
 
-class Fix {
+export default class Fix {
   updatedAt: Date;
   gpsAltitude: number;
   pressureAltitude: number | null;
@@ -25,5 +25,3 @@ class Fix {
     );
   }
 }
-
-export default Fix;

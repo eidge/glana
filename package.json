@@ -47,15 +47,31 @@
       ".(ts|tsx)$": "/Users/hugoribeira/src/glana/node_modules/ts-jest/dist/index.js",
       ".(js|jsx)$": "/Users/hugoribeira/src/glana/node_modules/babel-jest/build/index.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
-    "collectCoverageFrom": ["src/**/*.{ts,tsx,js,jsx}"],
-    "testMatch": ["<rootDir>/**/*.(spec|test).{ts,tsx,js,jsx}"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx,js,jsx}"
+    ],
+    "testMatch": [
+      "<rootDir>/**/*.(spec|test).{ts,tsx,js,jsx}"
+    ],
     "testURL": "http://localhost",
     "watchPlugins": [
       "/Users/hugoribeira/src/glana/node_modules/jest-watch-typeahead/filename.js",
       "/Users/hugoribeira/src/glana/node_modules/jest-watch-typeahead/testname.js"
     ],
-    "moduleDirectories": ["node_modules", "src"]
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
   }
 }
