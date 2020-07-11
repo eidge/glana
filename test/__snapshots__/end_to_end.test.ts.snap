@@ -3,6 +3,45 @@
 exports[`end to end works 1`] = `
 Array [
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 0,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -66,6 +105,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 17.08885216073594,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.0446,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -129,6 +207,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 15.056145826236104,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.0442,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.001,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -192,6 +309,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 17.088966126511934,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.0446,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.001,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -255,6 +411,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 17.817641700554304,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.04290000000000001,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.001,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -318,6 +513,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 16.41612718658382,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.046400000000000004,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.002,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -381,6 +615,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 21.02130875810144,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.045700000000000005,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.001,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -444,6 +717,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 24.756817532691855,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.047,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.002,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -507,6 +819,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 23.84243715077025,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.0487,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.001,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -570,6 +921,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 25.58358421954722,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.049400000000000006,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.001,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -633,6 +1023,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 27.27552607458574,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.0501,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -696,6 +1125,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 28.917494504487877,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.05090000000000001,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.002,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -759,6 +1227,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 28.917584090529772,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.05090000000000001,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.002,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -822,6 +1329,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 31.586568329659144,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.0501,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.001,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -885,6 +1431,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 28.917759525865335,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.05090000000000001,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -948,6 +1533,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 31.586753264660388,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.0501,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.001,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -1011,6 +1635,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 29.961606085739845,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.049300000000000004,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.003,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -1074,6 +1737,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 30.509545198248816,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.0517,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.004,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -1137,6 +1839,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 31.58702868819978,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.0501,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.003,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",
@@ -1200,6 +1941,45 @@ Array [
     },
   },
   Datum {
+    "calculatedValues": Object {
+      "heading": Quantity {
+        "unit": Degree {
+          "name": "degree",
+          "symbol": "°",
+        },
+        "value": 32.05081850884534,
+      },
+      "speed": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": 0.0525,
+      },
+      "vario": Quantity {
+        "unit": Speed {
+          "durationUnit": Millisecond {
+            "name": "millisecond",
+            "symbol": "ms",
+          },
+          "lengthUnit": Meter {
+            "name": "meter",
+            "symbol": "m",
+          },
+          "name": "meter per millisecond",
+          "symbol": "m/ms",
+        },
+        "value": -0.003,
+      },
+    },
     "heading": Quantity {
       "unit": Degree {
         "name": "degree",

@@ -1,6 +1,7 @@
 import Calculator from './calculators/calculator';
 import Fix from './fix';
 import Quantity from '../units/quantity';
+import Unit from '../units/unit';
 import { Speed, kilometersPerHour, metersPerSecond } from '../units/speed';
 import { Degree, degrees, Angle } from '../units/angle';
 import GPSSpeed from './calculators/gps_speed';
@@ -11,25 +12,30 @@ import StateMachine from './state_machine';
 
 export type CalculatorMap = Map<string, Calculator>;
 
+type CalculatedValues = { [key: string]: Quantity<Unit> | null };
+
 export class Datum {
   updatedAt: Date;
   position: Position;
   heading: Quantity<Degree>;
   speed: Quantity<Speed>;
   vario: Quantity<Speed>;
+  calculatedValues: CalculatedValues = {};
 
   constructor(
     updatedAt: Date,
     position: Position,
     heading: Quantity<Degree>,
     speed: Quantity<Speed>,
-    vario: Quantity<Speed>
+    vario: Quantity<Speed>,
+    calculatedValues: CalculatedValues = {}
   ) {
     this.updatedAt = updatedAt;
     this.position = position;
     this.heading = heading;
     this.speed = speed;
     this.vario = vario;
+    this.calculatedValues = calculatedValues;
   }
 }
 
@@ -67,8 +73,15 @@ export default class FlightComputer {
       fix.position,
       this.currentHeading() || degrees(0),
       this.currentSpeed() || kilometersPerHour(0),
-      this.currentVario() || metersPerSecond(0)
+      this.currentVario() || metersPerSecond(0),
+      this.calculatedValues()
     );
+  }
+
+  private currentHeading() {
+    return this.calculators.get('heading')!.getValue() as Quantity<
+      Angle
+    > | null;
   }
 
   private currentSpeed() {
@@ -79,9 +92,11 @@ export default class FlightComputer {
     return this.calculators.get('vario')!.getValue() as Quantity<Speed> | null;
   }
 
-  private currentHeading() {
-    return this.calculators.get('heading')!.getValue() as Quantity<
-      Angle
-    > | null;
+  private calculatedValues() {
+    const values: CalculatedValues = {};
+    this.calculators.forEach((calculator, name) => {
+      values[name] = calculator.getValue();
+    });
+    return values;
   }
 }
