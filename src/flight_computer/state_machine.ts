@@ -6,7 +6,7 @@ import MovingWindow from '../math/moving_window';
 import Quantity from 'units/quantity';
 
 export default class StateMachine {
-  private state: 'stopped' | 'gliding' | 'thermalling' = 'stopped';
+  state: 'stopped' | 'gliding' | 'thermalling' = 'stopped';
   private speedMovingWindow2Minute = new MovingWindow(
     seconds(10),
     kilometersPerHour.unit

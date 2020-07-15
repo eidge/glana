@@ -21,6 +21,7 @@ export class Datum {
   speed: Quantity<Speed>;
   vario: Quantity<Speed>;
   calculatedValues: CalculatedValues = {};
+  state: string;
 
   constructor(
     updatedAt: Date,
@@ -28,6 +29,7 @@ export class Datum {
     heading: Quantity<Degree>,
     speed: Quantity<Speed>,
     vario: Quantity<Speed>,
+    state: string,
     calculatedValues: CalculatedValues = {}
   ) {
     this.updatedAt = updatedAt;
@@ -35,6 +37,7 @@ export class Datum {
     this.heading = heading;
     this.speed = speed;
     this.vario = vario;
+    this.state = state;
     this.calculatedValues = calculatedValues;
   }
 }
@@ -74,6 +77,7 @@ export default class FlightComputer {
       this.currentHeading() || degrees(0),
       this.currentSpeed() || kilometersPerHour(0),
       this.currentVario() || metersPerSecond(0),
+      this.state.state,
       this.calculatedValues()
     );
   }

@@ -38,7 +38,8 @@ export default class DatumFactory {
       this.position,
       this.heading,
       this.speed,
-      this.vario
+      this.vario,
+      'gliding'
     );
 
     this.nextTick();
