@@ -4,12 +4,13 @@ import { meters, Meter } from '../../units/length';
 import { milliseconds } from '../../units/duration';
 import { Speed } from '../../units/speed';
 import Quantity from '../../units/quantity';
+import { Datum } from 'flight_computer/computer';
 
 abstract class AbstractSpeedCalculator extends Calculator {
   speed: Quantity<Speed> | null = null;
   lastFix: Fix | null = null;
 
-  update(fix: Fix): void {
+  update(fix: Fix, _datum: Datum): void {
     if (this.lastFix) {
       const ellapsedTime = this.ellapsedTime(fix, this.lastFix);
       const distanceDelta = this.distanceDelta(fix, this.lastFix);

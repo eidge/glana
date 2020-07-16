@@ -3,6 +3,7 @@ import { Degree, degrees } from '../../units/angle';
 import Quantity from '../../units/quantity';
 import Fix from '../fix';
 import Position from '../position';
+import { Datum } from 'flight_computer/computer';
 
 class Heading extends Calculator {
   heading: Quantity<Degree> | null = null;
@@ -12,7 +13,7 @@ class Heading extends Calculator {
     return 'Heading';
   }
 
-  update(fix: Fix): void {
+  update(fix: Fix, _previousDatum: Datum): void {
     if (!this.lastPosition) {
       this.lastPosition = fix.position;
       this.heading = degrees(0);

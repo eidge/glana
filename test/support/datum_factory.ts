@@ -8,9 +8,10 @@ import {
 import Quantity from '../../src/units/quantity';
 import { degrees, Degree } from '../../src/units/angle';
 import { Duration, milliseconds, seconds, Second } from 'units/duration';
+import { meters } from 'units/length';
 
 interface DatumFactoryOptions {
-  currentTime?: Date;
+  startTime?: Date;
   tickSizeInSeconds?: number;
 }
 
@@ -24,7 +25,7 @@ export default class DatumFactory {
   private datum!: Datum;
 
   constructor(options: DatumFactoryOptions = {}) {
-    this.currentTime = options.currentTime || new Date();
+    this.currentTime = options.startTime || new Date();
     this.tick = seconds(options.tickSizeInSeconds || 5);
     this.position = new Position(degrees(0), degrees(0), degrees(0));
     this.heading = degrees(0);
@@ -42,18 +43,30 @@ export default class DatumFactory {
       'gliding'
     );
 
-    this.nextTick();
+    this.advanceTime(this.tick);
 
     return this.datum;
   }
 
-  private nextTick() {
-    this.advanceTime(this.tick);
+  nextDatums(count: number) {
+    let datums: Datum[] = [];
+    for (let i = 0; i < count; ++i) {
+      datums.push(this.nextDatum());
+    }
+    return datums;
   }
 
   advanceTime(delta: Quantity<Duration>) {
     let millis = delta.convertTo(milliseconds).value;
-    this.currentTime = new Date(this.currentTime.getTime() + millis);
+    let newTime = new Date(this.currentTime.getTime() + millis);
+    let distanceCovered = meters(
+      this.speed.convertTo(metersPerSecond).value *
+        delta.convertTo(seconds).value
+    );
+
+    this.currentTime = newTime;
+    this.position = this.position.move(distanceCovered, this.heading);
+
     return this;
   }
 

@@ -4,6 +4,7 @@ import { metersPerSecond, Speed } from '../../units/speed';
 import MovingWindow from '../../math/moving_window';
 import Vario from './vario';
 import Fix from 'flight_computer/fix';
+import { Datum } from 'flight_computer/computer';
 
 export default class AverageVario {
   movingWindow: MovingWindow<Speed>;
@@ -18,8 +19,8 @@ export default class AverageVario {
     return 'Av. Vario';
   }
 
-  update(fix: Fix) {
-    this.varioCalculator.update(fix);
+  update(fix: Fix, datum: Datum) {
+    this.varioCalculator.update(fix, datum);
     let vario = this.varioCalculator.getValue();
     if (vario) {
       this.movingWindow.addValue({ timestamp: fix.updatedAt, value: vario });

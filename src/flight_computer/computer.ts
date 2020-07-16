@@ -8,7 +8,8 @@ import GPSSpeed from './calculators/gps_speed';
 import Vario from './calculators/vario';
 import Heading from './calculators/heading';
 import Position from './position';
-import StateMachine from './state_machine';
+import StateMachine, { GliderState } from './state_machine';
+import { meters } from '../units/length';
 
 export type CalculatorMap = Map<string, Calculator>;
 
@@ -21,7 +22,7 @@ export class Datum {
   speed: Quantity<Speed>;
   vario: Quantity<Speed>;
   calculatedValues: CalculatedValues = {};
-  state: string;
+  state: GliderState;
 
   constructor(
     updatedAt: Date,
@@ -29,7 +30,7 @@ export class Datum {
     heading: Quantity<Degree>,
     speed: Quantity<Speed>,
     vario: Quantity<Speed>,
-    state: string,
+    state: GliderState,
     calculatedValues: CalculatedValues = {}
   ) {
     this.updatedAt = updatedAt;
@@ -39,6 +40,15 @@ export class Datum {
     this.vario = vario;
     this.state = state;
     this.calculatedValues = calculatedValues;
+  }
+
+  toFix() {
+    return new Fix(
+      this.updatedAt,
+      this.position.latitude.value,
+      this.position.longitude.value,
+      this.position.altitude.convertTo(meters).value
+    );
   }
 }
 
@@ -59,14 +69,14 @@ export default class FlightComputer {
   }
 
   update(fix: Fix) {
-    this.updateCalculators(fix);
+    this.updateCalculators(fix, this.currentDatum || this.buildDatum(fix));
     this.currentDatum = this.buildDatum(fix);
     this.state.update(this.currentDatum);
   }
 
-  private updateCalculators(fix: Fix) {
+  private updateCalculators(fix: Fix, previousDatum: Datum) {
     this.calculators.forEach(calculator => {
-      calculator.update(fix);
+      calculator.update(fix, previousDatum);
     });
   }
 

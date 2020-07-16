@@ -1,7 +1,11 @@
-import { getDistance, getRhumbLineBearing } from 'geolib';
-import { meters, Meter } from '../units/length';
+import {
+  getDistance,
+  getRhumbLineBearing,
+  computeDestinationPoint,
+} from 'geolib';
+import { meters, Meter, Length } from '../units/length';
 import Quantity from '../units/quantity';
-import { degrees, Degree } from '../units/angle';
+import { degrees, Degree, Angle } from '../units/angle';
 
 class Position {
   latitude: Quantity<Degree>;
@@ -41,6 +45,20 @@ class Position {
     }
     return degrees(
       getRhumbLineBearing(this.rawCoordinates(), otherPosition.rawCoordinates())
+    );
+  }
+
+  move(distance: Quantity<Length>, heading: Quantity<Angle>) {
+    let point = computeDestinationPoint(
+      this.rawCoordinates(),
+      distance.convertTo(meters).value,
+      heading.convertTo(degrees).value
+    );
+
+    return new Position(
+      degrees(point.latitude),
+      degrees(point.longitude),
+      this.altitude
     );
   }
 }

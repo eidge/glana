@@ -2,6 +2,9 @@ import AverageVario from './average_vario';
 import Fix from '../fix';
 import { metersPerSecond } from 'units/speed';
 import { seconds } from 'units/duration';
+import DatumFactory from '../../../test/support/datum_factory';
+
+const uselessDatum = new DatumFactory().nextDatum();
 
 describe('AverageVario', () => {
   it('returns null when it has not yet received a fix', () => {
@@ -12,7 +15,7 @@ describe('AverageVario', () => {
   it('returns 0 after first fix', () => {
     const verticalSpeed = new AverageVario(seconds(30));
     const fix = new Fix(new Date(), 40.0, 8, 1200);
-    verticalSpeed.update(fix);
+    verticalSpeed.update(fix, uselessDatum);
     expect(verticalSpeed.getValue()?.value).toEqual(0);
   });
 
@@ -26,8 +29,8 @@ describe('AverageVario', () => {
       1202
     );
 
-    verticalSpeed.update(fix1);
-    verticalSpeed.update(fix2);
+    verticalSpeed.update(fix1, uselessDatum);
+    verticalSpeed.update(fix2, uselessDatum);
 
     expect(verticalSpeed.getValue()?.convertTo(metersPerSecond)?.value).toEqual(
       1
@@ -44,8 +47,8 @@ describe('AverageVario', () => {
       1198
     );
 
-    verticalSpeed.update(fix1);
-    verticalSpeed.update(fix2);
+    verticalSpeed.update(fix1, uselessDatum);
+    verticalSpeed.update(fix2, uselessDatum);
 
     expect(verticalSpeed.getValue()?.convertTo(metersPerSecond)?.value).toEqual(
       -1

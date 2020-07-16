@@ -5,8 +5,10 @@ import { degrees, Degree } from '../units/angle';
 import MovingWindow from '../math/moving_window';
 import Quantity from 'units/quantity';
 
+export type GliderState = 'stopped' | 'gliding' | 'thermalling';
+
 export default class StateMachine {
-  state: 'stopped' | 'gliding' | 'thermalling' = 'stopped';
+  state: GliderState = 'stopped';
   private speedMovingWindow2Minute = new MovingWindow(
     seconds(10),
     kilometersPerHour.unit

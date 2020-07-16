@@ -33,7 +33,7 @@ class Second extends Duration {
 
 class Minute extends Duration {
   constructor() {
-    super('second', 's');
+    super('minute', 'min');
   }
 
   toStandardUnit(value: number) {
