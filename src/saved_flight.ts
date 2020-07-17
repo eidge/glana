@@ -4,7 +4,7 @@ import Analysis from './analysis';
 import Phase from './analysis/phase';
 
 export default class SavedFlight {
-  fixes: Fix[];
+  readonly fixes: Fix[];
   datums: Datum[] = [];
   phases: Phase[] = [];
 

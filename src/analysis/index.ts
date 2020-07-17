@@ -1,6 +1,7 @@
 import FlightComputer, { Datum } from '../flight_computer/computer';
 import Fix from '../flight_computer/fix';
 import Phase from './phase';
+import { seconds } from '../units/duration';
 
 export default class Analysis {
   private computer: FlightComputer;
@@ -20,7 +21,7 @@ export default class Analysis {
   perform() {
     if (this.isDone()) return this;
     this.datums = this.buildDatums();
-    this.phases = this.buildPhases(this.datums);
+    this.phases = this.detectPhases(this.datums);
     return this;
   }
 
@@ -33,7 +34,12 @@ export default class Analysis {
     return datums;
   }
 
-  private buildPhases(datums: Datum[]): Phase[] {
+  private detectPhases(datums: Datum[]): Phase[] {
+    let phases = this.buildPhases(datums);
+    return this.filterOutNoisyPhases(phases);
+  }
+
+  private buildPhases(datums: Datum[]) {
     let phases: Phase[] = [];
     let startDatumIdx = 0;
 
@@ -57,6 +63,26 @@ export default class Analysis {
     }
 
     return phases;
+  }
+
+  filterOutNoisyPhases(phases: Phase[]): Phase[] {
+    let filteredPhases: Phase[] = [];
+    phases.forEach((phase, idx) => {
+      if (
+        phase.duration().greaterThan(seconds(30)) ||
+        phase.type === 'stopped'
+      ) {
+        filteredPhases.push(phase);
+        return;
+      }
+
+      const nextPhase = phases[idx + 1];
+      if (nextPhase) {
+        nextPhase.startAt = phase.startAt;
+      }
+    });
+
+    return filteredPhases;
   }
 
   private buildPhase(datums: Datum[], startIdx: number, endIdx: number) {
