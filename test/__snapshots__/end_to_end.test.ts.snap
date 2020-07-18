@@ -54,7 +54,7 @@ Array [
       "value": 0,
     },
     "state": "stopped",
-    "updatedAt": 2019-11-28T10:17:10.000Z,
+    "timestamp": 2019-11-28T10:17:10.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Second {
@@ -157,7 +157,7 @@ Array [
       "value": 0,
     },
     "state": "stopped",
-    "updatedAt": 2019-11-28T10:17:11.000Z,
+    "timestamp": 2019-11-28T10:17:11.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -260,7 +260,7 @@ Array [
       "value": 0.0442,
     },
     "state": "stopped",
-    "updatedAt": 2019-11-28T10:17:12.000Z,
+    "timestamp": 2019-11-28T10:17:12.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -363,7 +363,7 @@ Array [
       "value": 0.0446,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:13.000Z,
+    "timestamp": 2019-11-28T10:17:13.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -466,7 +466,7 @@ Array [
       "value": 0.04290000000000001,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:14.000Z,
+    "timestamp": 2019-11-28T10:17:14.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -569,7 +569,7 @@ Array [
       "value": 0.046400000000000004,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:15.000Z,
+    "timestamp": 2019-11-28T10:17:15.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -672,7 +672,7 @@ Array [
       "value": 0.045700000000000005,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:16.000Z,
+    "timestamp": 2019-11-28T10:17:16.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -775,7 +775,7 @@ Array [
       "value": 0.047,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:17.000Z,
+    "timestamp": 2019-11-28T10:17:17.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -878,7 +878,7 @@ Array [
       "value": 0.0487,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:18.000Z,
+    "timestamp": 2019-11-28T10:17:18.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -981,7 +981,7 @@ Array [
       "value": 0.049400000000000006,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:19.000Z,
+    "timestamp": 2019-11-28T10:17:19.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -1084,7 +1084,7 @@ Array [
       "value": 0.0501,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:20.000Z,
+    "timestamp": 2019-11-28T10:17:20.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -1187,7 +1187,7 @@ Array [
       "value": 0.05090000000000001,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:21.000Z,
+    "timestamp": 2019-11-28T10:17:21.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -1290,7 +1290,7 @@ Array [
       "value": 0.05090000000000001,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:22.000Z,
+    "timestamp": 2019-11-28T10:17:22.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -1393,7 +1393,7 @@ Array [
       "value": 0.0501,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:23.000Z,
+    "timestamp": 2019-11-28T10:17:23.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -1496,7 +1496,7 @@ Array [
       "value": 0.05090000000000001,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:24.000Z,
+    "timestamp": 2019-11-28T10:17:24.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -1599,7 +1599,7 @@ Array [
       "value": 0.0501,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:25.000Z,
+    "timestamp": 2019-11-28T10:17:25.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -1702,7 +1702,7 @@ Array [
       "value": 0.049300000000000004,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:26.000Z,
+    "timestamp": 2019-11-28T10:17:26.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -1805,7 +1805,7 @@ Array [
       "value": 0.0517,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:27.000Z,
+    "timestamp": 2019-11-28T10:17:27.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -1908,7 +1908,7 @@ Array [
       "value": 0.0501,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:28.000Z,
+    "timestamp": 2019-11-28T10:17:28.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {
@@ -2011,7 +2011,7 @@ Array [
       "value": 0.0525,
     },
     "state": "gliding",
-    "updatedAt": 2019-11-28T10:17:29.000Z,
+    "timestamp": 2019-11-28T10:17:29.000Z,
     "vario": Quantity {
       "unit": Speed {
         "durationUnit": Millisecond {

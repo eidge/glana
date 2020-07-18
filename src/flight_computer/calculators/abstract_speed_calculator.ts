@@ -25,7 +25,7 @@ abstract class AbstractSpeedCalculator extends Calculator {
   abstract distanceDelta(fix: Fix, lastFix: Fix): Quantity<Meter>;
 
   private ellapsedTime(fix: Fix, lastFix: Fix) {
-    const millis = fix.updatedAt.getTime() - lastFix.updatedAt.getTime();
+    const millis = fix.timestamp.getTime() - lastFix.timestamp.getTime();
     return milliseconds(millis);
   }
 

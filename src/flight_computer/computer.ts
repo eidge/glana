@@ -16,7 +16,7 @@ export type CalculatorMap = Map<string, Calculator>;
 type CalculatedValues = { [key: string]: Quantity<Unit> | null };
 
 export class Datum {
-  updatedAt: Date;
+  timestamp: Date;
   position: Position;
   heading: Quantity<Degree>;
   speed: Quantity<Speed>;
@@ -25,7 +25,7 @@ export class Datum {
   state: GliderState;
 
   constructor(
-    updatedAt: Date,
+    timestamp: Date,
     position: Position,
     heading: Quantity<Degree>,
     speed: Quantity<Speed>,
@@ -33,7 +33,7 @@ export class Datum {
     state: GliderState,
     calculatedValues: CalculatedValues = {}
   ) {
-    this.updatedAt = updatedAt;
+    this.timestamp = timestamp;
     this.position = position;
     this.heading = heading;
     this.speed = speed;
@@ -44,7 +44,7 @@ export class Datum {
 
   toFix() {
     return new Fix(
-      this.updatedAt,
+      this.timestamp,
       this.position.latitude.value,
       this.position.longitude.value,
       this.position.altitude.convertTo(meters).value
@@ -82,7 +82,7 @@ export default class FlightComputer {
 
   private buildDatum(fix: Fix) {
     return new Datum(
-      fix.updatedAt,
+      fix.timestamp,
       fix.position,
       this.currentHeading() || degrees(0),
       this.currentSpeed() || kilometersPerHour(0),

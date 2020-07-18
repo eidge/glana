@@ -23,7 +23,7 @@ export default class AverageVario {
     this.varioCalculator.update(fix, datum);
     let vario = this.varioCalculator.getValue();
     if (vario) {
-      this.movingWindow.addValue({ timestamp: fix.updatedAt, value: vario });
+      this.movingWindow.addValue({ timestamp: fix.timestamp, value: vario });
     }
   }
 

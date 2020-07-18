@@ -47,15 +47,15 @@ export default class StateMachine {
 
   private updateMovingWindows(datum: Datum) {
     this.speedMovingWindow.addValue({
-      timestamp: datum.updatedAt,
+      timestamp: datum.timestamp,
       value: datum.speed,
     });
     this.speedMovingWindow2Minute.addValue({
-      timestamp: datum.updatedAt,
+      timestamp: datum.timestamp,
       value: datum.speed,
     });
     this.headingMovingWindow.addValue({
-      timestamp: datum.updatedAt,
+      timestamp: datum.timestamp,
       value: datum.heading,
     });
   }

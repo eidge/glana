@@ -87,8 +87,8 @@ export default class Analysis {
 
   private buildPhase(datums: Datum[], startIdx: number, endIdx: number) {
     return new Phase(
-      datums[startIdx].updatedAt,
-      datums[endIdx].updatedAt,
+      datums[startIdx].timestamp,
+      datums[endIdx].timestamp,
       datums[startIdx].state
     );
   }
