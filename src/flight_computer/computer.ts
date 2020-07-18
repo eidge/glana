@@ -69,7 +69,7 @@ export default class FlightComputer {
   }
 
   update(fix: Fix) {
-    this.updateCalculators(fix, this.currentDatum || this.buildDatum(fix));
+    if (this.currentDatum) this.updateCalculators(fix, this.currentDatum);
     this.currentDatum = this.buildDatum(fix);
     this.state.update(this.currentDatum);
   }

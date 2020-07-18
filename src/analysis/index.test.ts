@@ -75,7 +75,7 @@ describe('Analysis', () => {
 
       let moreGlidingFixes = datumFactory
         .setSpeed(kilometersPerHour(120))
-        .nextDatums(5)
+        .nextDatums(10)
         .map(datum => datum.toFix());
 
       let landingFixes = datumFactory
