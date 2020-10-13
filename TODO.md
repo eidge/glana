@@ -27,6 +27,11 @@ Backlog:
   - [ ] Synchronise options for flights (start time, clock time, adjust offset)
 - [ ] Wind calculation: http://blueflyvario.blogspot.com/2012/09/calculating-wind-speed-from-gps-track.html
 
+Crazy Ideas:
+
+- Integrate flarm - as you navigate flight, you see all planes that were there
+    at that moment.
+
 Notes:
 
 - Code for the bga viewer: https://github.com/GlidingWeb/IGCWebView | https://github.com/GlidingWeb/IgcWebview2/
