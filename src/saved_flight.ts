@@ -2,20 +2,20 @@ import Fix from './flight_computer/fix';
 import FlightComputer, { Datum } from './flight_computer/computer';
 import Analysis from './analysis';
 import Phase from './analysis/phase';
-import { Duration, milliseconds } from 'units/duration';
-import Quantity from 'units/quantity';
+import { Duration, milliseconds } from './units/duration';
+import Quantity from './units/quantity';
 
 export default class SavedFlight {
   readonly fixes: Fix[];
   private datums: Datum[] = [];
   private phases: Phase[] = [];
-  private timeOffsetInMilliseconds!: number;
+  private timeOffsetInMilliseconds: number;
   private analysed: boolean;
 
   constructor(fixes: Fix[]) {
     this.fixes = fixes;
     this.analysed = false;
-    this.setTimeOffset(milliseconds(0));
+    this.timeOffsetInMilliseconds = 0;
   }
 
   analise(computer = new FlightComputer()) {
@@ -33,13 +33,11 @@ export default class SavedFlight {
   }
 
   setTimeOffset(offset: Quantity<Duration>) {
-    if (!this.analysed) {
-      this.analise();
-    }
+    this.ensureAnalysisIsDone();
 
     let newOffset = offset.convertTo(milliseconds).value;
     let offsetDelta = newOffset - this.timeOffsetInMilliseconds;
-    this.timeOffsetInMilliseconds = offset.convertTo(milliseconds).value;
+    this.timeOffsetInMilliseconds = newOffset;
 
     if (offsetDelta === 0) {
       return;
@@ -47,6 +45,12 @@ export default class SavedFlight {
 
     this.datums = this.datums.map(d => this.offsetDatumTime(d, offsetDelta));
     this.phases = this.phases.map(p => this.offsetPhase(p, offsetDelta));
+  }
+
+  private ensureAnalysisIsDone() {
+    if (!this.analysed) {
+      this.analise();
+    }
   }
 
   private offsetDatumTime(datum: Datum, offsetInMillisecods: number) {
@@ -67,18 +71,12 @@ export default class SavedFlight {
   }
 
   getDatums() {
-    if (!this.analysed) {
-      this.analise();
-    }
-
+    this.ensureAnalysisIsDone();
     return this.datums;
   }
 
   getPhases() {
-    if (!this.analysed) {
-      this.analise();
-    }
-
+    this.ensureAnalysisIsDone();
     return this.phases;
   }
 

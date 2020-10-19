@@ -1,6 +1,9 @@
 import Vario from './vario';
 import Fix from '../fix';
 import { metersPerSecond } from 'units/speed';
+import DatumFactory from '../../../test/support/datum_factory';
+
+const uselessDatum = new DatumFactory().nextDatum();
 
 describe('Vario', () => {
   it('returns null when it has not yet received a fix', () => {
@@ -11,7 +14,7 @@ describe('Vario', () => {
   it('returns 0 after first fix', () => {
     const verticalSpeed = new Vario();
     const fix = new Fix(new Date(), 40.0, 8, 1200);
-    verticalSpeed.update(fix);
+    verticalSpeed.update(fix, uselessDatum);
     expect(verticalSpeed.getValue()?.value).toEqual(0);
   });
 
@@ -25,8 +28,8 @@ describe('Vario', () => {
       1202
     );
 
-    verticalSpeed.update(fix1);
-    verticalSpeed.update(fix2);
+    verticalSpeed.update(fix1, uselessDatum);
+    verticalSpeed.update(fix2, uselessDatum);
 
     expect(verticalSpeed.getValue()?.convertTo(metersPerSecond)?.value).toEqual(
       2
@@ -43,8 +46,8 @@ describe('Vario', () => {
       1198
     );
 
-    verticalSpeed.update(fix1);
-    verticalSpeed.update(fix2);
+    verticalSpeed.update(fix1, uselessDatum);
+    verticalSpeed.update(fix2, uselessDatum);
 
     expect(verticalSpeed.getValue()?.convertTo(metersPerSecond)?.value).toEqual(
       -2

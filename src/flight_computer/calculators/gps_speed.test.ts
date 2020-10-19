@@ -1,6 +1,9 @@
 import GPSSpeed from './gps_speed';
 import Fix from '../fix';
 import { metersPerSecond } from '../../units/speed';
+import DatumFactory from '../../../test/support/datum_factory';
+
+const uselessDatum = new DatumFactory().nextDatum();
 
 describe('GPS Speed', () => {
   it('returns null when it has not yet received a fix', () => {
@@ -11,7 +14,7 @@ describe('GPS Speed', () => {
   it('returns 0 after first fix', () => {
     const speed = new GPSSpeed();
     const fix = new Fix(new Date(), 40.0, 8, 1200);
-    speed.update(fix);
+    speed.update(fix, uselessDatum);
     expect(speed.getValue()?.value).toEqual(0);
   });
 
@@ -25,8 +28,8 @@ describe('GPS Speed', () => {
       1198
     );
 
-    speed.update(fix1);
-    speed.update(fix2);
+    speed.update(fix1, uselessDatum);
+    speed.update(fix2, uselessDatum);
 
     expect(speed.getValue()?.convertTo(metersPerSecond).value).toBeCloseTo(
       85.3

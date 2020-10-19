@@ -1,22 +1,24 @@
 import SavedFlight from 'saved_flight';
+import SynchronizationMethod from './synchronization/method';
+import RealTime from './synchronization/real_time';
+import RecordingStarted from './synchronization/recording_started';
 
-type SynchronizationType = 'realTime' | 'takeoffTime';
+export let synchronizationMethods = {
+  realTime: new RealTime(),
+  recordingStarted: new RecordingStarted(),
+};
 
 export default class FlightGroup {
-  currentTimestamp: Date;
-  followFlight: SavedFlight;
-  flights: SavedFlight[];
-  synchronizationType: SynchronizationType;
+  readonly flights: SavedFlight[];
+  private synchronizationMethod!: SynchronizationMethod;
 
   constructor(flights: SavedFlight[]) {
-    this.synchronizationType = 'realTime';
     this.flights = flights;
-    this.followFlight = flights[0];
-    this.currentTimestamp = this.followFlight.datums[0].timestamp;
+    this.synchronize(synchronizationMethods.realTime);
   }
 
-  synchronize(type: SynchronizationType) {
-    this.synchronizationType = type;
-    // Do some synchro here!
+  synchronize(method: SynchronizationMethod) {
+    this.synchronizationMethod = method;
+    this.synchronizationMethod.synchronize(this.flights);
   }
 }
