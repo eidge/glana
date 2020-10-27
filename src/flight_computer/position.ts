@@ -1,11 +1,7 @@
-import {
-  getDistance,
-  getRhumbLineBearing,
-  computeDestinationPoint,
-} from 'geolib';
 import { meters, Meter, Length } from '../units/length';
 import Quantity from '../units/quantity';
-import { degrees, Degree, Angle } from '../units/angle';
+import { Degree, Angle } from '../units/angle';
+import { distance2D, heading2D, translatePosition } from '../math/geo';
 
 class Position {
   latitude: Quantity<Degree>;
@@ -23,43 +19,15 @@ class Position {
   }
 
   distance2DTo(otherPosition: Position, accuracy: number = 0.1) {
-    if (otherPosition === this) {
-      return meters(0);
-    }
-    return meters(
-      getDistance(
-        this.rawCoordinates(),
-        otherPosition.rawCoordinates(),
-        accuracy
-      )
-    );
-  }
-
-  private rawCoordinates() {
-    return { latitude: this.latitude.value, longitude: this.longitude.value };
+    return distance2D(this, otherPosition, accuracy);
   }
 
   heading2DTo(otherPosition: Position) {
-    if (otherPosition === this) {
-      return degrees(0);
-    }
-    return degrees(
-      getRhumbLineBearing(this.rawCoordinates(), otherPosition.rawCoordinates())
-    );
+    return heading2D(this, otherPosition);
   }
 
   move(distance: Quantity<Length>, heading: Quantity<Angle>) {
-    let point = computeDestinationPoint(
-      this.rawCoordinates(),
-      distance.convertTo(meters).value,
-      heading.convertTo(degrees).value
-    );
-
-    return new Position(
-      degrees(point.latitude),
-      degrees(point.longitude),
-      this.altitude
-    );
+    return translatePosition(this, distance, heading);
   }
 }
 

@@ -80,11 +80,52 @@ export default class SavedFlight {
     return this.phases;
   }
 
+  getRecordingStartedAt() {
+    return this.getDatums()[0].timestamp;
+  }
+
+  getTakeoffAt() {
+    let firstFlightPhase =
+      this.getPhases().find(p => p.type !== 'stopped') || null;
+    return firstFlightPhase && firstFlightPhase.startAt;
+  }
+
+  getLandedAt() {
+    if (!this.getTakeoffAt()) return null;
+
+    let lastStopPhase =
+      this.getPhases()
+        .reverse()
+        .find(p => p.type === 'stopped') || null;
+
+    if (!lastStopPhase || this.getPhases().indexOf(lastStopPhase) === 0) {
+      return null;
+    }
+
+    return lastStopPhase.startAt;
+  }
+
+  getRecordingStoppedAt() {
+    let datums = this.getDatums();
+    return datums[datums.length - 1].timestamp;
+  }
+
   phaseAt(timestamp: Date) {
-    return this.phases.find(
-      phase =>
-        phase.startAt.getTime() <= timestamp.getTime() &&
-        phase.finishAt.getTime() > timestamp.getTime()
+    return (
+      this.getPhases().find(
+        phase =>
+          phase.startAt.getTime() <= timestamp.getTime() &&
+          phase.finishAt.getTime() > timestamp.getTime()
+      ) || null
+    );
+  }
+
+  datumAt(timestamp: Date) {
+    // FIXME: This should defo be binary search
+    return (
+      this.getDatums().find(
+        datum => datum.timestamp.getTime() > timestamp.getTime()
+      ) || null
     );
   }
 }
