@@ -1,35 +1,32 @@
 import Position from '../flight_computer/position';
 import { degrees, Angle } from '../units/angle';
-import { meters, Length } from '../units/length';
+import { meters, Length, kilometers } from '../units/length';
 import {
-  getDistance,
-  getRhumbLineBearing,
-  computeDestinationPoint,
-} from 'geolib';
+  point,
+  rhumbDistance,
+  rhumbBearing,
+  transformTranslate,
+} from '@turf/turf';
 import Quantity from 'units/quantity';
 
-function positionToGeoLibCoordinates(position: Position) {
-  return {
-    latitude: position.latitude.convertTo(degrees).value,
-    longitude: position.longitude.convertTo(degrees).value,
-  };
+function positionToTurfPoint(position: Position) {
+  return point([
+    position.longitude.convertTo(degrees).value,
+    position.latitude.convertTo(degrees).value,
+  ]);
 }
 
-export function distance2D(
-  position: Position,
-  otherPosition: Position,
-  accuracy: number = 0.1
-) {
+export function distance2D(position: Position, otherPosition: Position) {
   if (position === otherPosition) {
     return meters(0);
   }
 
   return meters(
-    getDistance(
-      positionToGeoLibCoordinates(position),
-      positionToGeoLibCoordinates(otherPosition),
-      accuracy
-    )
+    rhumbDistance(
+      positionToTurfPoint(position),
+      positionToTurfPoint(otherPosition),
+      { units: 'kilometers' }
+    ) * 1000
   );
 }
 
@@ -38,12 +35,17 @@ export function heading2D(position: Position, otherPosition: Position) {
     return degrees(0);
   }
 
-  return degrees(
-    getRhumbLineBearing(
-      positionToGeoLibCoordinates(position),
-      positionToGeoLibCoordinates(otherPosition)
-    )
+  let bearing = rhumbBearing(
+    positionToTurfPoint(position),
+    positionToTurfPoint(otherPosition),
+    { final: false }
   );
+
+  if (bearing < 0) {
+    bearing += 360;
+  }
+
+  return degrees(bearing);
 }
 
 export function translatePosition(
@@ -51,15 +53,16 @@ export function translatePosition(
   distance: Quantity<Length>,
   heading: Quantity<Angle>
 ) {
-  let point = computeDestinationPoint(
-    positionToGeoLibCoordinates(position),
-    distance.convertTo(meters).value,
-    heading.convertTo(degrees).value
+  let point = transformTranslate(
+    positionToTurfPoint(position),
+    distance.convertTo(kilometers).value,
+    heading.convertTo(degrees).value,
+    { units: 'kilometers', mutate: true }
   );
 
   return new Position(
-    degrees(point.latitude),
-    degrees(point.longitude),
+    degrees(point.geometry!.coordinates[1]),
+    degrees(point.geometry!.coordinates[0]),
     position.altitude
   );
 }

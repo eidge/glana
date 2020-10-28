@@ -20,14 +20,14 @@ Analysis {
                 "name": "degree",
                 "symbol": "°",
               },
-              "value": 0.022483040138736414,
+              "value": 0.022483009093113442,
             },
             "longitude": Quantity {
               "unit": Degree {
                 "name": "degree",
                 "symbol": "°",
               },
-              "value": 9.231847074787084e-12,
+              "value": 9.322320693172514e-12,
             },
           },
           "pressureAltitude": null,
@@ -46,7 +46,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.00002,
+          "value": 0,
         },
       },
       "vario" => Vario {
@@ -65,14 +65,14 @@ Analysis {
                 "name": "degree",
                 "symbol": "°",
               },
-              "value": 0.022483040138736414,
+              "value": 0.022483009093113442,
             },
             "longitude": Quantity {
               "unit": Degree {
                 "name": "degree",
                 "symbol": "°",
               },
-              "value": 9.231847074787084e-12,
+              "value": 9.322320693172514e-12,
             },
           },
           "pressureAltitude": null,
@@ -115,14 +115,14 @@ Analysis {
               "name": "degree",
               "symbol": "°",
             },
-            "value": 0.022483040138736414,
+            "value": 0.022483009093113442,
           },
           "longitude": Quantity {
             "unit": Degree {
               "name": "degree",
               "symbol": "°",
             },
-            "value": 9.231847074787084e-12,
+            "value": 9.322320693172514e-12,
           },
         },
       },
@@ -149,7 +149,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.00002,
+          "value": 0,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -187,14 +187,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.022483040138736414,
+          "value": 0.022483009093113442,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -210,7 +210,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.00002,
+        "value": 0,
       },
       "state": "stopped",
       "timestamp": 2020-07-16T11:34:45.139Z,
@@ -319,7 +319,7 @@ Analysis {
                 "name": "meter per millisecond",
                 "symbol": "m/ms",
               },
-              "value": 0.00002,
+              "value": 0,
             },
           },
           Object {
@@ -337,7 +337,7 @@ Analysis {
                 "name": "meter per millisecond",
                 "symbol": "m/ms",
               },
-              "value": 0.00002,
+              "value": 0,
             },
           },
           Object {
@@ -355,7 +355,7 @@ Analysis {
                 "name": "meter per millisecond",
                 "symbol": "m/ms",
               },
-              "value": 0.00002,
+              "value": 0,
             },
           },
         ],
@@ -390,7 +390,7 @@ Analysis {
                 "name": "meter per millisecond",
                 "symbol": "m/ms",
               },
-              "value": 0.00002,
+              "value": 0,
             },
           },
           Object {
@@ -408,7 +408,7 @@ Analysis {
                 "name": "meter per millisecond",
                 "symbol": "m/ms",
               },
-              "value": 0.00002,
+              "value": 0,
             },
           },
           Object {
@@ -426,7 +426,7 @@ Analysis {
                 "name": "meter per millisecond",
                 "symbol": "m/ms",
               },
-              "value": 0.00002,
+              "value": 0,
             },
           },
         ],
@@ -1042,7 +1042,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.03333333333333334,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -1080,7 +1080,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.0014988693431978845,
+          "value": 0.0014988672728742302,
         },
         "longitude": Quantity {
           "unit": Degree {
@@ -1103,7 +1103,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.03333333333333334,
       },
       "state": "stopped",
       "timestamp": 2020-07-16T11:27:35.139Z,
@@ -1145,7 +1145,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.03333333333333334,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -1183,7 +1183,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.002997738686395769,
+          "value": 0.0029977345457484605,
         },
         "longitude": Quantity {
           "unit": Degree {
@@ -1206,7 +1206,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.03333333333333334,
       },
       "state": "stopped",
       "timestamp": 2020-07-16T11:27:40.139Z,
@@ -1248,7 +1248,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.03333333333333334,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -1286,7 +1286,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.004496608029593654,
+          "value": 0.004496601818622691,
         },
         "longitude": Quantity {
           "unit": Degree {
@@ -1309,7 +1309,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.03333333333333334,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:27:45.139Z,
@@ -1351,7 +1351,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.03333333333333334,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -1389,7 +1389,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.005995477372791538,
+          "value": 0.005995469091496921,
         },
         "longitude": Quantity {
           "unit": Degree {
@@ -1412,7 +1412,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.03333333333333334,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:27:50.139Z,
@@ -1454,7 +1454,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.03333333333333334,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -1492,7 +1492,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.007494346715989423,
+          "value": 0.007494336364371152,
         },
         "longitude": Quantity {
           "unit": Degree {
@@ -1515,7 +1515,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.03333333333333334,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:27:55.139Z,
@@ -1542,7 +1542,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 90.00000009823657,
+          "value": 90,
         },
         "speed": Quantity {
           "unit": Speed {
@@ -1557,7 +1557,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.0333333333335152,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -1580,7 +1580,7 @@ Analysis {
           "name": "degree",
           "symbol": "°",
         },
-        "value": 90.00000009823657,
+        "value": 90,
       },
       "position": Position {
         "altitude": Quantity {
@@ -1595,14 +1595,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.007494346713425021,
+          "value": 0.007494336364371152,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.0014988693560198938,
+          "value": 0.001498867285704364,
         },
       },
       "speed": Quantity {
@@ -1618,7 +1618,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.0333333333335152,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:28:00.139Z,
@@ -1660,7 +1660,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.03333333333333334,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -1698,14 +1698,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.005995477370227136,
+          "value": 0.005995469091496921,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.001498869356019894,
+          "value": 0.001498867285704364,
         },
       },
       "speed": Quantity {
@@ -1721,7 +1721,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.03333333333333334,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:28:05.139Z,
@@ -1748,7 +1748,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 269.9999999212162,
+          "value": 270,
         },
         "speed": Quantity {
           "unit": Speed {
@@ -1763,7 +1763,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.03333333333250875,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -1786,7 +1786,7 @@ Analysis {
           "name": "degree",
           "symbol": "°",
         },
-        "value": 269.9999999212162,
+        "value": 270,
       },
       "position": Position {
         "altitude": Quantity {
@@ -1801,14 +1801,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.005995477368175615,
+          "value": 0.005995469091496921,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 4.615923440330716e-12,
+          "value": 4.661160346586257e-12,
         },
       },
       "speed": Quantity {
@@ -1824,7 +1824,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.03333333333250875,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:28:10.139Z,
@@ -1866,7 +1866,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.03333333333333334,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -1904,14 +1904,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.007494346711373498,
+          "value": 0.007494336364371152,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 4.615923440330716e-12,
+          "value": 4.661160346586257e-12,
         },
       },
       "speed": Quantity {
@@ -1927,7 +1927,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.03333333333333334,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:28:15.139Z,
@@ -1954,7 +1954,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 90.00000009823657,
+          "value": 90,
         },
         "speed": Quantity {
           "unit": Speed {
@@ -1969,7 +1969,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.0333333333335152,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -1992,7 +1992,7 @@ Analysis {
           "name": "degree",
           "symbol": "°",
         },
-        "value": 90.00000009823657,
+        "value": 90,
       },
       "position": Position {
         "altitude": Quantity {
@@ -2007,14 +2007,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.007494346708809097,
+          "value": 0.007494336364371152,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.0014988693606358173,
+          "value": 0.0014988672903655242,
         },
       },
       "speed": Quantity {
@@ -2030,7 +2030,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.0333333333335152,
       },
       "state": "thermalling",
       "timestamp": 2020-07-16T11:28:20.139Z,
@@ -2072,7 +2072,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.03333333333333334,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -2110,14 +2110,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.005995477365611211,
+          "value": 0.005995469091496921,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.0014988693606358175,
+          "value": 0.0014988672903655242,
         },
       },
       "speed": Quantity {
@@ -2133,7 +2133,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.03333333333333334,
       },
       "state": "thermalling",
       "timestamp": 2020-07-16T11:28:25.139Z,
@@ -2160,7 +2160,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 269.99999992170257,
+          "value": 270,
         },
         "speed": Quantity {
           "unit": Speed {
@@ -2175,7 +2175,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.03333333333250875,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -2198,7 +2198,7 @@ Analysis {
           "name": "degree",
           "symbol": "°",
         },
-        "value": 269.99999992170257,
+        "value": 270,
       },
       "position": Position {
         "altitude": Quantity {
@@ -2213,14 +2213,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.00599547736355969,
+          "value": 0.005995469091496921,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -2236,7 +2236,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.03333333333250875,
       },
       "state": "thermalling",
       "timestamp": 2020-07-16T11:28:30.139Z,
@@ -2278,7 +2278,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.03333333333333334,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -2316,14 +2316,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.007494346706757576,
+          "value": 0.007494336364371152,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -2339,7 +2339,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.03333333333333334,
       },
       "state": "thermalling",
       "timestamp": 2020-07-16T11:28:35.139Z,
@@ -2381,7 +2381,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.03333333333333334,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -2419,14 +2419,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.008993216049955462,
+          "value": 0.008993203637245381,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -2442,7 +2442,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.03333333333333334,
       },
       "state": "thermalling",
       "timestamp": 2020-07-16T11:28:40.139Z,
@@ -2484,7 +2484,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.033333333333333305,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -2522,14 +2522,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.010492085393153347,
+          "value": 0.01049207091011961,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -2545,7 +2545,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.033333333333333305,
       },
       "state": "thermalling",
       "timestamp": 2020-07-16T11:28:45.139Z,
@@ -2587,7 +2587,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.033333333333333305,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -2625,14 +2625,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.01199095473635123,
+          "value": 0.01199093818299384,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -2648,7 +2648,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.033333333333333305,
       },
       "state": "thermalling",
       "timestamp": 2020-07-16T11:28:50.139Z,
@@ -2690,7 +2690,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.033333333333333305,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -2728,14 +2728,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.013489824079549113,
+          "value": 0.013489805455868068,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -2751,7 +2751,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.033333333333333305,
       },
       "state": "thermalling",
       "timestamp": 2020-07-16T11:28:55.139Z,
@@ -2793,7 +2793,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.033333333333333375,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -2831,14 +2831,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.014988693422746996,
+          "value": 0.014988672728742299,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -2854,7 +2854,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.033333333333333375,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:29:00.139Z,
@@ -2896,7 +2896,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.033333333333333305,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -2934,14 +2934,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.01648756276594488,
+          "value": 0.01648754000161653,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -2957,7 +2957,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.033333333333333305,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:29:05.139Z,
@@ -2999,7 +2999,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.033333333333333305,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -3037,14 +3037,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.017986432109142768,
+          "value": 0.017986407274490756,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -3060,7 +3060,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.033333333333333305,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:29:10.139Z,
@@ -3102,7 +3102,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.033333333333333236,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -3140,14 +3140,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.01948530145234065,
+          "value": 0.019485274547364984,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -3163,7 +3163,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.033333333333333236,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:29:15.139Z,
@@ -3205,7 +3205,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.03338,
+          "value": 0.033333333333333375,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -3243,14 +3243,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.020984170795538538,
+          "value": 0.020984141820239215,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -3266,7 +3266,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.03338,
+        "value": 0.033333333333333375,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:29:20.139Z,
@@ -3308,7 +3308,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.0005472131147540984,
+          "value": 0.0005464480874316934,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -3346,14 +3346,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.022483040138736414,
+          "value": 0.022483009093113442,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -3369,7 +3369,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.0005472131147540984,
+        "value": 0.0005464480874316934,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:34:25.139Z,
@@ -3411,7 +3411,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.00002,
+          "value": 0,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -3449,14 +3449,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.022483040138736414,
+          "value": 0.022483009093113442,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -3472,7 +3472,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.00002,
+        "value": 0,
       },
       "state": "gliding",
       "timestamp": 2020-07-16T11:34:30.139Z,
@@ -3514,7 +3514,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.00002,
+          "value": 0,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -3552,14 +3552,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.022483040138736414,
+          "value": 0.022483009093113442,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -3575,9 +3575,9 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.00002,
+        "value": 0,
       },
-      "state": "gliding",
+      "state": "stopped",
       "timestamp": 2020-07-16T11:34:35.139Z,
       "vario": Quantity {
         "unit": Speed {
@@ -3617,7 +3617,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.00002,
+          "value": 0,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -3655,14 +3655,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.022483040138736414,
+          "value": 0.022483009093113442,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -3678,7 +3678,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.00002,
+        "value": 0,
       },
       "state": "stopped",
       "timestamp": 2020-07-16T11:34:40.139Z,
@@ -3720,7 +3720,7 @@ Analysis {
             "name": "meter per millisecond",
             "symbol": "m/ms",
           },
-          "value": 0.00002,
+          "value": 0,
         },
         "vario": Quantity {
           "unit": Speed {
@@ -3758,14 +3758,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.022483040138736414,
+          "value": 0.022483009093113442,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "speed": Quantity {
@@ -3781,7 +3781,7 @@ Analysis {
           "name": "meter per millisecond",
           "symbol": "m/ms",
         },
-        "value": 0.00002,
+        "value": 0,
       },
       "state": "stopped",
       "timestamp": 2020-07-16T11:34:45.139Z,
@@ -3986,7 +3986,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.0014988693431978845,
+          "value": 0.0014988672728742302,
         },
         "longitude": Quantity {
           "unit": Degree {
@@ -4014,7 +4014,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.002997738686395769,
+          "value": 0.0029977345457484605,
         },
         "longitude": Quantity {
           "unit": Degree {
@@ -4042,7 +4042,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.004496608029593654,
+          "value": 0.004496601818622691,
         },
         "longitude": Quantity {
           "unit": Degree {
@@ -4070,7 +4070,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.005995477372791538,
+          "value": 0.005995469091496921,
         },
         "longitude": Quantity {
           "unit": Degree {
@@ -4098,7 +4098,7 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.007494346715989423,
+          "value": 0.007494336364371152,
         },
         "longitude": Quantity {
           "unit": Degree {
@@ -4126,14 +4126,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.007494346713425021,
+          "value": 0.007494336364371152,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.0014988693560198938,
+          "value": 0.001498867285704364,
         },
       },
       "pressureAltitude": null,
@@ -4154,14 +4154,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.005995477370227136,
+          "value": 0.005995469091496921,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.001498869356019894,
+          "value": 0.001498867285704364,
         },
       },
       "pressureAltitude": null,
@@ -4182,14 +4182,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.005995477368175615,
+          "value": 0.005995469091496921,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 4.615923440330716e-12,
+          "value": 4.661160346586257e-12,
         },
       },
       "pressureAltitude": null,
@@ -4210,14 +4210,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.007494346711373498,
+          "value": 0.007494336364371152,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 4.615923440330716e-12,
+          "value": 4.661160346586257e-12,
         },
       },
       "pressureAltitude": null,
@@ -4238,14 +4238,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.007494346708809097,
+          "value": 0.007494336364371152,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.0014988693606358173,
+          "value": 0.0014988672903655242,
         },
       },
       "pressureAltitude": null,
@@ -4266,14 +4266,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.005995477365611211,
+          "value": 0.005995469091496921,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.0014988693606358175,
+          "value": 0.0014988672903655242,
         },
       },
       "pressureAltitude": null,
@@ -4294,14 +4294,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.00599547736355969,
+          "value": 0.005995469091496921,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4322,14 +4322,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.007494346706757576,
+          "value": 0.007494336364371152,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4350,14 +4350,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.008993216049955462,
+          "value": 0.008993203637245381,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4378,14 +4378,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.010492085393153347,
+          "value": 0.01049207091011961,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4406,14 +4406,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.01199095473635123,
+          "value": 0.01199093818299384,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4434,14 +4434,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.013489824079549113,
+          "value": 0.013489805455868068,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4462,14 +4462,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.014988693422746996,
+          "value": 0.014988672728742299,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4490,14 +4490,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.01648756276594488,
+          "value": 0.01648754000161653,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4518,14 +4518,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.017986432109142768,
+          "value": 0.017986407274490756,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4546,14 +4546,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.01948530145234065,
+          "value": 0.019485274547364984,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4574,14 +4574,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.020984170795538538,
+          "value": 0.020984141820239215,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4602,14 +4602,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.022483040138736414,
+          "value": 0.022483009093113442,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4630,14 +4630,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.022483040138736414,
+          "value": 0.022483009093113442,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4658,14 +4658,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.022483040138736414,
+          "value": 0.022483009093113442,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4686,14 +4686,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.022483040138736414,
+          "value": 0.022483009093113442,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4714,14 +4714,14 @@ Analysis {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 0.022483040138736414,
+          "value": 0.022483009093113442,
         },
         "longitude": Quantity {
           "unit": Degree {
             "name": "degree",
             "symbol": "°",
           },
-          "value": 9.231847074787084e-12,
+          "value": 9.322320693172514e-12,
         },
       },
       "pressureAltitude": null,
@@ -4745,13 +4745,13 @@ Analysis {
       "type": "thermalling",
     },
     Phase {
-      "finishAt": 2020-07-16T11:34:40.139Z,
+      "finishAt": 2020-07-16T11:34:35.139Z,
       "startAt": 2020-07-16T11:29:00.139Z,
       "type": "gliding",
     },
     Phase {
       "finishAt": 2020-07-16T11:34:45.139Z,
-      "startAt": 2020-07-16T11:34:40.139Z,
+      "startAt": 2020-07-16T11:34:35.139Z,
       "type": "stopped",
     },
   ],

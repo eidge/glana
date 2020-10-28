@@ -18,8 +18,8 @@ class Position {
     this.altitude = altitude;
   }
 
-  distance2DTo(otherPosition: Position, accuracy: number = 0.1) {
-    return distance2D(this, otherPosition, accuracy);
+  distance2DTo(otherPosition: Position) {
+    return distance2D(this, otherPosition);
   }
 
   heading2DTo(otherPosition: Position) {

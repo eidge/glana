@@ -32,7 +32,7 @@ describe('GPS Speed', () => {
     speed.update(fix2, uselessDatum);
 
     expect(speed.getValue()?.convertTo(metersPerSecond).value).toBeCloseTo(
-      85.3
+      85.18
     );
   });
 });

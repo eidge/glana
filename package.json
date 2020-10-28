@@ -39,7 +39,7 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "geolib": "^3.3.1",
+    "@turf/turf": "^5.1.6",
     "igc-parser": "^0.5.0"
   },
   "jest": {

@@ -7,9 +7,9 @@ describe('Position', () => {
     it('returns distance across two points', () => {
       const lisbon = new Position(degrees(38.736946), degrees(-9.142685));
       const coimbra = new Position(degrees(40.203314), degrees(-8.410257));
-      expect(
-        lisbon.distance2DTo(coimbra).equals(kilometers(174.94740000000002))
-      ).toBeTruthy();
+      expect(lisbon.distance2DTo(coimbra).convertTo(kilometers).value).toEqual(
+        kilometers(174.7523181972606).value
+      );
     });
 
     it('returns zero when measuring distance to itself', () => {
