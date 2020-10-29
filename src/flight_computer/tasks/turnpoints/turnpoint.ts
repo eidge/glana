@@ -2,11 +2,13 @@ import Position from '../../position';
 import { TaskTurnpoint } from '../task';
 import Quantity from '../../../units/quantity';
 import { Angle, degrees } from '../../../units/angle';
+import { unionGeoJSON } from '../../../math/geo';
 
 export interface TurnpointSegment {
   center: Position;
   isCrossing(lastPosition: Position, position: Position): boolean;
   rotate(angle: Quantity<Angle>): void;
+  toGeoJSON(): any;
 }
 
 export default class Turnpoint implements TaskTurnpoint {
@@ -28,5 +30,13 @@ export default class Turnpoint implements TaskTurnpoint {
 
   isCrossing(lastPosition: Position, position: Position) {
     return !!this.parts.find(p => p.isCrossing(lastPosition, position));
+  }
+
+  toGeoJSON() {
+    let geoJSON = this.parts[0].toGeoJSON();
+    this.parts
+      .slice(1)
+      .forEach(p => (geoJSON = unionGeoJSON(geoJSON, p.toGeoJSON())));
+    return geoJSON;
   }
 }

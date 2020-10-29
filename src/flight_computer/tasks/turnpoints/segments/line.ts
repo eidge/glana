@@ -1,10 +1,11 @@
-import { Length, meters } from 'units/length';
+import { Length, meters } from '../../../../units/length';
 import Quantity from 'units/quantity';
-import { Angle, degrees } from 'units/angle';
+import { Angle, degrees } from '../../../../units/angle';
 import Position from '../../../position';
-import { intersectsLine } from '../../../../math/geo';
+import { intersectsLine, lineGeoJSON } from '../../../../math/geo';
+import { TurnpointSegment } from '../turnpoint';
 
-export default class Line {
+export default class Line implements TurnpointSegment {
   center: Position;
   rotationAngle: Quantity<Angle> = degrees(0);
   length: Quantity<Length>;
@@ -36,5 +37,9 @@ export default class Line {
       [this.startPosition, this.endPosition],
       [lastPosition, position]
     );
+  }
+
+  toGeoJSON() {
+    return lineGeoJSON(this.startPosition, this.endPosition);
   }
 }

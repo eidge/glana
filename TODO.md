@@ -20,8 +20,8 @@ Next up:
               index. As time will always be linear!
 
 - [ ] Tasks
-  - [ ] Read task from saved flight
-  - [ ] Render tasks
+  - [x] Read task from saved flight
+  - [x] Render tasks
   - [ ] Add task computer
 
 - [ ] Offset

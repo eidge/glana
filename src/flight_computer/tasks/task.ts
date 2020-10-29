@@ -9,6 +9,7 @@ export interface TaskTurnpoint {
   rotationAngle: Quantity<Angle>;
   isCrossing(lastPosition: Position, position: Position): boolean;
   rotate(angle: Quantity<Angle>): void;
+  toGeoJSON(): any;
 }
 
 export default class Task {
@@ -59,10 +60,14 @@ export default class Task {
   ) {
     let inboundHeading = previousTp.center.heading2DTo(tp.center);
     let outboundHeading = tp.center.heading2DTo(nextTp.center);
-    let heading = inboundHeading
-      .add(outboundHeading)
-      .divide(2)
-      .subtract(degrees(90));
+    let heading = inboundHeading.add(outboundHeading).divide(2);
+
+    if (inboundHeading.greaterThan(outboundHeading)) {
+      heading = heading.add(degrees(90));
+    } else {
+      heading = heading.subtract(degrees(90));
+    }
+
     tp.rotate(heading);
   }
 

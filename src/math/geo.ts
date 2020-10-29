@@ -8,6 +8,9 @@ import {
   transformTranslate,
   lineString,
   lineIntersect,
+  circle,
+  sector,
+  union,
 } from '@turf/turf';
 import Quantity from 'units/quantity';
 
@@ -82,4 +85,43 @@ export function intersectsLine(
     [line2[1].longitude.value, line2[1].latitude.value],
   ]);
   return lineIntersect(turfLine1, turfLine2).features.length > 0;
+}
+
+export function circleGeoJSON(
+  center: Position,
+  radius: Quantity<Length>,
+  steps: number = 64
+) {
+  return circle(
+    positionToTurfPoint(center),
+    radius.convertTo(kilometers).value,
+    { steps, units: 'kilometers' }
+  );
+}
+
+export function lineGeoJSON(positionA: Position, positionB: Position) {
+  return lineString([
+    positionToTurfPoint(positionA).geometry!.coordinates,
+    positionToTurfPoint(positionB).geometry!.coordinates,
+  ]);
+}
+
+export function sectorGeoJSON(
+  center: Position,
+  radius: Quantity<Length>,
+  startBearing: Quantity<Angle>,
+  endBearing: Quantity<Angle>,
+  steps: number = 64
+) {
+  return sector(
+    positionToTurfPoint(center),
+    radius.convertTo(kilometers).value,
+    startBearing.convertTo(degrees).value,
+    endBearing.convertTo(degrees).value,
+    { steps }
+  );
+}
+
+export function unionGeoJSON(geoA: any, geoB: any) {
+  return union(geoA, geoB);
 }

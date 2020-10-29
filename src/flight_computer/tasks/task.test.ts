@@ -67,5 +67,15 @@ describe('Task', () => {
       expect(rotationDegrees(task.turnpoints[3])).toBeCloseTo(135);
       expect(rotationDegrees(task.turnpoints[4])).toBeCloseTo(270);
     });
+
+    it('rotates middle turnpoint clockwise', () => {
+      let task = new Task([tp1, tp2, tp3]);
+      expect(rotationDegrees(task.turnpoints[1])).toBeCloseTo(360 - 45);
+    });
+
+    it('rotates middle turnpoint counter-clockwise', () => {
+      let task = new Task([tp3, tp2, tp1]);
+      expect(rotationDegrees(task.turnpoints[1])).toBeCloseTo(360 - 45);
+    });
   });
 });

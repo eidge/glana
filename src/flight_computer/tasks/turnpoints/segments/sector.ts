@@ -3,6 +3,7 @@ import Quantity from '../../../../units/quantity';
 import { Angle, degrees } from '../../../../units/angle';
 import Position from '../../../position';
 import { TurnpointSegment } from '.././turnpoint';
+import { circleGeoJSON, sectorGeoJSON } from '../../../../math/geo';
 
 export default class Sector implements TurnpointSegment {
   radius: Quantity<Length>;
@@ -14,7 +15,7 @@ export default class Sector implements TurnpointSegment {
 
   private adjustToZero!: Quantity<Angle>;
   private adjustedStartAngle!: Quantity<Angle>;
-  private adjustEndAngle!: Quantity<Angle>;
+  private adjustedEndAngle!: Quantity<Angle>;
 
   constructor(
     center: Position,
@@ -37,10 +38,10 @@ export default class Sector implements TurnpointSegment {
     // We rotate all angles so that the adjustedStartAngle is zero. This simplifies the
     // math, because arc < 360, we do not have to worry about sectors where the
     // startAngle > endAngle. By rotating everything so that adjustedStartAngle = 0,
-    // adjustedStartAngle will always be smaller than the adjustEndAngle.
+    // adjustedStartAngle will always be smaller than the adjustedEndAngle.
     this.adjustToZero = this.startAngle;
     this.adjustedStartAngle = degrees(0);
-    this.adjustEndAngle = this.endAngle.subtract(this.startAngle).normalise();
+    this.adjustedEndAngle = this.endAngle.subtract(this.startAngle).normalise();
   }
 
   isCrossing(_lastPosition: Position, position: Position) {
@@ -60,11 +61,24 @@ export default class Sector implements TurnpointSegment {
 
     return (
       adjustedPositionAngle.equalOrGreaterThan(this.adjustedStartAngle) &&
-      adjustedPositionAngle.equalOrLessThan(this.adjustEndAngle)
+      adjustedPositionAngle.equalOrLessThan(this.adjustedEndAngle)
     );
   }
 
+  toGeoJSON() {
+    if (this.isFullCircle()) {
+      return circleGeoJSON(this.center, this.radius);
+    } else {
+      return sectorGeoJSON(
+        this.center,
+        this.radius,
+        this.startAngle,
+        this.endAngle
+      );
+    }
+  }
+
   private isFullCircle() {
-    return this.adjustedStartAngle.equals(this.adjustEndAngle);
+    return this.adjustedStartAngle.equals(this.adjustedEndAngle);
   }
 }

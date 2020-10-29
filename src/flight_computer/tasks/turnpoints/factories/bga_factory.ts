@@ -5,7 +5,7 @@ import Line from '../segments/line';
 import Turnpoint from '../turnpoint';
 import { meters, kilometers } from '../../../../units/length';
 import Sector from '../segments/sector';
-import { degrees } from 'units/angle';
+import { degrees } from '../../../../units/angle';
 
 class BGAFactory implements Factory {
   start(name: string, center: Position): TaskTurnpoint {

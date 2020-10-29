@@ -27,7 +27,7 @@ class Parser {
 
       if (index === 0) {
         return turnpointFactory.start(tpName, tpPosition);
-      } else if (index === task.points.length - 1) {
+      } else if (index === points.length - 1) {
         return turnpointFactory.finish(tpName, tpPosition);
       } else {
         return turnpointFactory.turnpoint(tpName, tpPosition);

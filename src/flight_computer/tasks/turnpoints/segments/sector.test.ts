@@ -1,7 +1,7 @@
 import Position from 'flight_computer/position';
-import { degrees } from 'units/angle';
+import { degrees } from '../../../../units/angle';
 import Sector from './sector';
-import { meters } from 'units/length';
+import { meters } from '../../../../units/length';
 
 let unusedPosition = new Position(degrees(0), degrees(0));
 
