@@ -15,6 +15,13 @@ describe('end to end', () => {
       computer.update(fix);
       data.push(computer.currentDatum!);
     });
+    expect(flight.task!.turnpoints.map(tp => tp.name)).toEqual([
+      'GP Start Line',
+      'Wesselbron',
+      'Houtkraal',
+      'R 4',
+      'GP Start Line',
+    ]);
     expect(data).toMatchSnapshot();
   });
 });

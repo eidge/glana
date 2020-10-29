@@ -1,7 +1,7 @@
-import Position from 'flight_computer/position';
-import { TaskTurnpoint } from 'flight_computer/task';
-import Quantity from 'units/quantity';
-import { Angle, degrees } from 'units/angle';
+import Position from '../../position';
+import { TaskTurnpoint } from '../task';
+import Quantity from '../../../units/quantity';
+import { Angle, degrees } from '../../../units/angle';
 
 export interface TurnpointSegment {
   center: Position;

@@ -4,18 +4,22 @@ import Analysis from './analysis';
 import Phase from './analysis/phase';
 import { Duration, milliseconds } from './units/duration';
 import Quantity from './units/quantity';
+import Task from './flight_computer/tasks/task';
 
 export default class SavedFlight {
   readonly fixes: Fix[];
+  readonly task: Task | null;
+
   private datums: Datum[] = [];
   private phases: Phase[] = [];
   private timeOffsetInMilliseconds: number;
   private analysed: boolean;
 
-  constructor(fixes: Fix[]) {
+  constructor(fixes: Fix[], task: Task | null = null) {
     this.fixes = fixes;
     this.analysed = false;
     this.timeOffsetInMilliseconds = 0;
+    this.task = task;
   }
 
   analise(computer = new FlightComputer()) {

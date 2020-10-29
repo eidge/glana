@@ -1,8 +1,8 @@
-import { Length, meters } from '../../units/length';
-import Quantity from '../../units/quantity';
-import { Angle, degrees } from '../../units/angle';
-import Position from '../position';
-import { TurnpointSegment } from './turnpoint';
+import { Length, meters } from '../../../../units/length';
+import Quantity from '../../../../units/quantity';
+import { Angle, degrees } from '../../../../units/angle';
+import Position from '../../../position';
+import { TurnpointSegment } from '.././turnpoint';
 
 export default class Sector implements TurnpointSegment {
   radius: Quantity<Length>;

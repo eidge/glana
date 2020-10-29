@@ -1,7 +1,7 @@
-import Position from './position';
-import { Angle, degrees } from '../units/angle';
-import Quantity from '../units/quantity';
-import { Length, meters } from 'units/length';
+import Position from '../position';
+import { Angle, degrees } from '../../units/angle';
+import Quantity from '../../units/quantity';
+import { Length, meters } from '../../units/length';
 
 export interface TaskTurnpoint {
   name: string;

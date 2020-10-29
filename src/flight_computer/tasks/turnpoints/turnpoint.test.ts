@@ -5,6 +5,7 @@ import Turnpoint, { TurnpointSegment } from './turnpoint';
 import Quantity from 'units/quantity';
 
 class DummySegment implements TurnpointSegment {
+  center: Position = new Position(degrees(0), degrees(0));
   crossing = false;
   rotationAngle: Quantity<Angle> = degrees(0);
 

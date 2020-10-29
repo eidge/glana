@@ -1,8 +1,8 @@
-import { Length, meters } from '../../units/length';
-import Quantity from '../../units/quantity';
-import { Angle, degrees } from '../../units/angle';
-import Position from '../position';
-import { intersectsLine } from '../../math/geo';
+import { Length, meters } from 'units/length';
+import Quantity from 'units/quantity';
+import { Angle, degrees } from 'units/angle';
+import Position from '../../../position';
+import { intersectsLine } from '../../../../math/geo';
 
 export default class Line {
   center: Position;

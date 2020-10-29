@@ -1,7 +1,7 @@
 import Task, { TaskTurnpoint } from './task';
 import Turnpoint from './turnpoints/turnpoint';
-import Sector from './turnpoints/sector';
-import Position from './position';
+import Sector from './turnpoints/segments/sector';
+import Position from '../position';
 import { degrees } from 'units/angle';
 import { meters, kilometers } from 'units/length';
 
