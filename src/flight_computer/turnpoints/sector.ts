@@ -1,31 +1,70 @@
-import { Length } from '../../units/length';
+import { Length, meters } from '../../units/length';
 import Quantity from '../../units/quantity';
-import { Angle } from '../../units/angle';
+import { Angle, degrees } from '../../units/angle';
 import Position from '../position';
+import { TurnpointSegment } from './turnpoint';
 
-export default class Sector {
+export default class Sector implements TurnpointSegment {
   radius: Quantity<Length>;
-  angle: Quantity<Angle>;
-  rotate: Quantity<Angle>;
+  arc: Quantity<Angle>;
   center: Position;
+  rotationAngle: Quantity<Angle> = degrees(0);
+  startAngle!: Quantity<Angle>;
+  endAngle!: Quantity<Angle>;
+
+  private adjustToZero!: Quantity<Angle>;
+  private adjustedStartAngle!: Quantity<Angle>;
+  private adjustEndAngle!: Quantity<Angle>;
 
   constructor(
     center: Position,
     radius: Quantity<Length>,
-    angle: Quantity<Angle>,
-    rotate: Quantity<Angle>
+    arc: Quantity<Angle>
   ) {
     this.center = center;
-    this.radius = radius;
-    this.angle = angle;
-    this.rotate = rotate;
+    this.radius = radius.convertTo(meters);
+    this.arc = arc.convertTo(degrees).normalise();
+    this.rotate(this.rotationAngle);
   }
 
-  isCrossing(lastPosition: Position, position: Position) {
-    // FIXME: Implement this
-    //
-    // Don't need the last position, algo is:
-    // distance(position, center) < radius && angle(position, center) < angle+rotate
-    return !!(lastPosition && position);
+  rotate(angle: Quantity<Angle>) {
+    this.rotationAngle = angle;
+    this.startAngle = this.rotationAngle
+      .subtract(this.arc.divide(2))
+      .normalise();
+    this.endAngle = this.rotationAngle.add(this.arc.divide(2)).normalise();
+
+    // We rotate all angles so that the adjustedStartAngle is zero. This simplifies the
+    // math, because arc < 360, we do not have to worry about sectors where the
+    // startAngle > endAngle. By rotating everything so that adjustedStartAngle = 0,
+    // adjustedStartAngle will always be smaller than the adjustEndAngle.
+    this.adjustToZero = this.startAngle;
+    this.adjustedStartAngle = degrees(0);
+    this.adjustEndAngle = this.endAngle.subtract(this.startAngle).normalise();
+  }
+
+  isCrossing(_lastPosition: Position, position: Position) {
+    let distanceToCenter = this.center.distance2DTo(position);
+    if (distanceToCenter.greaterThan(this.radius)) {
+      return false;
+    }
+
+    if (this.isFullCircle() || distanceToCenter.value === 0) {
+      return true;
+    }
+
+    let adjustedPositionAngle = this.center
+      .heading2DTo(position)
+      .subtract(this.adjustToZero)
+      .normalise();
+
+    return (
+      adjustedPositionAngle.equalOrGreaterThan(this.adjustedStartAngle) &&
+      adjustedPositionAngle.equalOrLessThan(this.adjustEndAngle)
+    );
+  }
+
+  private isFullCircle() {
+    return this.adjustedStartAngle.equals(this.adjustEndAngle);
   }
 }

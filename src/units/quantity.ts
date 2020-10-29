@@ -76,6 +76,20 @@ class Quantity<U extends Unit> {
     return this.unit.lessThan(this.value, rhs.convertTo(this.unit).value);
   }
 
+  equalOrGreaterThan(rhs: Quantity<U>) {
+    return this.unit.equalOrGreaterThan(
+      this.value,
+      rhs.convertTo(this.unit).value
+    );
+  }
+
+  equalOrLessThan(rhs: Quantity<U>) {
+    return this.unit.equalOrLessThan(
+      this.value,
+      rhs.convertTo(this.unit).value
+    );
+  }
+
   toString() {
     return `${this.value.toFixed(1)}${this.unit.symbol}`;
   }

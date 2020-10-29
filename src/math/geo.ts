@@ -6,6 +6,8 @@ import {
   rhumbDistance,
   rhumbBearing,
   transformTranslate,
+  lineString,
+  lineIntersect,
 } from '@turf/turf';
 import Quantity from 'units/quantity';
 
@@ -65,4 +67,19 @@ export function translatePosition(
     degrees(point.geometry!.coordinates[0]),
     position.altitude
   );
+}
+
+export function intersectsLine(
+  line1: [Position, Position],
+  line2: [Position, Position]
+) {
+  let turfLine1 = lineString([
+    [line1[0].longitude.value, line1[0].latitude.value],
+    [line1[1].longitude.value, line1[1].latitude.value],
+  ]);
+  let turfLine2 = lineString([
+    [line2[0].longitude.value, line2[0].latitude.value],
+    [line2[1].longitude.value, line2[1].latitude.value],
+  ]);
+  return lineIntersect(turfLine1, turfLine2).features.length > 0;
 }

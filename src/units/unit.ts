@@ -31,12 +31,20 @@ abstract class Unit {
     return lhs / rhs;
   }
 
+  equalOrGreaterThan(lhs: number, rhs: number) {
+    return lhs >= rhs;
+  }
+
   greaterThan(lhs: number, rhs: number) {
     return lhs > rhs;
   }
 
   lessThan(lhs: number, rhs: number) {
     return lhs < rhs;
+  }
+
+  equalOrLessThan(lhs: number, rhs: number) {
+    return lhs <= rhs;
   }
 
   equals(lhs: number, rhs: number) {

@@ -18,6 +18,12 @@ Next up:
               the nearest point being hovered in the map though.
           - We can try to make all calculations based on time rather than point
               index. As time will always be linear!
+
+- [ ] Tasks
+  - [ ] Read task from saved flight
+  - [ ] Render tasks
+  - [ ] Add task computer
+
 - [ ] Offset
   - [x] Offset flight group by calculating diff to flight being followed
   - [ ] Saved flight should contain recordingStartedAt, flightStartedAt,
@@ -27,9 +33,9 @@ Next up:
 
 - [ ] Compare multiple flights
   - [x] Show multiple flight tracks
-      - [ ] Place marker on current timestamp
+      - [x] Place marker on current timestamp
       - [ ] Render flight as time moves forward
-  - [ ] Show multiple altitude charts
+  - [x] Show multiple altitude charts
   - [ ] Synchronise options for flights (start time, clock time, adjust offset)
 
 Backlog:
