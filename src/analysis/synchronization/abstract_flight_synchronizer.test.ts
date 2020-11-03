@@ -1,12 +1,18 @@
 import FlightGroup from 'analysis/flight_group';
 import SavedFlight from 'saved_flight';
 import FixFactory from '../../../test/support/fix_factory';
-import RecordingStarted from './recording_started';
+import AbstractFlightSynchronizer from './abstract_flight_synchronizer';
 
-describe('RecordingStarted', () => {
+class DummySynchronizer extends AbstractFlightSynchronizer {
+  protected referenceTimeWithoutOffset(flight: SavedFlight) {
+    return flight.getRecordingStartedAt(true);
+  }
+}
+
+describe('AbstractFlightSynchronizer', () => {
   describe('synchronize()', () => {
     let flightGroup: FlightGroup;
-    let recordingStarted = new RecordingStarted();
+    let recordingStarted = new DummySynchronizer();
 
     beforeEach(done => {
       let fixFactory = new FixFactory({
