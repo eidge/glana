@@ -1,5 +1,36 @@
 Next up:
 
+
+- [ ] Tasks
+  - [x] Read task from saved flight
+  - [x] Render tasks
+  - [ ] Add task computer
+  - [?] Show task started and each turnpoint on Timeline?
+
+- [ ] Offset
+  - [x] Offset flight group by calculating diff to flight being followed
+  - [ ] Synchronise options for flights (takeoff time; task started)
+  - [ ] Saved flight should contain recordingStartedAt, flightStartedAt,
+      taskStartedAt, xFinishedAt
+  - [ ] Create synchro mechanisms for recordingStart, flightStarted, taskStarted
+
+
+- [ ] Render flight as time moves forward
+
+
+Backlog:
+  - [ ] Wind calculation: http://blueflyvario.blogspot.com/2012/09/calculating-wind-speed-from-gps-track.html
+
+Crazy Ideas:
+
+- Integrate flarm - as you navigate flight, you see all planes that were there
+    at that moment.
+
+Notes:
+
+- Code for the bga viewer: https://github.com/GlidingWeb/IGCWebView | https://github.com/GlidingWeb/IgcWebview2/
+
+Done:
 - [x] Show up visual bar representing phases of flight (gliding vs thermalling)
     - [x] Finish refactor of saved flight to use Analysis
     - [x] Add phases to Analysis
@@ -18,34 +49,7 @@ Next up:
               the nearest point being hovered in the map though.
           - We can try to make all calculations based on time rather than point
               index. As time will always be linear!
-
-- [ ] Tasks
-  - [x] Read task from saved flight
-  - [x] Render tasks
-  - [ ] Add task computer
-
-- [ ] Offset
-  - [x] Offset flight group by calculating diff to flight being followed
-  - [ ] Saved flight should contain recordingStartedAt, flightStartedAt,
-      taskStartedAt, xFinishedAt
-  - [ ] Create synchro mechanisms for recordingStart, flightStarted, taskStarted
-
-
-- [ ] Compare multiple flights
+- [x] Compare multiple flights
   - [x] Show multiple flight tracks
       - [x] Place marker on current timestamp
-      - [ ] Render flight as time moves forward
   - [x] Show multiple altitude charts
-  - [ ] Synchronise options for flights (start time, clock time, adjust offset)
-
-Backlog:
-  - [ ] Wind calculation: http://blueflyvario.blogspot.com/2012/09/calculating-wind-speed-from-gps-track.html
-
-Crazy Ideas:
-
-- Integrate flarm - as you navigate flight, you see all planes that were there
-    at that moment.
-
-Notes:
-
-- Code for the bga viewer: https://github.com/GlidingWeb/IGCWebView | https://github.com/GlidingWeb/IgcWebview2/

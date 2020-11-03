@@ -99,11 +99,9 @@ export function circleGeoJSON(
   );
 }
 
-export function lineGeoJSON(positionA: Position, positionB: Position) {
-  return lineString([
-    positionToTurfPoint(positionA).geometry!.coordinates,
-    positionToTurfPoint(positionB).geometry!.coordinates,
-  ]);
+export function lineGeoJSON(...positions: Position[]) {
+  let points = positions.map(p => positionToTurfPoint(p).geometry!.coordinates);
+  return lineString(points);
 }
 
 export function sectorGeoJSON(
@@ -122,6 +120,6 @@ export function sectorGeoJSON(
   );
 }
 
-export function unionGeoJSON(geoA: any, geoB: any) {
-  return union(geoA, geoB);
+export function unionGeoJSON(...geo: any[]) {
+  return union(...geo);
 }

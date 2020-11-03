@@ -13,7 +13,10 @@ class Parser {
     let parsedIGC = IGCParser.parse(igc_contents);
     let fixes = parsedIGC.fixes.map(this.buildFix);
     let task = this.parseTask(parsedIGC.task, turnpointFactory);
-    return new SavedFlight(fixes, task);
+    return new SavedFlight(fixes, task, {
+      registration: parsedIGC.registration,
+      callsign: parsedIGC.callsign,
+    });
   }
 
   private parseTask(task: IGCParser.Task | null, turnpointFactory: Factory) {

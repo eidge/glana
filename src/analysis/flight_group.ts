@@ -10,7 +10,7 @@ export let synchronizationMethods = {
 
 export default class FlightGroup {
   readonly flights: SavedFlight[];
-  private synchronizationMethod!: SynchronizationMethod;
+  synchronizationMethod!: SynchronizationMethod;
 
   constructor(flights: SavedFlight[]) {
     this.flights = flights;
@@ -18,6 +18,8 @@ export default class FlightGroup {
   }
 
   synchronize(method: SynchronizationMethod) {
+    if (this.synchronizationMethod === method) return;
+
     this.synchronizationMethod = method;
     this.synchronizationMethod.synchronize(this.flights);
   }

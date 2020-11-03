@@ -16,6 +16,10 @@ class DummySegment implements TurnpointSegment {
   rotate(angle: Quantity<Angle>) {
     this.rotationAngle = angle;
   }
+
+  toGeoJSON() {
+    throw new Error('Method not implemented.');
+  }
 }
 
 describe('Sector', () => {
