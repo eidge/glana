@@ -1,4 +1,4 @@
-import SavedFlight from 'saved_flight';
+import SavedFlight from '../saved_flight';
 import SynchronizationMethod from './synchronization/method';
 import RealTime from './synchronization/real_time';
 import RecordingStarted from './synchronization/recording_started';
