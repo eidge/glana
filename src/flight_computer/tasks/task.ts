@@ -2,6 +2,7 @@ import Position from '../position';
 import { Angle, degrees } from '../../units/angle';
 import Quantity from '../../units/quantity';
 import { Length, meters } from '../../units/length';
+import { Datum } from 'flight_computer/computer';
 
 export interface TaskTurnpoint {
   name: string;
@@ -16,9 +17,65 @@ export default class Task {
   readonly turnpoints: TaskTurnpoint[];
   readonly distance: Quantity<Length>;
 
+  private lastDatum: Datum | null = null;
+  private nextTurnpointIndex: number = 0;
+  private reachedTurnpointsAt: WeakMap<TaskTurnpoint, Date> = new WeakMap();
+
   constructor(turnpoints: TaskTurnpoint[]) {
     this.turnpoints = this.rotateTurnpoints(turnpoints);
     this.distance = this.calculateDistance(turnpoints);
+  }
+
+  update(datum: Datum) {
+    if (!this.lastDatum || !this.getNextTurnpoint()) {
+      this.lastDatum = datum;
+      return;
+    }
+
+    let nextTp = this.getNextTurnpoint();
+    if (this.shouldResetStartTime(datum)) {
+      this.markTurnpointAsReached(0, datum);
+    } else if (nextTp.isCrossing(this.lastDatum!.position, datum.position)) {
+      this.markTurnpointAsReached(this.nextTurnpointIndex, datum);
+    }
+
+    this.lastDatum = datum;
+  }
+
+  getNextTurnpoint() {
+    return this.turnpoints[this.nextTurnpointIndex] || null;
+  }
+
+  isStarted() {
+    return this.nextTurnpointIndex !== 0 && !this.isFinished();
+  }
+
+  isFinished() {
+    return this.nextTurnpointIndex === this.turnpoints.length;
+  }
+
+  private shouldResetStartTime(datum: Datum) {
+    return (
+      this.nextTurnpointIndex === 1 &&
+      this.isCrossing(this.turnpoints[0], datum)
+    );
+  }
+
+  private isCrossing(turnpoint: TaskTurnpoint, datum: Datum) {
+    if (!this.lastDatum) return false;
+    return turnpoint.isCrossing(this.lastDatum.position, datum.position);
+  }
+
+  private markTurnpointAsReached(turnpointIndex: number, datum: Datum) {
+    this.reachedTurnpointsAt.set(
+      this.turnpoints[turnpointIndex],
+      datum.timestamp
+    );
+    this.nextTurnpointIndex = turnpointIndex + 1;
+  }
+
+  getTurnpointReachedAt(turnpoint: TaskTurnpoint) {
+    return this.reachedTurnpointsAt.get(turnpoint) || null;
   }
 
   private rotateTurnpoints(turnpoints: TaskTurnpoint[]) {

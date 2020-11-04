@@ -3,11 +3,13 @@ import SynchronizationMethod from './synchronization/method';
 import RealTime from './synchronization/real_time';
 import RecordingStarted from './synchronization/recording_started';
 import TakeOff from './synchronization/take_off';
+import TaskStarted from './synchronization/task_started';
 
 export let synchronizationMethods = {
   realTime: new RealTime(),
   recordingStarted: new RecordingStarted(),
   takeOff: new TakeOff(),
+  taskStarted: new TaskStarted(),
 };
 
 export default class FlightGroup {

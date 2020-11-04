@@ -1,22 +1,19 @@
 Next up:
 
 
-- [ ] Tasks
-  - [x] Read task from saved flight
-  - [x] Render tasks
-  - [ ] Add task computer
-  - [?] Show task started and each turnpoint on Timeline?
-
-- [ ] Offset
-  - [x] Offset flight group by calculating diff to flight being followed
-  - [ ] Synchronise options for flights (takeoff time; task started)
-  - [ ] Saved flight should contain recordingStartedAt, flightStartedAt,
-      taskStartedAt, xFinishedAt
-  - [ ] Create synchro mechanisms for recordingStart, flightStarted, taskStarted
-
-
-- [ ] Render flight as time moves forward
-
+- [ ] UI improvements
+  - [ ] Test mobile - specially timeline
+  - [ ] Show task started and each turnpoint on Timeline?
+  - [ ] Control which flight to follow
+  - [ ] Store config in localStorage
+  - [ ] Play flight
+- [ ] Deploy
+  - [ ] Loading screen
+  - [ ] Flight upload screen
+  - [ ] Load flights from BGA
+- [ ] Flight phases
+  - [ ] Render phases chart
+  - [ ] Show phase stats
 
 Backlog:
   - [ ] Wind calculation: http://blueflyvario.blogspot.com/2012/09/calculating-wind-speed-from-gps-track.html
@@ -53,3 +50,14 @@ Done:
   - [x] Show multiple flight tracks
       - [x] Place marker on current timestamp
   - [x] Show multiple altitude charts
+- [x] Offset
+  - [x] Offset flight group by calculating diff to flight being followed
+  - [x] Synchronise options for flights (takeoff time; task started)
+  - [x] Saved flight should contain recordingStartedAt, flightStartedAt,
+      taskStartedAt, xFinishedAt
+  - [x] Create synchro mechanisms for recordingStart, flightStarted, taskStarted
+- [x] Render flight as time moves forward
+- [x] Tasks
+  - [x] Read task from saved flight
+  - [x] Render tasks
+  - [x] Add task computer

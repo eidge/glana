@@ -52,8 +52,13 @@ export class Datum {
   }
 }
 
+export interface ComputerTask {
+  update(datum: Datum): void;
+}
+
 export default class FlightComputer {
   currentDatum: Datum | null = null;
+  task: ComputerTask | null = null;
   private state = new StateMachine();
   private calculators: CalculatorMap = new Map();
 
@@ -72,6 +77,11 @@ export default class FlightComputer {
     if (this.currentDatum) this.updateCalculators(fix, this.currentDatum);
     this.currentDatum = this.buildDatum(fix);
     this.state.update(this.currentDatum);
+    this.task?.update(this.currentDatum);
+  }
+
+  setTask(task: ComputerTask) {
+    this.task = task;
   }
 
   private updateCalculators(fix: Fix, previousDatum: Datum) {

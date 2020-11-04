@@ -30,6 +30,10 @@ export default class SavedFlight {
   }
 
   analise(computer = new FlightComputer()) {
+    if (this.task) {
+      computer.setTask(this.task);
+    }
+
     let analysis = this.performAnalysis(computer);
     this.datums = analysis.getDatums();
     this.phases = analysis.getPhases();
@@ -114,6 +118,20 @@ export default class SavedFlight {
       firstFlightPhase &&
       this.maybeReturnRealTime(firstFlightPhase.startAt, realTime)
     );
+  }
+
+  getTaskStartedAt(realTime = false) {
+    if (!this.task?.isStarted() && !this.task?.isFinished()) {
+      return null;
+    }
+
+    let startedAt = this.task.getTurnpointReachedAt(this.task.turnpoints[0])!;
+
+    if (realTime) {
+      return startedAt;
+    } else {
+      return this.offsetDate(startedAt, this.timeOffsetInMilliseconds);
+    }
   }
 
   getLandedAt(realTime = false) {

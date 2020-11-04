@@ -434,6 +434,7 @@ Analysis {
       },
       "state": "stopped",
     },
+    "task": null,
   },
   "datums": Array [
     Datum {
