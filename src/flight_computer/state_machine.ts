@@ -3,7 +3,7 @@ import { seconds } from '../units/duration';
 import { kilometersPerHour } from '../units/speed';
 import { degrees, Degree } from '../units/angle';
 import MovingWindow from '../math/moving_window';
-import Quantity from 'units/quantity';
+import Quantity from '../units/quantity';
 
 export type GliderState = 'stopped' | 'gliding' | 'thermalling';
 

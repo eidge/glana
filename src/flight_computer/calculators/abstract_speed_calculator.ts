@@ -4,7 +4,7 @@ import { meters, Meter } from '../../units/length';
 import { milliseconds } from '../../units/duration';
 import { Speed } from '../../units/speed';
 import Quantity from '../../units/quantity';
-import { Datum } from 'flight_computer/computer';
+import { Datum } from '../computer';
 
 abstract class AbstractSpeedCalculator extends Calculator {
   speed: Quantity<Speed> | null = null;

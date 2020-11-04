@@ -1,7 +1,7 @@
 import Fix from '../fix';
 import Quantity from '../../units/quantity';
 import Unit from '../../units/unit';
-import { Datum } from 'flight_computer/computer';
+import { Datum } from '../computer';
 
 abstract class Calculator {
   abstract name(): string;

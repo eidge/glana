@@ -12,7 +12,7 @@ import {
   sector,
   union,
 } from '@turf/turf';
-import Quantity from 'units/quantity';
+import Quantity from '../units/quantity';
 
 function positionToTurfPoint(position: Position) {
   return point([

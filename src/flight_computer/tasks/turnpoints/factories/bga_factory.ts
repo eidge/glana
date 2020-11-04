@@ -1,6 +1,6 @@
 import Factory from './factory';
-import Position from 'flight_computer/position';
-import { TaskTurnpoint } from 'flight_computer/tasks/task';
+import Position from '../../../position';
+import { TaskTurnpoint } from '../../task';
 import Line from '../segments/line';
 import Turnpoint from '../turnpoint';
 import { meters, kilometers } from '../../../../units/length';

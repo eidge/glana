@@ -3,7 +3,7 @@ import { Degree, degrees } from '../../units/angle';
 import Quantity from '../../units/quantity';
 import Fix from '../fix';
 import Position from '../position';
-import { Datum } from 'flight_computer/computer';
+import { Datum } from '../computer';
 
 class Heading extends Calculator {
   heading: Quantity<Degree> | null = null;

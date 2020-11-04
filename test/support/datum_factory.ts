@@ -7,8 +7,13 @@ import {
 } from '../../src/units/speed';
 import Quantity from '../../src/units/quantity';
 import { degrees, Degree } from '../../src/units/angle';
-import { Duration, milliseconds, seconds, Second } from 'units/duration';
-import { meters } from 'units/length';
+import {
+  Duration,
+  milliseconds,
+  seconds,
+  Second,
+} from '../../src/units/duration';
+import { meters } from '../../src/units/length';
 
 interface DatumFactoryOptions {
   startTime?: Date;

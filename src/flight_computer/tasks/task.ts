@@ -2,7 +2,7 @@ import Position from '../position';
 import { Angle, degrees } from '../../units/angle';
 import Quantity from '../../units/quantity';
 import { Length, meters } from '../../units/length';
-import { Datum } from 'flight_computer/computer';
+import { Datum } from '../computer';
 
 export interface TaskTurnpoint {
   name: string;

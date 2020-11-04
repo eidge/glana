@@ -3,8 +3,8 @@ import { Duration } from '../../units/duration';
 import { metersPerSecond, Speed } from '../../units/speed';
 import MovingWindow from '../../math/moving_window';
 import Vario from './vario';
-import Fix from 'flight_computer/fix';
-import { Datum } from 'flight_computer/computer';
+import Fix from '../fix';
+import { Datum } from '../computer';
 
 export default class AverageVario {
   movingWindow: MovingWindow<Speed>;
