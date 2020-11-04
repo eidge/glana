@@ -1,12 +1,14 @@
 import Unit from './unit';
 import Quantity from './quantity';
 
-type QuantityFactory<U extends Unit> = {
+export type QuantityFactory<U extends Unit> = {
   (value: number): Quantity<U>;
   unit: U;
 };
 
-function makeQuantityFactory<U extends Unit>(unit: U): QuantityFactory<U> {
+export function makeQuantityFactory<U extends Unit>(
+  unit: U
+): QuantityFactory<U> {
   const factory = (value: number): Quantity<U> => {
     return new Quantity(value, unit);
   };
@@ -15,5 +17,3 @@ function makeQuantityFactory<U extends Unit>(unit: U): QuantityFactory<U> {
 
   return factory;
 }
-
-export { QuantityFactory, makeQuantityFactory };
