@@ -18,7 +18,7 @@ describe('MovingWindow', () => {
       expect(mw.values).toEqual([p1, p2, p3]);
     });
 
-    it('raises error if given datapoint is not more recent than the newest data point in the window', () => {
+    it('ignores datapoint older than the newest data point in the window', () => {
       let mw = new MovingWindow(seconds(30), kilometersPerHour.unit);
       let p1 = { timestamp: secondsAgo(31), value: kilometersPerHour(119) };
       let p2 = { timestamp: secondsAgo(20), value: kilometersPerHour(120) };
@@ -26,8 +26,9 @@ describe('MovingWindow', () => {
 
       mw.addValue(p1);
       mw.addValue(p2);
+      mw.addValue(p3);
 
-      expect(() => mw.addValue(p3)).toThrow();
+      expect(mw.values).toEqual([p1, p2]);
     });
 
     it('removes old values', () => {

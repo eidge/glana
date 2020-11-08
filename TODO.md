@@ -1,15 +1,18 @@
 Next up:
 
-
 - [ ] UI improvements
-  - [ ] Test mobile - specially timeline
+  - [x] Test mobile - specially timeline
+      - [ ] Swipe is slow, because of Nivo.
   - [ ] Show task started and each turnpoint on Timeline?
   - [ ] Control which flight to follow
+      - [ ] Use flight's task!
+  - [x] Toggle for follow flight
   - [ ] Store config in localStorage
   - [ ] Play flight
+  - [ ] Replace nivo with something faster
 - [ ] Deploy
-  - [ ] Loading screen
-  - [ ] Flight upload screen
+  - [x] Loading screen
+  - [x] Flight upload screen
   - [ ] Load flights from BGA
 - [ ] Flight phases
   - [ ] Render phases chart

@@ -19,9 +19,7 @@ export default class MovingWindow<U extends Unit> {
 
   addValue(datapoint: DataPoint<U>) {
     if (this.isOlderThanMostRecentValue(datapoint)) {
-      throw new Error(
-        'given datapoint is older than the last datapoint in the window'
-      );
+      return;
     }
 
     if (this.isTooOld(datapoint)) {
