@@ -4,7 +4,7 @@ import Analysis from './analysis';
 import Phase from './analysis/phase';
 import { Duration, milliseconds } from './units/duration';
 import Quantity from './units/quantity';
-import Task from './flight_computer/tasks/task';
+import Task, { TaskTurnpoint } from './flight_computer/tasks/task';
 
 interface Metadata {
   registration?: string | null;
@@ -121,16 +121,20 @@ export default class SavedFlight {
   }
 
   getTaskStartedAt(realTime = false) {
-    if (!this.task?.isStarted() && !this.task?.isFinished()) {
-      return null;
-    }
+    if (!this.task) return null;
+    return this.getTurnpointReachedAt(this.task.turnpoints[0], realTime);
+  }
 
-    let startedAt = this.task.getTurnpointReachedAt(this.task.turnpoints[0])!;
+  getTurnpointReachedAt(tp: TaskTurnpoint, realTime = false) {
+    if (!this.task) return null;
+    let reachedAt = this.task.getTurnpointReachedAt(tp);
+
+    if (!reachedAt) return null;
 
     if (realTime) {
-      return startedAt;
+      return reachedAt;
     } else {
-      return this.offsetDate(startedAt, this.timeOffsetInMilliseconds);
+      return this.offsetDate(reachedAt, this.timeOffsetInMilliseconds);
     }
   }
 

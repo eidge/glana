@@ -1,28 +1,15 @@
 Next up:
 
+- [ ] Store config in localStorage
 - [ ] Bugs:
   - [x] Changing settings hides task (hbb + a5)
   - [ ] Changing playback speed messes with zoom
     - I should use extent of full line regardless of what is showing atm for
         zoomToFit
-- [ ] UI improvements
-  - [x] Test mobile - specially timeline
-      - [x] Swipe is slow, because of Nivo.
-  - [x] Control which flight to follow
-      - [x] Use flight's task!
-  - [x] Toggle for follow flight
-  - [x] Play flight
-  - [ ] Store config in localStorage
-  - [ ] Setting for units 
-- [x] Deploy
-  - [x] Loading screen
-  - [x] Flight upload screen
-  - [x] Load flights from URL
-  - [x] Load flights from BGA
-- [ ] Flight phases
-  - [ ] Show task started and each turnpoint on Timeline?
-  - [ ] Render phases chart
-  - [ ] Show phase stats
+- [ ] Stats
+  - [ ] Show general stats: Flight time, High point, Low point, Task Distance & Time
+  - [ ] Show flight phases and stats
+  - [ ] Show task legs and stats
 
 Backlog:
   - [ ] Wind calculation: http://blueflyvario.blogspot.com/2012/09/calculating-wind-speed-from-gps-track.html
@@ -37,6 +24,22 @@ Notes:
 - Code for the bga viewer: https://github.com/GlidingWeb/IGCWebView | https://github.com/GlidingWeb/IgcWebview2/
 
 Done:
+- [x] UI improvements
+  - [x] Test mobile - specially timeline
+      - [x] Swipe is slow, because of Nivo.
+  - [x] Control which flight to follow
+      - [x] Use flight's task!
+  - [x] Toggle for follow flight
+  - [x] Play flight
+  - [x] Setting for units 
+- [x] Deploy
+  - [x] Loading screen
+  - [x] Flight upload screen
+  - [x] Load flights from URL
+  - [x] Load flights from BGA
+- [x] Flight phases
+  - [x] Show task started and each turnpoint on Timeline?
+  - [x] Render phases chart
 - [x] Show up visual bar representing phases of flight (gliding vs thermalling)
     - [x] Finish refactor of saved flight to use Analysis
     - [x] Add phases to Analysis
