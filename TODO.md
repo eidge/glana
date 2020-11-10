@@ -3,13 +3,35 @@ Next up:
 - [ ] Store config in localStorage
 - [ ] Bugs:
   - [x] Changing settings hides task (hbb + a5)
+  - [x] Rendering two flights, one that has a task and one that doesn't,
+      switching to folloing the flight that has no task does not clear the task.
+  - [x] Task layer should always be lower than the others!
   - [ ] Changing playback speed messes with zoom
     - I should use extent of full line regardless of what is showing atm for
         zoomToFit
+
+- UI Improves
+  - [x] There's no way to close large modals on mobile
+  - [x] More than 3 flights and timeline marker occupies too much space.
+  - [ ] Consider including timelineMarker top into the padding used to calculate
+      visibility in the Map. This is to prevent the flight being hidden below
+      the timeline marker itself.
+      - Another option is to use a dropdown for the marker, so that only one
+          flight is displayed there at a time. At least for mobile. These
+          solutions might play well together! That's what doarama does!
+  - [ ] Persist some of the settings in the url (Start time)
+  - [ ] Keep track points visible for x minutes.
+
 - [ ] Stats
   - [ ] Show general stats: Flight time, High point, Low point, Task Distance & Time
   - [ ] Show flight phases and stats
   - [ ] Show task legs and stats
+
+- [ ] BGA
+  - [x] Layers (airspace + clouds)
+  - [ ] Engine detection (chart + track)
+  - [ ] Photos
+  - [ ] Barrel config - this should come from the bga, maybe FAI vs BGA tps.
 
 Backlog:
   - [ ] Wind calculation: http://blueflyvario.blogspot.com/2012/09/calculating-wind-speed-from-gps-track.html
