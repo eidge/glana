@@ -31,7 +31,47 @@ class Kilometer extends Length {
   }
 }
 
+class Feet extends Length {
+  constructor() {
+    super('feet', 'ft');
+  }
+
+  toStandardUnit(value: number) {
+    return value * 0.3048;
+  }
+
+  fromStandardUnit(value: number) {
+    return value / 0.3048;
+  }
+}
+
+class NauticalMile extends Length {
+  constructor() {
+    super('nautical mile', 'nm');
+  }
+
+  toStandardUnit(value: number) {
+    return value * 1852.8;
+  }
+
+  fromStandardUnit(value: number) {
+    return value / 1852.8;
+  }
+}
+
 const meters = makeQuantityFactory(new Meter());
 const kilometers = makeQuantityFactory(new Kilometer());
+const feet = makeQuantityFactory(new Feet());
+const nauticalMiles = makeQuantityFactory(new NauticalMile());
 
-export { Length, Meter, Kilometer, meters, kilometers };
+export {
+  Length,
+  Meter,
+  Kilometer,
+  Feet,
+  NauticalMile,
+  meters,
+  kilometers,
+  feet,
+  nauticalMiles,
+};

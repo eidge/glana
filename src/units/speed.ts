@@ -1,5 +1,5 @@
 import Unit from './unit';
-import { Length, meters, kilometers } from './length';
+import { Length, meters, kilometers, nauticalMiles } from './length';
 import { Duration, seconds, hours } from './duration';
 import Quantity from './quantity';
 import { makeQuantityFactory } from './quantity_factory';
@@ -13,10 +13,15 @@ class Speed extends Unit {
     return new Quantity(dx.value / dt.value, speedUnit);
   }
 
-  constructor(lengthUnit: Length, durationUnit: Duration) {
+  constructor(
+    lengthUnit: Length,
+    durationUnit: Duration,
+    name?: string,
+    unit?: string
+  ) {
     super(
-      `${lengthUnit.name} per ${durationUnit.name}`,
-      `${lengthUnit.symbol}/${durationUnit.symbol}`
+      name || `${lengthUnit.name} per ${durationUnit.name}`,
+      unit || `${lengthUnit.symbol}/${durationUnit.symbol}`
     );
 
     this.lengthUnit = lengthUnit;
@@ -41,8 +46,13 @@ class Speed extends Unit {
 const metersPerSecond = makeQuantityFactory<Speed>(
   new Speed(meters.unit, seconds.unit)
 );
+
 const kilometersPerHour = makeQuantityFactory<Speed>(
   new Speed(kilometers.unit, hours.unit)
 );
 
-export { Speed, metersPerSecond, kilometersPerHour };
+const knots = makeQuantityFactory<Speed>(
+  new Speed(nauticalMiles.unit, hours.unit, undefined, 'kts')
+);
+
+export { Speed, metersPerSecond, kilometersPerHour, knots };

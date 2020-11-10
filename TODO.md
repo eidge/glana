@@ -1,20 +1,26 @@
 Next up:
 
+- [ ] Bugs:
+  - [x] Changing settings hides task (hbb + a5)
+  - [ ] Changing playback speed messes with zoom
+    - I should use extent of full line regardless of what is showing atm for
+        zoomToFit
 - [ ] UI improvements
   - [x] Test mobile - specially timeline
-      - [ ] Swipe is slow, because of Nivo.
-  - [ ] Show task started and each turnpoint on Timeline?
-  - [ ] Control which flight to follow
-      - [ ] Use flight's task!
+      - [x] Swipe is slow, because of Nivo.
+  - [x] Control which flight to follow
+      - [x] Use flight's task!
   - [x] Toggle for follow flight
+  - [x] Play flight
   - [ ] Store config in localStorage
-  - [ ] Play flight
-  - [ ] Replace nivo with something faster
-- [ ] Deploy
+  - [ ] Setting for units 
+- [x] Deploy
   - [x] Loading screen
   - [x] Flight upload screen
-  - [ ] Load flights from BGA
+  - [x] Load flights from URL
+  - [x] Load flights from BGA
 - [ ] Flight phases
+  - [ ] Show task started and each turnpoint on Timeline?
   - [ ] Render phases chart
   - [ ] Show phase stats
 
