@@ -19,6 +19,8 @@ Next up:
       - Another option is to use a dropdown for the marker, so that only one
           flight is displayed there at a time. At least for mobile. These
           solutions might play well together! That's what doarama does!
+      - When centering the map, it should center on this "virtual" center
+          instead of the actual map center.
   - [ ] Persist some of the settings in the url (Start time)
   - [ ] Keep track points visible for x minutes.
 
@@ -32,6 +34,8 @@ Next up:
   - [ ] Engine detection (chart + track)
   - [ ] Photos
   - [ ] Barrel config - this should come from the bga, maybe FAI vs BGA tps.
+  - Missing data:
+    - Callsign (do you have that?)
 
 Backlog:
   - [ ] Wind calculation: http://blueflyvario.blogspot.com/2012/09/calculating-wind-speed-from-gps-track.html

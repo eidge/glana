@@ -13,8 +13,8 @@ interface Metadata {
 
 export default class SavedFlight {
   readonly fixes: Fix[];
-  readonly task: Task | null;
   readonly metadata: Metadata;
+  task: Task | null;
 
   private datums: Datum[] = [];
   private phases: Phase[] = [];
