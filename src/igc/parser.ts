@@ -1,5 +1,5 @@
 import IGCParser from 'igc-parser';
-import Fix from '../flight_computer/fix';
+import Fix, { FixExtras } from '../flight_computer/fix';
 import SavedFlight from '../saved_flight';
 import Factory from '../flight_computer/tasks/turnpoints/factories/factory';
 import bgaFactory from '../flight_computer/tasks/turnpoints/factories/bga_factory';
@@ -49,12 +49,19 @@ class Parser {
   }
 
   private buildFix(brecord: IGCParser.BRecord) {
+    const extras: FixExtras = {};
+
+    if (brecord.enl) {
+      extras.engineNoiseLevel = brecord.enl;
+    }
+
     return new Fix(
       new Date(brecord.timestamp),
       brecord.latitude,
       brecord.longitude,
       brecord.gpsAltitude || 0,
-      brecord.pressureAltitude
+      brecord.pressureAltitude,
+      extras
     );
   }
 }

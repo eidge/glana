@@ -5,17 +5,19 @@ import MovingWindow from '../../math/moving_window';
 import Vario from './vario';
 import Fix from '../fix';
 import { Datum } from '../computer';
+import Calculator from './calculator';
 
-export default class AverageVario {
+export default class AverageVario extends Calculator {
   movingWindow: MovingWindow<Speed>;
   varioCalculator: Vario;
 
   constructor(windowSize: Quantity<Duration>) {
+    super();
     this.movingWindow = new MovingWindow(windowSize, metersPerSecond.unit);
     this.varioCalculator = new Vario();
   }
 
-  name(): string {
+  name() {
     return 'Av. Vario';
   }
 

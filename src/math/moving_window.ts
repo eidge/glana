@@ -54,4 +54,22 @@ export default class MovingWindow<U extends Unit> {
       return average.add(pointContribution);
     }, zero);
   }
+
+  min() {
+    if (this.values.length === 0) {
+      return new Quantity(0, this.unit);
+    }
+
+    const minValue = Math.min(...this.values.map(v => v.value.value));
+    return new Quantity(minValue, this.unit);
+  }
+
+  max() {
+    if (this.values.length === 0) {
+      return new Quantity(0, this.unit);
+    }
+
+    const maxValue = Math.max(...this.values.map(v => v.value.value));
+    return new Quantity(maxValue, this.unit);
+  }
 }

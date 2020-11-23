@@ -73,4 +73,19 @@ describe('MovingWindow', () => {
       expect(mw.average()).toEqual(kilometersPerHour(120));
     });
   });
+
+  describe('minimum', () => {
+    it('returns zero when window is empty', () => {
+      let mw = new MovingWindow(seconds(30), kilometersPerHour.unit);
+      expect(mw.min().equals(kilometersPerHour(0))).toBeTruthy();
+    });
+
+    it('returns minimum value in window', () => {
+      let mw = new MovingWindow(seconds(30), kilometersPerHour.unit);
+      mw.addValue({ timestamp: secondsAgo(20), value: kilometersPerHour(119) });
+      mw.addValue({ timestamp: secondsAgo(15), value: kilometersPerHour(50) });
+      mw.addValue({ timestamp: secondsAgo(10), value: kilometersPerHour(121) });
+      expect(mw.min()).toEqual(kilometersPerHour(50));
+    });
+  });
 });

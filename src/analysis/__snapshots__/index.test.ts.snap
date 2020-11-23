@@ -6,6 +6,7 @@ Analysis {
     "calculators": Map {
       "speed" => GPSSpeed {
         "lastFix": Fix {
+          "engineNoiseLevel": null,
           "gpsAltitude": 0,
           "position": Position {
             "altitude": Quantity {
@@ -51,6 +52,7 @@ Analysis {
       },
       "vario" => Vario {
         "lastFix": Fix {
+          "engineNoiseLevel": null,
           "gpsAltitude": 0,
           "position": Position {
             "altitude": Quantity {
@@ -3805,6 +3807,7 @@ Analysis {
   ],
   "fixes": Array [
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -3833,6 +3836,7 @@ Analysis {
       "timestamp": 2020-07-16T11:27:05.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -3861,6 +3865,7 @@ Analysis {
       "timestamp": 2020-07-16T11:27:10.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -3889,6 +3894,7 @@ Analysis {
       "timestamp": 2020-07-16T11:27:15.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -3917,6 +3923,7 @@ Analysis {
       "timestamp": 2020-07-16T11:27:20.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -3945,6 +3952,7 @@ Analysis {
       "timestamp": 2020-07-16T11:27:25.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -3973,6 +3981,7 @@ Analysis {
       "timestamp": 2020-07-16T11:27:30.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4001,6 +4010,7 @@ Analysis {
       "timestamp": 2020-07-16T11:27:35.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4029,6 +4039,7 @@ Analysis {
       "timestamp": 2020-07-16T11:27:40.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4057,6 +4068,7 @@ Analysis {
       "timestamp": 2020-07-16T11:27:45.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4085,6 +4097,7 @@ Analysis {
       "timestamp": 2020-07-16T11:27:50.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4113,6 +4126,7 @@ Analysis {
       "timestamp": 2020-07-16T11:27:55.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4141,6 +4155,7 @@ Analysis {
       "timestamp": 2020-07-16T11:28:00.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4169,6 +4184,7 @@ Analysis {
       "timestamp": 2020-07-16T11:28:05.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4197,6 +4213,7 @@ Analysis {
       "timestamp": 2020-07-16T11:28:10.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4225,6 +4242,7 @@ Analysis {
       "timestamp": 2020-07-16T11:28:15.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4253,6 +4271,7 @@ Analysis {
       "timestamp": 2020-07-16T11:28:20.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4281,6 +4300,7 @@ Analysis {
       "timestamp": 2020-07-16T11:28:25.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4309,6 +4329,7 @@ Analysis {
       "timestamp": 2020-07-16T11:28:30.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4337,6 +4358,7 @@ Analysis {
       "timestamp": 2020-07-16T11:28:35.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4365,6 +4387,7 @@ Analysis {
       "timestamp": 2020-07-16T11:28:40.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4393,6 +4416,7 @@ Analysis {
       "timestamp": 2020-07-16T11:28:45.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4421,6 +4445,7 @@ Analysis {
       "timestamp": 2020-07-16T11:28:50.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4449,6 +4474,7 @@ Analysis {
       "timestamp": 2020-07-16T11:28:55.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4477,6 +4503,7 @@ Analysis {
       "timestamp": 2020-07-16T11:29:00.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4505,6 +4532,7 @@ Analysis {
       "timestamp": 2020-07-16T11:29:05.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4533,6 +4561,7 @@ Analysis {
       "timestamp": 2020-07-16T11:29:10.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4561,6 +4590,7 @@ Analysis {
       "timestamp": 2020-07-16T11:29:15.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4589,6 +4619,7 @@ Analysis {
       "timestamp": 2020-07-16T11:29:20.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4617,6 +4648,7 @@ Analysis {
       "timestamp": 2020-07-16T11:34:25.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4645,6 +4677,7 @@ Analysis {
       "timestamp": 2020-07-16T11:34:30.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4673,6 +4706,7 @@ Analysis {
       "timestamp": 2020-07-16T11:34:35.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
@@ -4701,6 +4735,7 @@ Analysis {
       "timestamp": 2020-07-16T11:34:40.139Z,
     },
     Fix {
+      "engineNoiseLevel": null,
       "gpsAltitude": 0,
       "position": Position {
         "altitude": Quantity {
