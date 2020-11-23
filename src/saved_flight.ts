@@ -172,11 +172,51 @@ export default class SavedFlight {
   }
 
   datumAt(timestamp: Date) {
-    // FIXME: This should defo be binary search
-    return (
-      this.getDatums().find(
-        datum => datum.timestamp.getTime() > timestamp.getTime()
-      ) || null
-    );
+    const index = this.datumIndexAt(timestamp);
+    if (index === null) return null;
+    return this.getDatums()[index];
+  }
+
+  datumIndexAt(timestamp: Date) {
+    const datums = this.getDatums();
+
+    if (
+      timestamp < datums[0].timestamp ||
+      timestamp > datums[datums.length - 1].timestamp
+    ) {
+      return null;
+    }
+
+    let start = 0;
+    let end = datums.length - 1;
+    let middle = Math.floor(end / 2);
+
+    let iteration = 0;
+    while (start !== end) {
+      if (iteration++ > 1000) {
+        throw new Error('datums are not ordered');
+      }
+
+      if (
+        middle === datums.length - 1 ||
+        (timestamp >= datums[middle].timestamp &&
+          timestamp < datums[middle + 1].timestamp)
+      ) {
+        break;
+      }
+
+      if (timestamp >= datums[middle].timestamp) {
+        start = middle;
+        middle = Math.floor((end + start) / 2);
+        if (start === middle) {
+          ++middle;
+        }
+      } else {
+        end = middle;
+        middle = Math.floor((end + start) / 2);
+      }
+    }
+
+    return middle;
   }
 }

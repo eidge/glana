@@ -30,10 +30,11 @@ Next up:
   - [ ] Show task legs and stats
 
 - [ ] BGA
-  - [x] Layers (airspace + clouds)
+  - [x] Airspace Layer
+  - [x] Barrel config - this should come from the bga, maybe FAI vs BGA tps.
+  - [ ] Clouds/Weather Layer
   - [ ] Engine detection (chart + track)
   - [ ] Photos
-  - [ ] Barrel config - this should come from the bga, maybe FAI vs BGA tps.
   - Missing data:
     - Callsign (do you have that?)
 
@@ -50,6 +51,7 @@ Notes:
 - Code for the bga viewer: https://github.com/GlidingWeb/IGCWebView | https://github.com/GlidingWeb/IgcWebview2/
 
 Done:
+- [x] Use binary search for SavedFlight.datumAt
 - [x] UI improvements
   - [x] Test mobile - specially timeline
       - [x] Swipe is slow, because of Nivo.
