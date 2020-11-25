@@ -10,7 +10,7 @@ Next up:
     - I should use extent of full line regardless of what is showing atm for
         zoomToFit
 
-- UI Improves
+- UI Improvements
   - [x] There's no way to close large modals on mobile
   - [x] More than 3 flights and timeline marker occupies too much space.
   - [ ] Consider including timelineMarker top into the padding used to calculate
@@ -32,9 +32,15 @@ Next up:
 - [ ] BGA
   - [x] Airspace Layer
   - [x] Barrel config - this should come from the bga, maybe FAI vs BGA tps.
+  - Engine detection:
+    - [x] Chart
+    - [ ] Track
+  - Handle invalid traces from BGA:
+    - [ ] Single trace
+    - [ ] Multiple traces (all broken, some broken)
+  - [ ] Flight stats
+  - [ ] Photos markers
   - [ ] Clouds/Weather Layer
-  - [ ] Engine detection (chart + track)
-  - [ ] Photos
   - Missing data:
     - Callsign (do you have that?)
 
