@@ -22,10 +22,12 @@ export default class EngineInUse extends Calculator {
   }
 
   update(fix: Fix, _datum: Datum) {
-    if (!fix.engineNoiseLevel) return;
+    if (!fix.engineNoiseLevel && fix.meansOfPropulsion) return;
+    const value = (fix.engineNoiseLevel || 0) + (fix.meansOfPropulsion || 0);
+
     this.window.addValue({
       timestamp: fix.timestamp,
-      value: dimensionless(fix.engineNoiseLevel),
+      value: dimensionless(value),
     });
   }
 

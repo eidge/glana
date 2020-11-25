@@ -4,6 +4,7 @@ import { degrees } from '../units/angle';
 
 export interface FixExtras {
   engineNoiseLevel?: number;
+  meansOfPropulsion?: number;
 }
 
 export default class Fix {
@@ -12,6 +13,7 @@ export default class Fix {
   gpsAltitude: number;
   pressureAltitude: number | null;
   engineNoiseLevel: number | null;
+  meansOfPropulsion: number | null;
 
   constructor(
     timestamp: Date,
@@ -30,5 +32,6 @@ export default class Fix {
       meters(pressureAltitude || gpsAltitude)
     );
     this.engineNoiseLevel = extras.engineNoiseLevel || null;
+    this.meansOfPropulsion = extras.meansOfPropulsion || null;
   }
 }

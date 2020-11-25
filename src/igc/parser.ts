@@ -55,6 +55,10 @@ class Parser {
       extras.engineNoiseLevel = brecord.enl;
     }
 
+    if (brecord.extensions.MOP) {
+      extras.meansOfPropulsion = +brecord.extensions.MOP / 1000;
+    }
+
     return new Fix(
       new Date(brecord.timestamp),
       brecord.latitude,
