@@ -8,6 +8,7 @@ Analysis {
         "lastFix": Fix {
           "engineNoiseLevel": null,
           "gpsAltitude": 0,
+          "meansOfPropulsion": null,
           "position": Position {
             "altitude": Quantity {
               "unit": Meter {
@@ -54,6 +55,7 @@ Analysis {
         "lastFix": Fix {
           "engineNoiseLevel": null,
           "gpsAltitude": 0,
+          "meansOfPropulsion": null,
           "position": Position {
             "altitude": Quantity {
               "unit": Meter {
@@ -3809,6 +3811,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -3838,6 +3841,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -3867,6 +3871,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -3896,6 +3901,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -3925,6 +3931,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -3954,6 +3961,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -3983,6 +3991,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4012,6 +4021,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4041,6 +4051,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4070,6 +4081,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4099,6 +4111,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4128,6 +4141,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4157,6 +4171,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4186,6 +4201,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4215,6 +4231,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4244,6 +4261,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4273,6 +4291,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4302,6 +4321,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4331,6 +4351,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4360,6 +4381,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4389,6 +4411,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4418,6 +4441,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4447,6 +4471,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4476,6 +4501,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4505,6 +4531,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4534,6 +4561,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4563,6 +4591,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4592,6 +4621,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4621,6 +4651,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4650,6 +4681,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4679,6 +4711,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4708,6 +4741,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {
@@ -4737,6 +4771,7 @@ Analysis {
     Fix {
       "engineNoiseLevel": null,
       "gpsAltitude": 0,
+      "meansOfPropulsion": null,
       "position": Position {
         "altitude": Quantity {
           "unit": Meter {

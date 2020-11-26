@@ -52,8 +52,6 @@ export default class SavedFlight {
   }
 
   setTimeOffset(offset: Quantity<Duration>) {
-    this.ensureAnalysisIsDone();
-
     let newOffset = offset.convertTo(milliseconds).value;
     let offsetDelta = newOffset - this.timeOffsetInMilliseconds;
     this.timeOffsetInMilliseconds = newOffset;
@@ -62,13 +60,14 @@ export default class SavedFlight {
       return;
     }
 
+    this.ensureAnalysisIsDone();
     this.datums = this.datums.map(d => this.offsetDatumTime(d, offsetDelta));
     this.phases = this.phases.map(p => this.offsetPhase(p, offsetDelta));
   }
 
   private ensureAnalysisIsDone() {
     if (!this.analysed) {
-      this.analise();
+      throw new Error('Flight has not been analysed yet.');
     }
   }
 

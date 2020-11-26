@@ -19,9 +19,9 @@ describe('AbstractFlightSynchronizer', () => {
         tickSizeInSeconds: 5,
         startTime: new Date(1594898825139),
       });
-      let earliestFlight = new SavedFlight(fixFactory.nextFixes(5));
-      let middleFlight = new SavedFlight(fixFactory.nextFixes(10));
-      let lastFlight = new SavedFlight(fixFactory.nextFixes(5));
+      let earliestFlight = new SavedFlight(fixFactory.nextFixes(5)).analise();
+      let middleFlight = new SavedFlight(fixFactory.nextFixes(10)).analise();
+      let lastFlight = new SavedFlight(fixFactory.nextFixes(5)).analise();
       flightGroup = new FlightGroup([middleFlight, earliestFlight, lastFlight]);
       done();
     });

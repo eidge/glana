@@ -13,6 +13,8 @@ Next up:
 - UI Improvements
   - [x] There's no way to close large modals on mobile
   - [x] More than 3 flights and timeline marker occupies too much space.
+      - [ ] Consider putting height + vario on same line, probably same space
+          occupied!
   - [ ] Consider including timelineMarker top into the padding used to calculate
       visibility in the Map. This is to prevent the flight being hidden below
       the timeline marker itself.

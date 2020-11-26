@@ -1,6 +1,6 @@
 import FixFactory from '../test/support/fix_factory';
 import SavedFlight from './saved_flight';
-import { minutes } from './units/duration';
+import { minutes, seconds } from './units/duration';
 
 const startTime = new Date(1594898825139);
 
@@ -13,6 +13,29 @@ describe('SavedFlight', () => {
       startTime: startTime,
     });
     done();
+  });
+
+  describe('setTimeOffset()', () => {
+    let savedFlight: SavedFlight;
+
+    beforeEach(done => {
+      let fixes = fixFactory.nextFixes(5);
+      savedFlight = new SavedFlight(fixes);
+      done();
+    });
+
+    it('requires analysis to change offset', () => {
+      expect(() => {
+        savedFlight.setTimeOffset(seconds(3));
+      }).toThrow('Flight has not been analysed yet');
+    });
+
+    it('does not require analysis if offset has not changed', () => {
+      savedFlight.analise();
+      expect(() => {
+        savedFlight.setTimeOffset(seconds(3));
+      }).not.toThrow();
+    });
   });
 
   describe('getDatums()', () => {
