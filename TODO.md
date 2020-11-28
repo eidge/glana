@@ -36,10 +36,10 @@ Next up:
   - [x] Barrel config - this should come from the bga, maybe FAI vs BGA tps.
   - Engine detection:
     - [x] Chart
-    - [ ] Track
+    - [x] Track
   - Handle invalid traces from BGA:
-    - [ ] Single trace
-    - [ ] Multiple traces (all broken, some broken)
+    - [x] Single trace
+    - [x] Multiple traces (all broken, some broken)
   - [ ] Flight stats
   - [ ] Photos markers
   - [ ] Clouds/Weather Layer
