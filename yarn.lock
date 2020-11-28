@@ -3989,6 +3989,13 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
+glana-igc-parser@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/glana-igc-parser/-/glana-igc-parser-0.5.1.tgz#3c7acde25587f126914cd00ab3974139227a1212"
+  integrity sha512-tT5xPm11htYSWOwSOOb7zEo2SSK/5CmDZu72hLy8MyEYIRuCBOARJL6XBrBXwCdSrDAZ+1yeOffL/KUATrk8FA==
+  dependencies:
+    flight-recorder-manufacturers "^1.0.1"
+
 glob-parent@^5.0.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.1.tgz#b6c1ef417c4e5663ea498f1c45afac6916bbc229"
@@ -4176,13 +4183,6 @@ iconv-lite@0.4.24, iconv-lite@^0.4.24:
   integrity sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
-
-igc-parser@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/igc-parser/-/igc-parser-0.5.0.tgz#57d3e8781cd2984cc5a357dc7cdeb9389a447232"
-  integrity sha512-XpuPcl7MTu3H+FPjOpH21AQhZWOeaqFpk/T5M5r63ROxRpLF9idgb6SS7/NyQHXOe1L1pdgDKIErKfkxqp90OA==
-  dependencies:
-    flight-recorder-manufacturers "^1.0.1"
 
 ignore@^4.0.6:
   version "4.0.6"

@@ -15,7 +15,7 @@ Next up:
   - [x] More than 3 flights and timeline marker occupies too much space.
       - [ ] Consider putting height + vario on same line, probably same space
           occupied!
-  - [ ] Consider including timelineMarker top into the padding used to calculate
+  - [x] Consider including timelineMarker top into the padding used to calculate
       visibility in the Map. This is to prevent the flight being hidden below
       the timeline marker itself.
       - Another option is to use a dropdown for the marker, so that only one

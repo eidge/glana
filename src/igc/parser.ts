@@ -1,4 +1,4 @@
-import IGCParser from 'igc-parser';
+import IGCParser from 'glana-igc-parser';
 import Fix, { FixExtras } from '../flight_computer/fix';
 import SavedFlight from '../saved_flight';
 import Factory from '../flight_computer/tasks/turnpoints/factories/factory';
