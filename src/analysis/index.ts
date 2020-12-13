@@ -65,11 +65,15 @@ export default class Analysis {
     return phases;
   }
 
-  filterOutNoisyPhases(phases: Phase[]): Phase[] {
+  private filterOutNoisyPhases(phases: Phase[]): Phase[] {
+    // This is buggy:
+    //   - Given three phases: [gliding, thermal, gliding]
+    //   - If the thermal is filtered out we get: [gliding, gliding]
+    //   - What we should get instead is: [gliding]
     let filteredPhases: Phase[] = [];
     phases.forEach((phase, idx) => {
       if (
-        phase.duration().greaterThan(seconds(30)) ||
+        phase.getDuration().greaterThan(seconds(30)) ||
         phase.type === 'stopped'
       ) {
         filteredPhases.push(phase);

@@ -6,6 +6,7 @@ import { degrees } from 'units/angle';
 import { meters, kilometers } from 'units/length';
 import { Datum } from 'flight_computer/computer';
 import { kilometersPerHour, metersPerSecond } from 'units/speed';
+import { milliseconds } from 'units/duration';
 
 function buildSector(center: Position) {
   return new Sector(center, meters(100), degrees(90));
@@ -103,6 +104,7 @@ describe('Task', () => {
         expect(task.getTurnpointReachedAt(tp1)).toBeNull();
         expect(task.isStarted()).toBeFalsy();
         expect(task.isFinished()).toBeFalsy();
+        expect(task.getDuration()).toBeNull();
       });
 
       it('does not change current turnpoint when position is outside tp1', () => {
@@ -151,6 +153,7 @@ describe('Task', () => {
         expect(task.getTurnpointReachedAt(tp2)).toBeNull();
         expect(task.isStarted()).toBeTruthy();
         expect(task.isFinished()).toBeFalsy();
+        expect(task.getDuration()).toBeNull();
       });
 
       it('does not change current turnpoint when position is outside tp2', () => {
@@ -191,6 +194,7 @@ describe('Task', () => {
         expect(task.getTurnpointReachedAt(tp3)).toBeNull();
         expect(task.isStarted()).toBeTruthy();
         expect(task.isFinished()).toBeFalsy();
+        expect(task.getDuration()).toBeNull();
       });
 
       it('finishes task', () => {
@@ -199,6 +203,7 @@ describe('Task', () => {
         expect(task.getTurnpointReachedAt(tp3)).toEqual(new Date(3000));
         expect(task.isStarted()).toBeFalsy();
         expect(task.isFinished()).toBeTruthy();
+        expect(task.getDuration()).toEqual(milliseconds(2000));
       });
     });
   });

@@ -12,7 +12,7 @@ export default class Phase {
     this.type = type;
   }
 
-  duration() {
+  getDuration() {
     let millis = this.finishAt.getTime() - this.startAt.getTime();
     return milliseconds(millis).convertTo(seconds);
   }

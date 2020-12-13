@@ -9,6 +9,8 @@ Next up:
   - [ ] Changing playback speed messes with zoom
     - I should use extent of full line regardless of what is showing atm for
         zoomToFit
+  - [ ] Handle showing time appropriately -> Should always show local time of
+      flight, not local time of browser!!!
 
 - UI Improvements
   - [x] There's no way to close large modals on mobile
@@ -25,9 +27,29 @@ Next up:
           instead of the actual map center.
   - [ ] Persist some of the settings in the url (Start time)
   - [ ] Keep track points visible for x minutes.
+  - [ ] Bring followedFlight forward (z-index) to avoid it being clobbered by
+      other flights.
+  - [ ] Synchronize flights by real-time by default. If a viewing multiple
+      flights from different days, then synchronize by startedAt (push a toast
+      message in doing so).
 
 - [ ] Stats
-  - [ ] Show general stats: Flight time, High point, Low point, Task Distance & Time
+  - [x] table header rounded bug!
+  - [x] Icon for stats
+  - [x] Choose flight to show stats
+  - [ ] Create layout ui component (FullSplitScreen - should handle opening and
+      closing side view and mobile breakpoints)
+      - [ ] Before panel opens we should take map boundaries and ensure they're
+          visible after it's open (i.e. the map view is the same but zoomed
+          out).
+  - [ ] Per stage stats: Thermal -> height gain + average vario | Glide -> Glide
+      angle + KM
+  - [ ] Highlight current row in altitude chart + flight track (render entire
+      track first when in stats mode!)
+  - [ ] Show general stats
+    - [x] Flight time
+    - [x] Task Distance, Time & speed
+    - [ ] High point, Low point
   - [ ] Show flight phases and stats
   - [ ] Show task legs and stats
 

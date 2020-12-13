@@ -7,6 +7,7 @@ import Quantity from './units/quantity';
 import Task, { TaskTurnpoint } from './flight_computer/tasks/task';
 
 interface Metadata {
+  pilotName?: string | null;
   registration?: string | null;
   callsign?: string | null;
 }
@@ -14,6 +15,8 @@ interface Metadata {
 export default class SavedFlight {
   readonly fixes: Fix[];
   readonly metadata: Metadata;
+
+  id: string;
   task: Task | null;
 
   private datums: Datum[] = [];
@@ -22,6 +25,9 @@ export default class SavedFlight {
   private analysed: boolean;
 
   constructor(fixes: Fix[], task: Task | null = null, metadata: Metadata = {}) {
+    this.id = Math.random()
+      .toString()
+      .slice(2, 8);
     this.fixes = fixes;
     this.analysed = false;
     this.timeOffsetInMilliseconds = 0;
@@ -72,13 +78,13 @@ export default class SavedFlight {
   }
 
   private offsetDatumTime(datum: Datum, offsetInMillisecods: number) {
-    datum = Object.assign({}, datum);
+    datum = Object.create(datum);
     datum.timestamp = this.offsetDate(datum.timestamp, offsetInMillisecods);
     return datum;
   }
 
   private offsetPhase(phase: Phase, offsetInMillisecods: number) {
-    phase = Object.assign({}, phase);
+    phase = Object.create(phase);
     phase.startAt = this.offsetDate(phase.startAt, offsetInMillisecods);
     phase.finishAt = this.offsetDate(phase.finishAt, offsetInMillisecods);
     return phase;
@@ -140,13 +146,12 @@ export default class SavedFlight {
   getLandedAt(realTime = false) {
     if (!this.getTakeoffAt()) return null;
 
-    let lastStopPhase =
-      this.getPhases()
-        .reverse()
-        .find(p => p.type === 'stopped') || null;
+    const phases = this.getPhases().slice();
+    const lastStopPhase =
+      phases.reverse().find(p => p.type === 'stopped') || null;
 
     if (!lastStopPhase || this.getPhases().indexOf(lastStopPhase) === 0) {
-      return null;
+      return this.getRecordingStoppedAt(realTime);
     }
 
     return this.maybeReturnRealTime(lastStopPhase.startAt, realTime);
@@ -158,6 +163,21 @@ export default class SavedFlight {
       datums[datums.length - 1].timestamp,
       realTime
     );
+  }
+
+  getDuration() {
+    const startTime = this.getTakeoffAt()?.getTime();
+    let finishTime = this.getLandedAt()?.getTime();
+
+    if (!startTime) {
+      return milliseconds(0);
+    }
+
+    if (!finishTime) {
+      finishTime = this.getRecordingStoppedAt().getTime();
+    }
+
+    return milliseconds(finishTime - startTime);
   }
 
   phaseAt(timestamp: Date) {
