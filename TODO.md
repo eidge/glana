@@ -44,14 +44,19 @@ Next up:
           out).
   - [ ] Per stage stats: Thermal -> height gain + average vario | Glide -> Glide
       angle + KM
+  - [ ] Show task started & each turnpoint as a flight stage
   - [ ] Highlight current row in altitude chart + flight track (render entire
       track first when in stats mode!)
   - [ ] Show general stats
     - [x] Flight time
     - [x] Task Distance, Time & speed
     - [ ] High point, Low point
+    - [ ] Make each flight a card - unknown regs are G-DOE
+    - [ ] Use this screen to show / hide flights & also upload new flights
   - [ ] Show flight phases and stats
   - [ ] Show task legs and stats
+  - [ ] When flight group has more than one task, ask user to select a task to
+      use.
 
 - [ ] BGA
   - [x] Airspace Layer
