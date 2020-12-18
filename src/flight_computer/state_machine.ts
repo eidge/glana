@@ -111,7 +111,7 @@ export default class StateMachine {
     }
   }
 
-  isStartingToGlide() {
+  private isStartingToGlide() {
     let degreesTurned = this.degreesTurnedInWindow();
 
     return (

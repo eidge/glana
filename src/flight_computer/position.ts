@@ -26,8 +26,12 @@ class Position {
     return heading2D(this, otherPosition);
   }
 
-  move(distance: Quantity<Length>, heading: Quantity<Angle>) {
-    return translatePosition(this, distance, heading);
+  move(
+    distance: Quantity<Length>,
+    heading: Quantity<Angle>,
+    altitudeDelta: Quantity<Length> = meters(0)
+  ) {
+    return translatePosition(this, distance, heading, altitudeDelta);
   }
 }
 

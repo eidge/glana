@@ -56,7 +56,8 @@ export function heading2D(position: Position, otherPosition: Position) {
 export function translatePosition(
   position: Position,
   distance: Quantity<Length>,
-  heading: Quantity<Angle>
+  heading: Quantity<Angle>,
+  altitudeDelta: Quantity<Length> = meters(0)
 ) {
   let point = transformTranslate(
     positionToTurfPoint(position),
@@ -68,7 +69,7 @@ export function translatePosition(
   return new Position(
     degrees(point.geometry!.coordinates[1]),
     degrees(point.geometry!.coordinates[0]),
-    position.altitude
+    position.altitude.add(altitudeDelta)
   );
 }
 

@@ -1,4 +1,4 @@
-import FixFactory from '../test/support/fix_factory';
+import FixFactory from 'utils/fix_factory';
 import SavedFlight from './saved_flight';
 import { minutes, seconds } from './units/duration';
 
@@ -38,7 +38,7 @@ describe('SavedFlight', () => {
     });
   });
 
-  describe('getDatums()', () => {
+  describe('datums', () => {
     let savedFlight: SavedFlight;
 
     beforeEach(done => {
@@ -49,7 +49,7 @@ describe('SavedFlight', () => {
     });
 
     it('returns datums', () => {
-      expect(savedFlight.getDatums().map(d => d.timestamp)).toEqual([
+      expect(savedFlight.datums.map(d => d.timestamp)).toEqual([
         new Date('2020-07-16T11:27:05.139Z'),
         new Date('2020-07-16T11:27:10.139Z'),
         new Date('2020-07-16T11:27:15.139Z'),
@@ -60,7 +60,7 @@ describe('SavedFlight', () => {
 
     it('returns datums offset in time', () => {
       savedFlight.setTimeOffset(minutes(60));
-      expect(savedFlight.getDatums().map(d => d.timestamp)).toEqual([
+      expect(savedFlight.datums.map(d => d.timestamp)).toEqual([
         new Date('2020-07-16T12:27:05.139Z'),
         new Date('2020-07-16T12:27:10.139Z'),
         new Date('2020-07-16T12:27:15.139Z'),
@@ -71,7 +71,7 @@ describe('SavedFlight', () => {
 
     it('reverts datum offset', () => {
       savedFlight.setTimeOffset(minutes(60));
-      expect(savedFlight.getDatums().map(d => d.timestamp)).toEqual([
+      expect(savedFlight.datums.map(d => d.timestamp)).toEqual([
         new Date('2020-07-16T12:27:05.139Z'),
         new Date('2020-07-16T12:27:10.139Z'),
         new Date('2020-07-16T12:27:15.139Z'),
@@ -80,7 +80,7 @@ describe('SavedFlight', () => {
       ]);
 
       savedFlight.setTimeOffset(minutes(0));
-      expect(savedFlight.getDatums().map(d => d.timestamp)).toEqual([
+      expect(savedFlight.datums.map(d => d.timestamp)).toEqual([
         new Date('2020-07-16T11:27:05.139Z'),
         new Date('2020-07-16T11:27:10.139Z'),
         new Date('2020-07-16T11:27:15.139Z'),
@@ -103,26 +103,26 @@ describe('SavedFlight', () => {
     it('returns phase at given timestamp', () => {
       let phase = savedFlight.phaseAt(new Date('2020-07-16T11:27:05.140Z'));
       expect(phase!.startAt).toEqual(new Date('2020-07-16T11:27:05.139Z'));
-      expect(phase!.finishAt).toEqual(new Date('2020-07-16T11:27:25.139Z'));
+      expect(phase!.finishAt).toEqual(new Date('2020-07-16T11:27:20.139Z'));
     });
 
     it('returns phase offset in time', () => {
       savedFlight.setTimeOffset(minutes(60));
       let phase = savedFlight.phaseAt(new Date('2020-07-16T12:27:05.140Z'));
       expect(phase!.startAt).toEqual(new Date('2020-07-16T12:27:05.139Z'));
-      expect(phase!.finishAt).toEqual(new Date('2020-07-16T12:27:25.139Z'));
+      expect(phase!.finishAt).toEqual(new Date('2020-07-16T12:27:20.139Z'));
     });
 
     it('reverts phase offset', () => {
       savedFlight.setTimeOffset(minutes(60));
       let phase = savedFlight.phaseAt(new Date('2020-07-16T12:27:05.140Z'));
       expect(phase!.startAt).toEqual(new Date('2020-07-16T12:27:05.139Z'));
-      expect(phase!.finishAt).toEqual(new Date('2020-07-16T12:27:25.139Z'));
+      expect(phase!.finishAt).toEqual(new Date('2020-07-16T12:27:20.139Z'));
 
       savedFlight.setTimeOffset(minutes(0));
       phase = savedFlight.phaseAt(new Date('2020-07-16T11:27:05.140Z'));
       expect(phase!.startAt).toEqual(new Date('2020-07-16T11:27:05.139Z'));
-      expect(phase!.finishAt).toEqual(new Date('2020-07-16T11:27:25.139Z'));
+      expect(phase!.finishAt).toEqual(new Date('2020-07-16T11:27:20.139Z'));
     });
   });
 
@@ -145,37 +145,33 @@ describe('SavedFlight', () => {
     it('returns first datum', () => {
       let sv = createSavedFlight(5);
       expect(sv.datumAt(secondsAfterStartTime(0))?.timestamp).toEqual(
-        sv.getDatums()[0].timestamp
+        sv.datums[0].timestamp
       );
     });
 
     it('returns first datum for timestamps between first and second datum', () => {
       let sv = createSavedFlight(5);
-      expect(sv.datumAt(secondsAfterStartTime(0.01))).toEqual(
-        sv.getDatums()[0]
-      );
-      expect(sv.datumAt(secondsAfterStartTime(0.2))).toEqual(sv.getDatums()[0]);
-      expect(sv.datumAt(secondsAfterStartTime(1))).toEqual(sv.getDatums()[0]);
-      expect(sv.datumAt(secondsAfterStartTime(4))).toEqual(sv.getDatums()[0]);
-      expect(sv.datumAt(secondsAfterStartTime(4.999999))).toEqual(
-        sv.getDatums()[0]
-      );
-      expect(sv.datumAt(secondsAfterStartTime(5))).toEqual(sv.getDatums()[1]);
+      expect(sv.datumAt(secondsAfterStartTime(0.01))).toEqual(sv.datums[0]);
+      expect(sv.datumAt(secondsAfterStartTime(0.2))).toEqual(sv.datums[0]);
+      expect(sv.datumAt(secondsAfterStartTime(1))).toEqual(sv.datums[0]);
+      expect(sv.datumAt(secondsAfterStartTime(4))).toEqual(sv.datums[0]);
+      expect(sv.datumAt(secondsAfterStartTime(4.999999))).toEqual(sv.datums[0]);
+      expect(sv.datumAt(secondsAfterStartTime(5))).toEqual(sv.datums[1]);
     });
 
     it('returns middle datums', () => {
       let sv = createSavedFlight(5);
-      expect(sv.datumAt(secondsAfterStartTime(10))).toEqual(sv.getDatums()[2]);
+      expect(sv.datumAt(secondsAfterStartTime(10))).toEqual(sv.datums[2]);
     });
 
     it('returns last datum', () => {
       let sv = createSavedFlight(5);
-      expect(sv.datumAt(secondsAfterStartTime(20))).toEqual(sv.getDatums()[4]);
+      expect(sv.datumAt(secondsAfterStartTime(20))).toEqual(sv.datums[4]);
     });
 
     it('works correctly for even numbers of datums', () => {
       let sv = createSavedFlight(10);
-      let datums = sv.getDatums();
+      let datums = sv.datums;
       expect(sv.datumAt(secondsAfterStartTime(0.1))).toEqual(datums[0]);
       expect(sv.datumAt(secondsAfterStartTime(5.1))).toEqual(datums[1]);
       expect(sv.datumAt(secondsAfterStartTime(10.1))).toEqual(datums[2]);
@@ -191,7 +187,7 @@ describe('SavedFlight', () => {
 
     it('works correctly for uneven numbers of datums', () => {
       let sv = createSavedFlight(9);
-      let datums = sv.getDatums();
+      let datums = sv.datums;
       expect(sv.datumAt(secondsAfterStartTime(0.1))).toEqual(datums[0]);
       expect(sv.datumAt(secondsAfterStartTime(5.1))).toEqual(datums[1]);
       expect(sv.datumAt(secondsAfterStartTime(10.1))).toEqual(datums[2]);

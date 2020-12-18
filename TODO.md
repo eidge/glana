@@ -42,8 +42,17 @@ Next up:
       - [ ] Before panel opens we should take map boundaries and ensure they're
           visible after it's open (i.e. the map view is the same but zoomed
           out).
-  - [ ] Per stage stats: Thermal -> height gain + average vario | Glide -> Glide
+  - [ ] Per phase stats:
+      - [x] Thermal -> height gain + average vario | Glide -> Glide
       angle + KM
+      - [ ] Click thermal to see vertical chart of that thermal (i.e. to
+          understand if I'm using a thermal for too long - i.e. should have left
+          earlier!).
+      - Filters
+        - [x] Filter by phase: Thermal | Glide
+        - [ ] Filter phases inside / outside task or both.
+      - [ ] Consider showing all flights phases in the same table, to compare glides
+          and thermals at the same time.
   - [ ] Show task started & each turnpoint as a flight stage
   - [ ] Highlight current row in altitude chart + flight track (render entire
       track first when in stats mode!)
@@ -51,12 +60,16 @@ Next up:
     - [x] Flight time
     - [x] Task Distance, Time & speed
     - [ ] High point, Low point
+    - [ ] Average climb rate, average glide speed, glide angle glide distance
+        (or distance between thermals).
     - [ ] Make each flight a card - unknown regs are G-DOE
     - [ ] Use this screen to show / hide flights & also upload new flights
   - [ ] Show flight phases and stats
   - [ ] Show task legs and stats
   - [ ] When flight group has more than one task, ask user to select a task to
       use.
+  - [ ] When playing a flight, everytime a thermal finishes it's average
+      animates on the map. Like when points are collected in platform game.
 
 - [ ] BGA
   - [x] Airspace Layer

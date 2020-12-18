@@ -1,7 +1,7 @@
 import MovingWindow from './moving_window';
 import { seconds } from '../units/duration';
 import { kilometersPerHour } from '../units/speed';
-import { secondsAgo } from '../../test/support/time_helpers';
+import { secondsAgo } from 'utils/time_helpers';
 
 describe('MovingWindow', () => {
   describe('addValue', () => {
