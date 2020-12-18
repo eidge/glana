@@ -16,6 +16,7 @@ class Parser {
     return new SavedFlight(fixes, task, {
       registration: parsedIGC.registration,
       callsign: parsedIGC.callsign,
+      pilotName: parsedIGC.pilot,
     });
   }
 

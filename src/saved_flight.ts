@@ -1,12 +1,13 @@
 import Fix from './flight_computer/fix';
 import FlightComputer, { Datum } from './flight_computer/computer';
 import Analysis from './analysis';
-import Phase from './analysis/phase';
+import Phase from './analysis/phases/phase';
 import { Duration, milliseconds } from './units/duration';
 import Quantity from './units/quantity';
 import Task, { TaskTurnpoint } from './flight_computer/tasks/task';
 
 interface Metadata {
+  pilotName?: string | null;
   registration?: string | null;
   callsign?: string | null;
 }
@@ -14,16 +15,19 @@ interface Metadata {
 export default class SavedFlight {
   readonly fixes: Fix[];
   readonly metadata: Metadata;
-  task: Task | null;
 
-  private datums: Datum[] = [];
-  private phases: Phase[] = [];
+  id: string;
+  task: Task | null;
+  private _datums: Datum[] = [];
+  private _phases: Phase[] = [];
+
   private timeOffsetInMilliseconds: number;
-  private analysed: boolean;
 
   constructor(fixes: Fix[], task: Task | null = null, metadata: Metadata = {}) {
+    this.id = Math.random()
+      .toString()
+      .slice(2, 8);
     this.fixes = fixes;
-    this.analysed = false;
     this.timeOffsetInMilliseconds = 0;
     this.task = task;
     this.metadata = metadata;
@@ -34,20 +38,33 @@ export default class SavedFlight {
       computer.setTask(this.task);
     }
 
-    let analysis = this.performAnalysis(computer);
-    this.datums = analysis.getDatums();
-    this.phases = analysis.getPhases();
-    this.analysed = true;
+    let analysis = new Analysis(computer);
+    analysis.perform(this);
+
     return this;
   }
 
-  private performAnalysis(computer: FlightComputer) {
-    let analysis = new Analysis(this.fixes, computer);
-    analysis.perform();
-    return analysis;
+  set datums(datums: Datum[]) {
+    if (this._datums.length > 0) throw new Error('Datums should be immutable.');
+    this._datums = datums;
   }
 
-  getTimeOffsetInMilliseconds() {
+  set phases(phases: Phase[]) {
+    if (this._phases.length > 0) throw new Error('Phases should be immutable.');
+    this._phases = phases;
+  }
+
+  get datums() {
+    this.ensureAnalysisIsDone();
+    return this._datums;
+  }
+
+  get phases() {
+    this.ensureAnalysisIsDone();
+    return this._phases;
+  }
+
+  get offsetInMilliseconds() {
     return milliseconds(this.timeOffsetInMilliseconds);
   }
 
@@ -61,45 +78,27 @@ export default class SavedFlight {
     }
 
     this.ensureAnalysisIsDone();
-    this.datums = this.datums.map(d => this.offsetDatumTime(d, offsetDelta));
-    this.phases = this.phases.map(p => this.offsetPhase(p, offsetDelta));
+    this._datums = this._datums.map(d => this.offsetDatumTime(d, offsetDelta));
   }
 
   private ensureAnalysisIsDone() {
-    if (!this.analysed) {
+    if (this._datums.length === 0) {
       throw new Error('Flight has not been analysed yet.');
     }
   }
 
   private offsetDatumTime(datum: Datum, offsetInMillisecods: number) {
-    datum = Object.assign({}, datum);
+    datum = Object.create(datum);
     datum.timestamp = this.offsetDate(datum.timestamp, offsetInMillisecods);
     return datum;
-  }
-
-  private offsetPhase(phase: Phase, offsetInMillisecods: number) {
-    phase = Object.assign({}, phase);
-    phase.startAt = this.offsetDate(phase.startAt, offsetInMillisecods);
-    phase.finishAt = this.offsetDate(phase.finishAt, offsetInMillisecods);
-    return phase;
   }
 
   private offsetDate(date: Date, offsetInMillisecods: number) {
     return new Date(date.getTime() + offsetInMillisecods);
   }
 
-  getDatums() {
-    this.ensureAnalysisIsDone();
-    return this.datums;
-  }
-
-  getPhases() {
-    this.ensureAnalysisIsDone();
-    return this.phases;
-  }
-
   getRecordingStartedAt(realTime = false) {
-    return this.maybeReturnRealTime(this.getDatums()[0].timestamp, realTime);
+    return this.maybeReturnRealTime(this.datums[0].timestamp, realTime);
   }
 
   private maybeReturnRealTime(date: Date, realTime: boolean) {
@@ -111,8 +110,7 @@ export default class SavedFlight {
   }
 
   getTakeoffAt(realTime = false) {
-    let firstFlightPhase =
-      this.getPhases().find(p => p.type !== 'stopped') || null;
+    let firstFlightPhase = this.phases.find(p => p.type !== 'stopped') || null;
     return (
       firstFlightPhase &&
       this.maybeReturnRealTime(firstFlightPhase.startAt, realTime)
@@ -140,29 +138,43 @@ export default class SavedFlight {
   getLandedAt(realTime = false) {
     if (!this.getTakeoffAt()) return null;
 
-    let lastStopPhase =
-      this.getPhases()
-        .reverse()
-        .find(p => p.type === 'stopped') || null;
+    const phases = this.phases.slice();
+    const lastStopPhase =
+      phases.reverse().find(p => p.type === 'stopped') || null;
 
-    if (!lastStopPhase || this.getPhases().indexOf(lastStopPhase) === 0) {
-      return null;
+    if (!lastStopPhase || this.phases.indexOf(lastStopPhase) === 0) {
+      return this.getRecordingStoppedAt(realTime);
     }
 
     return this.maybeReturnRealTime(lastStopPhase.startAt, realTime);
   }
 
   getRecordingStoppedAt(realTime = false) {
-    let datums = this.getDatums();
+    let datums = this.datums;
     return this.maybeReturnRealTime(
       datums[datums.length - 1].timestamp,
       realTime
     );
   }
 
+  getDuration() {
+    const startTime = this.getTakeoffAt()?.getTime();
+    let finishTime = this.getLandedAt()?.getTime();
+
+    if (!startTime) {
+      return milliseconds(0);
+    }
+
+    if (!finishTime) {
+      finishTime = this.getRecordingStoppedAt().getTime();
+    }
+
+    return milliseconds(finishTime - startTime);
+  }
+
   phaseAt(timestamp: Date) {
     return (
-      this.getPhases().find(
+      this.phases.find(
         phase =>
           phase.startAt.getTime() <= timestamp.getTime() &&
           phase.finishAt.getTime() > timestamp.getTime()
@@ -173,11 +185,11 @@ export default class SavedFlight {
   datumAt(timestamp: Date) {
     const index = this.datumIndexAt(timestamp);
     if (index === null) return null;
-    return this.getDatums()[index];
+    return this.datums[index];
   }
 
   datumIndexAt(timestamp: Date) {
-    const datums = this.getDatums();
+    const datums = this.datums;
 
     if (
       timestamp < datums[0].timestamp ||

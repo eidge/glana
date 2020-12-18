@@ -1,5 +1,5 @@
 {
-  "version": "0.2.12",
+  "version": "0.2.15",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -44,8 +44,8 @@
   },
   "jest": {
     "transform": {
-      ".(ts|tsx)$": "/Users/hugoribeira/src/glana/node_modules/ts-jest/dist/index.js",
-      ".(js|jsx)$": "/Users/hugoribeira/src/glana/node_modules/babel-jest/build/index.js"
+      ".(ts|tsx)$": "./node_modules/ts-jest/dist/index.js",
+      ".(js|jsx)$": "./node_modules/babel-jest/build/index.js"
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
@@ -66,8 +66,8 @@
     ],
     "testURL": "http://localhost",
     "watchPlugins": [
-      "/Users/hugoribeira/src/glana/node_modules/jest-watch-typeahead/filename.js",
-      "/Users/hugoribeira/src/glana/node_modules/jest-watch-typeahead/testname.js"
+      "./node_modules/jest-watch-typeahead/filename.js",
+      "./node_modules/jest-watch-typeahead/testname.js"
     ],
     "moduleDirectories": [
       "node_modules",

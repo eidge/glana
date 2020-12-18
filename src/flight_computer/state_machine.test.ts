@@ -2,7 +2,7 @@ import StateMachine from './state_machine';
 import { degrees } from '../units/angle';
 import { kilometersPerHour } from '../units/speed';
 
-import DatumFactory from '../../test/support/datum_factory';
+import DatumFactory from 'utils/datum_factory';
 import { minutes } from 'units/duration';
 
 describe('StateMachine', () => {

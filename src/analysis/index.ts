@@ -1,51 +1,48 @@
 import FlightComputer, { Datum } from '../flight_computer/computer';
-import Fix from '../flight_computer/fix';
-import Phase from './phase';
-import { seconds } from '../units/duration';
+import Phase from './phases/phase';
+import SavedFlight from '../saved_flight';
+import * as phases from './phases';
 
 export default class Analysis {
   private computer: FlightComputer;
-  private fixes: Fix[];
-  private datums: Datum[] | null = null;
-  private phases: Phase[] = [];
 
-  constructor(fixes: Fix[], computer = new FlightComputer()) {
+  constructor(computer = new FlightComputer()) {
     this.computer = computer;
-    this.fixes = fixes;
   }
 
-  isDone() {
-    return this.datums !== null;
-  }
-
-  perform() {
-    if (this.isDone()) return this;
-    this.datums = this.buildDatums();
-    this.phases = this.detectPhases(this.datums);
+  perform(flight: SavedFlight) {
+    const datums = this.buildDatums(flight);
+    flight.datums = datums;
+    flight.phases = this.detectPhases(flight, datums);
     return this;
   }
 
-  private buildDatums() {
+  private buildDatums(flight: SavedFlight) {
     let datums: Datum[] = [];
-    this.fixes.forEach(fix => {
+    flight.fixes.forEach(fix => {
       this.computer.update(fix);
       datums.push(this.computer.currentDatum!);
     });
     return datums;
   }
 
-  private detectPhases(datums: Datum[]): Phase[] {
-    let phases = this.buildPhases(datums);
-    return this.filterOutNoisyPhases(phases);
+  private detectPhases(flight: SavedFlight, datums: Datum[]): Phase[] {
+    let phases = this.buildPhases(flight, datums);
+    return phases;
   }
 
-  private buildPhases(datums: Datum[]) {
+  private buildPhases(flight: SavedFlight, datums: Datum[]) {
     let phases: Phase[] = [];
     let startDatumIdx = 0;
 
     datums.forEach((datum, endDatumIdx) => {
       if (datums[startDatumIdx].state !== datum.state) {
-        let phase = this.buildPhase(datums, startDatumIdx, endDatumIdx);
+        let phase = this.buildPhase(
+          flight,
+          datums,
+          startDatumIdx,
+          endDatumIdx - 1
+        );
         phases.push(phase);
         startDatumIdx = endDatumIdx;
       }
@@ -55,6 +52,7 @@ export default class Analysis {
       // Last phase will not have a datum with a different state, therefore we
       // need to handle it differently.
       let finalPhase = this.buildPhase(
+        flight,
         datums,
         startDatumIdx,
         datums.length - 1
@@ -65,41 +63,12 @@ export default class Analysis {
     return phases;
   }
 
-  filterOutNoisyPhases(phases: Phase[]): Phase[] {
-    let filteredPhases: Phase[] = [];
-    phases.forEach((phase, idx) => {
-      if (
-        phase.duration().greaterThan(seconds(30)) ||
-        phase.type === 'stopped'
-      ) {
-        filteredPhases.push(phase);
-        return;
-      }
-
-      const nextPhase = phases[idx + 1];
-      if (nextPhase) {
-        nextPhase.startAt = phase.startAt;
-      }
-    });
-
-    return filteredPhases;
-  }
-
-  private buildPhase(datums: Datum[], startIdx: number, endIdx: number) {
-    return new Phase(
-      datums[startIdx].timestamp,
-      datums[endIdx].timestamp,
-      datums[startIdx].state
-    );
-  }
-
-  getDatums(): Datum[] {
-    if (!this.isDone()) this.perform();
-    return this.datums!;
-  }
-
-  getPhases(): Phase[] {
-    if (!this.isDone()) this.perform();
-    return this.phases;
+  private buildPhase(
+    flight: SavedFlight,
+    datums: Datum[],
+    startIdx: number,
+    endIdx: number
+  ) {
+    return phases.build(datums[startIdx].state, flight, startIdx, endIdx);
   }
 }

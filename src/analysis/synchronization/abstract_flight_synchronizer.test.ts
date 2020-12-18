@@ -1,6 +1,6 @@
 import FlightGroup from 'analysis/flight_group';
 import SavedFlight from 'saved_flight';
-import FixFactory from '../../../test/support/fix_factory';
+import FixFactory from 'utils/fix_factory';
 import AbstractFlightSynchronizer from './abstract_flight_synchronizer';
 
 class DummySynchronizer extends AbstractFlightSynchronizer {
@@ -29,17 +29,15 @@ describe('AbstractFlightSynchronizer', () => {
     it('starts all flights at the same time', () => {
       recordingStarted.synchronize(flightGroup.flights);
       flightGroup.flights.forEach(flight => {
-        expect(flight.getDatums()[0].timestamp).toEqual(
-          new Date(1594898825139)
-        );
+        expect(flight.datums[0].timestamp).toEqual(new Date(1594898825139));
       });
     });
 
     it('syncs flights to to the flight that started the earliest', () => {
       recordingStarted.synchronize(flightGroup.flights);
       flightGroup.flights.forEach(flight => {
-        expect(flight.getDatums()[0].timestamp).toEqual(
-          flightGroup.flights[1].getDatums()[0].timestamp
+        expect(flight.datums[0].timestamp).toEqual(
+          flightGroup.flights[1].datums[0].timestamp
         );
       });
     });
@@ -48,9 +46,7 @@ describe('AbstractFlightSynchronizer', () => {
       recordingStarted.synchronize(flightGroup.flights);
       recordingStarted.synchronize(flightGroup.flights);
       flightGroup.flights.forEach(flight => {
-        expect(flight.getDatums()[0].timestamp).toEqual(
-          new Date(1594898825139)
-        );
+        expect(flight.datums[0].timestamp).toEqual(new Date(1594898825139));
       });
     });
   });

@@ -9,6 +9,8 @@ Next up:
   - [ ] Changing playback speed messes with zoom
     - I should use extent of full line regardless of what is showing atm for
         zoomToFit
+  - [ ] Handle showing time appropriately -> Should always show local time of
+      flight, not local time of browser!!!
 
 - UI Improvements
   - [x] There's no way to close large modals on mobile
@@ -25,11 +27,49 @@ Next up:
           instead of the actual map center.
   - [ ] Persist some of the settings in the url (Start time)
   - [ ] Keep track points visible for x minutes.
+  - [ ] Bring followedFlight forward (z-index) to avoid it being clobbered by
+      other flights.
+  - [ ] Synchronize flights by real-time by default. If a viewing multiple
+      flights from different days, then synchronize by startedAt (push a toast
+      message in doing so).
 
 - [ ] Stats
-  - [ ] Show general stats: Flight time, High point, Low point, Task Distance & Time
+  - [x] table header rounded bug!
+  - [x] Icon for stats
+  - [x] Choose flight to show stats
+  - [ ] Create layout ui component (FullSplitScreen - should handle opening and
+      closing side view and mobile breakpoints)
+      - [ ] Before panel opens we should take map boundaries and ensure they're
+          visible after it's open (i.e. the map view is the same but zoomed
+          out).
+  - [ ] Per phase stats:
+      - [x] Thermal -> height gain + average vario | Glide -> Glide
+      angle + KM
+      - [ ] Click thermal to see vertical chart of that thermal (i.e. to
+          understand if I'm using a thermal for too long - i.e. should have left
+          earlier!).
+      - Filters
+        - [x] Filter by phase: Thermal | Glide
+        - [ ] Filter phases inside / outside task or both.
+      - [ ] Consider showing all flights phases in the same table, to compare glides
+          and thermals at the same time.
+  - [ ] Show task started & each turnpoint as a flight stage
+  - [ ] Highlight current row in altitude chart + flight track (render entire
+      track first when in stats mode!)
+  - [ ] Show general stats
+    - [x] Flight time
+    - [x] Task Distance, Time & speed
+    - [ ] High point, Low point
+    - [ ] Average climb rate, average glide speed, glide angle glide distance
+        (or distance between thermals).
+    - [ ] Make each flight a card - unknown regs are G-DOE
+    - [ ] Use this screen to show / hide flights & also upload new flights
   - [ ] Show flight phases and stats
   - [ ] Show task legs and stats
+  - [ ] When flight group has more than one task, ask user to select a task to
+      use.
+  - [ ] When playing a flight, everytime a thermal finishes it's average
+      animates on the map. Like when points are collected in platform game.
 
 - [ ] BGA
   - [x] Airspace Layer

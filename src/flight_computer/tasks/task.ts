@@ -3,6 +3,8 @@ import { Angle, degrees } from '../../units/angle';
 import Quantity from '../../units/quantity';
 import { Length, meters } from '../../units/length';
 import { Datum } from '../computer';
+import { milliseconds } from '../../units/duration';
+import { Speed } from '../../units/speed';
 
 export interface TaskTurnpoint {
   name: string;
@@ -52,6 +54,33 @@ export default class Task {
 
   isFinished() {
     return this.nextTurnpointIndex === this.turnpoints.length;
+  }
+
+  getDistance() {
+    return this.distance;
+  }
+
+  getDuration() {
+    if (!this.isFinished()) return null;
+    return milliseconds(
+      this.finishedAt()!.getTime() - this.startedAt()!.getTime()
+    );
+  }
+
+  getSpeed() {
+    const duration = this.getDuration();
+    if (!duration) return null;
+    return Speed.create(this.distance, duration);
+  }
+
+  private startedAt() {
+    return this.getTurnpointReachedAt(this.turnpoints[0]);
+  }
+
+  private finishedAt() {
+    return this.getTurnpointReachedAt(
+      this.turnpoints[this.turnpoints.length - 1]
+    );
   }
 
   private shouldResetStartTime(datum: Datum) {

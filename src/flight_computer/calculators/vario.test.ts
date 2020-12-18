@@ -1,7 +1,7 @@
 import Vario from './vario';
 import Fix from '../fix';
 import { metersPerSecond } from 'units/speed';
-import DatumFactory from '../../../test/support/datum_factory';
+import DatumFactory from 'utils/datum_factory';
 
 const uselessDatum = new DatumFactory().nextDatum();
 

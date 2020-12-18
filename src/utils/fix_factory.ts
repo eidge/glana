@@ -1,4 +1,4 @@
-import DatumFactory from './datum_factory';
+import DatumFactory from 'utils/datum_factory';
 import { Duration } from '../../src/units/duration';
 import Quantity from '../../src/units/quantity';
 import { Degree } from '../../src/units/angle';
