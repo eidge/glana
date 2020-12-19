@@ -39,6 +39,7 @@ Next up:
   - [x] Choose flight to show stats
   - [ ] Create layout ui component (FullSplitScreen - should handle opening and
       closing side view and mobile breakpoints)
+      - [ ] There's a good example here.
       - [ ] Before panel opens we should take map boundaries and ensure they're
           visible after it's open (i.e. the map view is the same but zoomed
           out).

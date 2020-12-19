@@ -36,7 +36,7 @@ export default class DatumFactory {
     this.currentTime = options.startTime || new Date();
     this.lastTickAt = this.currentTime;
     this.tick = seconds(options.tickSizeInSeconds || 5);
-    this.position = new Position(degrees(0), degrees(0), degrees(0));
+    this.position = new Position(degrees(0), degrees(0), meters(0));
     this.heading = degrees(0);
     this.speed = kilometersPerHour(120);
     this.vario = metersPerSecond(0);

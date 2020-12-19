@@ -2,7 +2,7 @@ import Phase from './phase';
 import { GliderState } from '../../flight_computer/state_machine';
 import Quantity from '../../units/quantity';
 import { Length } from '../../units/length';
-import { Speed } from '../../units/speed';
+import { Speed, metersPerSecond } from '../../units/speed';
 
 export default class Thermal extends Phase {
   type: GliderState = 'thermalling';
@@ -14,6 +14,7 @@ export default class Thermal extends Phase {
   }
 
   get climbRate(): Quantity<Speed> {
+    if (this.duration.value === 0) return metersPerSecond(0);
     return Speed.create(this.altitudeGain, this.duration);
   }
 
