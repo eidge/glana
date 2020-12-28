@@ -27,4 +27,14 @@ export default class FlightGroup {
     this.synchronizationMethod = method;
     this.synchronizationMethod.synchronize(this.flights);
   }
+
+  get earliestDatumAt() {
+    return this.flights.map(f => f.getRecordingStartedAt()).sort()[0];
+  }
+
+  get latestDatumAt() {
+    return this.flights.map(f => f.getRecordingStoppedAt()).sort()[
+      this.flights.length - 1
+    ];
+  }
 }

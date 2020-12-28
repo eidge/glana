@@ -34,6 +34,8 @@ export default class SavedFlight {
   }
 
   analise(computer = new FlightComputer()) {
+    if (this._datums.length > 0) return this;
+
     if (this.task) {
       computer.setTask(this.task);
     }
