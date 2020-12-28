@@ -99,13 +99,13 @@ class Quantity<U extends Unit> {
   ) {
     const precision = options.precision === undefined ? 1 : options.precision;
     const alwaysShowSign = options.alwaysShowSign || false;
-    let valueStr = this.value.toFixed(precision).toString();
+    let valueStr = this.value.toFixed(precision);
 
     if (options.padToSize) {
       valueStr = valueStr.padStart(options.padToSize, '0');
     }
 
-    if (alwaysShowSign && this.value >= 0) {
+    if (alwaysShowSign && valueStr[0] !== '-') {
       valueStr = `+${valueStr}`;
     }
 
