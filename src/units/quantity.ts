@@ -90,8 +90,26 @@ class Quantity<U extends Unit> {
     );
   }
 
-  toString() {
-    return `${this.value.toFixed(1)}${this.unit.symbol}`;
+  toString(
+    options: {
+      precision?: number;
+      padToSize?: number;
+      alwaysShowSign?: boolean;
+    } = {}
+  ) {
+    const precision = options.precision === undefined ? 1 : options.precision;
+    const alwaysShowSign = options.alwaysShowSign || false;
+    let valueStr = this.value.toFixed(precision).toString();
+
+    if (options.padToSize) {
+      valueStr = valueStr.padStart(options.padToSize, '0');
+    }
+
+    if (alwaysShowSign && this.value >= 0) {
+      valueStr = `+${valueStr}`;
+    }
+
+    return `${valueStr}${this.unit.symbol}`;
   }
 }
 
