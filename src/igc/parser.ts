@@ -9,8 +9,8 @@ import { meters } from '../units/length';
 import Task from '../flight_computer/tasks/task';
 
 class Parser {
-  parse(igc_contents: string, turnpointFactory: Factory = bgaFactory) {
-    let parsedIGC = IGCParser.parse(igc_contents, { lenient: true });
+  parse(igcContents: string, turnpointFactory: Factory = bgaFactory) {
+    let parsedIGC = IGCParser.parse(igcContents, { lenient: true });
     let fixes = parsedIGC.fixes.map(this.buildFix);
     let task = this.parseTask(parsedIGC.task, turnpointFactory);
     return new SavedFlight(fixes, task, {

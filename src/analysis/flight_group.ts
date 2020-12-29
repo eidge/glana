@@ -17,7 +17,7 @@ export default class FlightGroup {
   synchronizationMethod!: SynchronizationMethod;
 
   constructor(flights: SavedFlight[]) {
-    this.flights = flights;
+    this.flights = flights.slice().sort(compareByStartRecordingAt);
     this.synchronize(synchronizationMethods.realTime);
   }
 
@@ -37,4 +37,21 @@ export default class FlightGroup {
       this.flights.length - 1
     ];
   }
+
+  allFlightsInSameDay() {
+    const startTimes = this.flights.map(sv => sv.fixes[0].timestamp);
+    return startTimes.every(
+      startTs => startTs.toDateString() === startTimes[0].toDateString()
+    );
+  }
+}
+
+function compareByStartRecordingAt(f1: SavedFlight, f2: SavedFlight) {
+  if (f1.fixes[0].timestamp < f2.fixes[0].timestamp) {
+    return -1;
+  }
+  if (f1.fixes[0].timestamp > f2.fixes[0].timestamp) {
+    return 1;
+  }
+  return 0;
 }

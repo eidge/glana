@@ -1,5 +1,7 @@
 Next up:
   - Refactor / Redesign!
+      - [ ] Handle load errors!
+      - [ ] Upload flights screen
 
 - [ ] Bugs:
   - [ ] Changing playback speed messes with zoom
@@ -20,6 +22,10 @@ Next up:
   - [ ] Before side drawer opens we should take map boundaries and ensure they're
       visible after it's open (i.e. the map view is the same but zoomed
       out).
+  - [ ] Timeline details padding:
+    - [ ] Should pad to flights max value
+    - [ ] Should break evenly - every line should have the same number of
+        flights
 
 - [ ] Stats
   - [ ] When flight group has more than one task, ask user to select a task to
