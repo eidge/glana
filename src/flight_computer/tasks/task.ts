@@ -49,7 +49,7 @@ export default class Task {
   }
 
   isStarted() {
-    return this.nextTurnpointIndex !== 0 && !this.isFinished();
+    return this.nextTurnpointIndex !== 0;
   }
 
   isFinished() {

@@ -186,18 +186,16 @@ export default class SavedFlight {
 
   datumAt(timestamp: Date) {
     const index = this.datumIndexAt(timestamp);
-    if (index === null) return null;
     return this.datums[index];
   }
 
   datumIndexAt(timestamp: Date) {
     const datums = this.datums;
 
-    if (
-      timestamp < datums[0].timestamp ||
-      timestamp > datums[datums.length - 1].timestamp
-    ) {
-      return null;
+    if (timestamp < datums[0].timestamp) {
+      return 0;
+    } else if (timestamp > datums[datums.length - 1].timestamp) {
+      return datums.length - 1;
     }
 
     let start = 0;

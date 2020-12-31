@@ -137,9 +137,9 @@ describe('SavedFlight', () => {
       return new Date(startTime.getTime() + nSeconds * 1000);
     }
 
-    it('returns null if given timestamp is before first datum', () => {
+    it('returns first datum if given timestamp is before first datum', () => {
       let sv = createSavedFlight(5);
-      expect(sv.datumAt(secondsAfterStartTime(-10))).toEqual(null);
+      expect(sv.datumAt(secondsAfterStartTime(-10))).toEqual(sv.datums[0]);
     });
 
     it('returns first datum', () => {
@@ -182,7 +182,7 @@ describe('SavedFlight', () => {
       expect(sv.datumAt(secondsAfterStartTime(35.1))).toEqual(datums[7]);
       expect(sv.datumAt(secondsAfterStartTime(40.1))).toEqual(datums[8]);
       expect(sv.datumAt(secondsAfterStartTime(45.0))).toEqual(datums[9]);
-      expect(sv.datumAt(secondsAfterStartTime(45.1))).toEqual(null);
+      expect(sv.datumAt(secondsAfterStartTime(45.1))).toEqual(datums[9]);
     });
 
     it('works correctly for uneven numbers of datums', () => {
@@ -197,7 +197,7 @@ describe('SavedFlight', () => {
       expect(sv.datumAt(secondsAfterStartTime(30.1))).toEqual(datums[6]);
       expect(sv.datumAt(secondsAfterStartTime(35.1))).toEqual(datums[7]);
       expect(sv.datumAt(secondsAfterStartTime(40.0))).toEqual(datums[8]);
-      expect(sv.datumAt(secondsAfterStartTime(40.1))).toEqual(null);
+      expect(sv.datumAt(secondsAfterStartTime(40.1))).toEqual(datums[8]);
     });
   });
 });

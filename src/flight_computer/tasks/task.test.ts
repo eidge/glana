@@ -201,7 +201,7 @@ describe('Task', () => {
         task.update(datumFromPosition(tp3.center, new Date(3000)));
         expect(task.getNextTurnpoint()).toBeNull();
         expect(task.getTurnpointReachedAt(tp3)).toEqual(new Date(3000));
-        expect(task.isStarted()).toBeFalsy();
+        expect(task.isStarted()).toBeTruthy();
         expect(task.isFinished()).toBeTruthy();
         expect(task.getDuration()).toEqual(milliseconds(2000));
       });

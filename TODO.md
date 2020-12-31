@@ -1,10 +1,10 @@
 Next up:
   - Refactor / Redesign!
-      - [ ] Handle load errors!
-      - [ ] Upload flights screen
+      - [x] Handle load errors!
+      - [x] Upload flights screen
 
 - [ ] Bugs:
-  - [ ] Changing playback speed messes with zoom
+  - [x] Changing playback speed messes with zoom
     - I should use extent of full line regardless of what is showing atm for
         zoomToFit
   - [ ] Handle showing time appropriately -> Should always show local time of
@@ -13,10 +13,11 @@ Next up:
 - UI Improvements
   - [ ] Store config in localStorage
   - [ ] Keep track points visible for x minutes.
-  - [ ] Bring followedFlight forward (z-index) to avoid it being clobbered by
+  - [x] Bring followedFlight forward (z-index) to avoid it being clobbered by
       other flights.
-  - [ ] Hide zoom controls on mobile
-  - [ ] Synchronize flights by real-time by default. If a viewing multiple
+      - [x] Flight marker (circle) zIndex should be above all traces!
+  - [x] Hide zoom controls on mobile
+  - [x] Synchronize flights by real-time by default. If a viewing multiple
       flights from different days, then synchronize by startedAt (push a toast
       message in doing so).
   - [ ] Before side drawer opens we should take map boundaries and ensure they're
