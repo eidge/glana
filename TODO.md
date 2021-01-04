@@ -1,12 +1,6 @@
 Next up:
-  - Refactor / Redesign!
-      - [x] Handle load errors!
-      - [x] Upload flights screen
 
 - [ ] Bugs:
-  - [x] Changing playback speed messes with zoom
-    - I should use extent of full line regardless of what is showing atm for
-        zoomToFit
   - [ ] Handle showing time appropriately -> Should always show local time of
       flight, not local time of browser!!!
 
@@ -15,14 +9,11 @@ Next up:
   - [ ] Keep track points visible for x minutes.
   - [x] Bring followedFlight forward (z-index) to avoid it being clobbered by
       other flights.
-      - [x] Flight marker (circle) zIndex should be above all traces!
+      - [ ] Flight marker (glider) zIndex should be above all traces!
   - [x] Hide zoom controls on mobile
   - [x] Synchronize flights by real-time by default. If a viewing multiple
       flights from different days, then synchronize by startedAt (push a toast
       message in doing so).
-  - [ ] Before side drawer opens we should take map boundaries and ensure they're
-      visible after it's open (i.e. the map view is the same but zoomed
-      out).
   - [ ] Timeline details padding:
     - [ ] Should pad to flights max value
     - [ ] Should break evenly - every line should have the same number of
@@ -43,7 +34,7 @@ Next up:
     - [ ] Filter phases inside / outside task or both.
   - [ ] Consider showing all flights phases in the same table, to compare glides
         and thermals at the same time.
-  - [ ] Show task started & each turnpoint as a flight stage
+  - [ ] Show task started & each turnpoint as a flight phase
   - [ ] Highlight current row in altitude chart + flight track
 
 - [ ] Thermals
@@ -71,12 +62,14 @@ Next up:
   - Handle invalid traces from BGA:
     - [x] Single trace
     - [x] Multiple traces (all broken, some broken)
-  - [ ] Flight stats
+  - [x] Flight stats
   - [ ] Photos markers
-  - [ ] Clouds/Weather Layer
+  - [x] Clouds/Weather Layer
 
-Backlog:
+Backlog of ideas:
   - [ ] Wind calculation: http://blueflyvario.blogspot.com/2012/09/calculating-wind-speed-from-gps-track.html
+  - [ ] Use radar chart to display task stats: Number of climbs, avg climb rate,
+      number of glides, median glide length, median glide speed
 
 Crazy Ideas:
 

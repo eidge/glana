@@ -39,10 +39,12 @@ describe('Analysis', () => {
 
       expect(flight.phases.length).toEqual(1);
       expect(flight.phases[0].type).toEqual('stopped');
-      expect(flight.phases[0].startIdx).toEqual(0);
-      expect(flight.phases[0].endIdx).toEqual(4);
-      expect(flight.datums[flight.phases[0].startIdx].state).toEqual('stopped');
-      expect(flight.datums[flight.phases[0].endIdx].state).toEqual('stopped');
+      expect(flight.phases[0].startIndex).toEqual(0);
+      expect(flight.phases[0].endIndex).toEqual(4);
+      expect(flight.datums[flight.phases[0].startIndex].state).toEqual(
+        'stopped'
+      );
+      expect(flight.datums[flight.phases[0].endIndex].state).toEqual('stopped');
     });
 
     it('computes two flight phases correctly', () => {
@@ -62,16 +64,20 @@ describe('Analysis', () => {
       expect(flight.phases.length).toEqual(2);
 
       expect(flight.phases[0].type).toEqual('stopped');
-      expect(flight.phases[0].startIdx).toEqual(0);
-      expect(flight.phases[0].endIdx).toEqual(6);
-      expect(flight.datums[flight.phases[0].startIdx].state).toEqual('stopped');
-      expect(flight.datums[flight.phases[0].endIdx].state).toEqual('stopped');
+      expect(flight.phases[0].startIndex).toEqual(0);
+      expect(flight.phases[0].endIndex).toEqual(6);
+      expect(flight.datums[flight.phases[0].startIndex].state).toEqual(
+        'stopped'
+      );
+      expect(flight.datums[flight.phases[0].endIndex].state).toEqual('stopped');
 
       expect(flight.phases[1].type).toEqual('gliding');
-      expect(flight.phases[1].startIdx).toEqual(7);
-      expect(flight.phases[1].endIdx).toEqual(24);
-      expect(flight.datums[flight.phases[1].startIdx].state).toEqual('gliding');
-      expect(flight.datums[flight.phases[1].endIdx].state).toEqual('gliding');
+      expect(flight.phases[1].startIndex).toEqual(7);
+      expect(flight.phases[1].endIndex).toEqual(24);
+      expect(flight.datums[flight.phases[1].startIndex].state).toEqual(
+        'gliding'
+      );
+      expect(flight.datums[flight.phases[1].endIndex].state).toEqual('gliding');
     });
 
     it('computes many flight phases correctly', () => {

@@ -8,8 +8,8 @@ export default class Thermal extends Phase {
   type: GliderState = 'thermalling';
 
   get altitudeGain(): Quantity<Length> {
-    const d1 = this.flight.datums[this.startIdx];
-    const d2 = this.flight.datums[this.endIdx];
+    const d1 = this.flight.datums[this.startIndex];
+    const d2 = this.flight.datums[this.endIndex];
     return d2.position.altitude.subtract(d1.position.altitude);
   }
 
@@ -19,7 +19,7 @@ export default class Thermal extends Phase {
   }
 
   get finalAltitude(): Quantity<Length> {
-    const d2 = this.flight.datums[this.endIdx];
+    const d2 = this.flight.datums[this.endIndex];
     return d2.position.altitude;
   }
 }

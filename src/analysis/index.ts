@@ -66,9 +66,9 @@ export default class Analysis {
   private buildPhase(
     flight: SavedFlight,
     datums: Datum[],
-    startIdx: number,
-    endIdx: number
+    startIndex: number,
+    endIndex: number
   ) {
-    return phases.build(datums[startIdx].state, flight, startIdx, endIdx);
+    return phases.build(datums[startIndex].state, flight, startIndex, endIndex);
   }
 }
