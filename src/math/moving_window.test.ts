@@ -44,7 +44,7 @@ describe('MovingWindow', () => {
       expect(mw.values).toEqual([p2, p3]);
     });
 
-    it('accepts datapoints for the same timestamp', () => {
+    it('rejects datapoints for the same timestamp', () => {
       let mw = new MovingWindow(seconds(30), kilometersPerHour.unit);
 
       let timestamp = secondsAgo(45);
@@ -55,7 +55,7 @@ describe('MovingWindow', () => {
       mw.addValue(p1);
       mw.addValue(p2);
 
-      expect(mw.values).toEqual([p1, p2]);
+      expect(mw.values).toEqual([p1]);
     });
   });
 

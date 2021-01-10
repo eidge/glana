@@ -11,6 +11,8 @@ abstract class AbstractSpeedCalculator extends Calculator {
   lastFix: Fix | null = null;
 
   update(fix: Fix, _datum: Datum): void {
+    if (this.lastFix && this.lastFix.timestamp >= fix.timestamp) return;
+
     if (this.lastFix) {
       const ellapsedTime = this.ellapsedTime(fix, this.lastFix);
       const distanceDelta = this.distanceDelta(fix, this.lastFix);

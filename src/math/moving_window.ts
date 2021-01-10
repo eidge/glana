@@ -34,7 +34,7 @@ export default class MovingWindow<U extends Unit> {
     const newestDataPoint = this.values[this.values.length - 1];
     if (!newestDataPoint) return false;
 
-    return newestDataPoint.timestamp.getTime() > datapoint.timestamp.getTime();
+    return newestDataPoint.timestamp.getTime() >= datapoint.timestamp.getTime();
   }
 
   private isTooOld(newDataPoint: DataPoint<U>) {
