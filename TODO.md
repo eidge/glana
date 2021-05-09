@@ -45,6 +45,10 @@ Next up:
 
 - Task - per leg:
   - [ ] #thermals, average vario, average glide angle & distance
+  - [ ] Implement Netto as a stat, it's a great indicator of how well you've
+      picked your route (i.e. did you manage to stay in lift?)
+      - It can be used as an average / mean to show an aggregated view, but also
+          to colour the flight track to show where you got the track wrong!
 
 - [ ] Summary
   - Average vario, average glide angle, glide distance (distance between
@@ -75,9 +79,12 @@ Crazy Ideas:
 
 - Integrate flarm - as you navigate flight, you see all planes that were there
     at that moment.
+- Do flight plans with "local airfield" calculation for planning flights in the
+    alps, like you can with this: https://www.glideplan.com/styled-2/page8/index.html
 
 Notes:
 
 - Code for the bga viewer: https://github.com/GlidingWeb/IGCWebView | https://github.com/GlidingWeb/IgcWebview2/
+- Reach out to this guy for publicity: https://chessintheair.com/do-you-know-your-turf-off-season-homework-for-cross-country-pilots/
+- Vision: To be the best flight analysis and planning tool!
 
-Done:
