@@ -33,8 +33,8 @@ export default class SavedFlight {
     this.metadata = metadata;
   }
 
-  analise(computer = new FlightComputer()) {
-    if (this._datums.length > 0) return this;
+  analise(computer = new FlightComputer(), force = false) {
+    if (this._datums.length > 0 && !force) return this;
 
     if (this.task) {
       computer.setTask(this.task);
@@ -47,12 +47,10 @@ export default class SavedFlight {
   }
 
   set datums(datums: Datum[]) {
-    if (this._datums.length > 0) throw new Error('Datums should be immutable.');
     this._datums = datums;
   }
 
   set phases(phases: Phase[]) {
-    if (this._phases.length > 0) throw new Error('Phases should be immutable.');
     this._phases = phases;
   }
 
