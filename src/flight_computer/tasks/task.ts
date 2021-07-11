@@ -18,6 +18,7 @@ export interface TaskTurnpoint {
 export default class Task {
   readonly turnpoints: TaskTurnpoint[];
   readonly distance: Quantity<Length>;
+  readonly name: string;
 
   private lastDatum: Datum | null = null;
   private nextTurnpointIndex: number = 0;
@@ -26,6 +27,11 @@ export default class Task {
   constructor(turnpoints: TaskTurnpoint[]) {
     this.turnpoints = this.rotateTurnpoints(turnpoints);
     this.distance = this.calculateDistance(turnpoints);
+    this.name = this.defaultTaskName(turnpoints);
+  }
+
+  private defaultTaskName(turnpoints: TaskTurnpoint[]) {
+    return turnpoints.map(tp => tp.name).join('-');
   }
 
   update(datum: Datum) {

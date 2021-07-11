@@ -74,6 +74,8 @@ Backlog of ideas:
   - [ ] Wind calculation: http://blueflyvario.blogspot.com/2012/09/calculating-wind-speed-from-gps-track.html
   - [ ] Use radar chart to display task stats: Number of climbs, avg climb rate,
       number of glides, median glide length, median glide speed
+  - [ ] Export video or image (e.g. for instagram)
+      - Full track, summary stats
 
 Crazy Ideas:
 
