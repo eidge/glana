@@ -11,13 +11,24 @@ import Task from '../flight_computer/tasks/task';
 class Parser {
   parse(igcContents: string, turnpointFactory: Factory = bgaFactory) {
     let parsedIGC = IGCParser.parse(igcContents, { lenient: true });
-    let fixes = parsedIGC.fixes.map(this.buildFix);
+    let fixes = this.parseFixes(parsedIGC);
     let task = this.parseTask(parsedIGC.task, turnpointFactory);
     return new SavedFlight(fixes, task, {
       registration: parsedIGC.registration,
       callsign: parsedIGC.callsign,
       pilotName: parsedIGC.pilot,
     });
+  }
+
+  private parseFixes(parsedIGC: IGCParser.IGCFile) {
+    let parsedFixes: Fix[] = [];
+    parsedIGC.fixes.forEach(brecord => {
+      let parsedFix = this.buildFix(brecord);
+      if (parsedFix) {
+        parsedFixes.push(parsedFix);
+      }
+    });
+    return parsedFixes;
   }
 
   private parseTask(task: IGCParser.Task | null, turnpointFactory: Factory) {
@@ -50,6 +61,8 @@ class Parser {
   }
 
   private buildFix(brecord: IGCParser.BRecord) {
+    if (!brecord.valid) return null;
+
     const extras: FixExtras = {};
 
     if (brecord.enl) {
