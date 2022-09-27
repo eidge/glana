@@ -7,6 +7,10 @@ Next up:
 - UI Improvements
   - [ ] Store config in localStorage
   - [ ] Keep track points visible for x minutes.
+  - [ ] When a task is abandoned, on the flight summary screen display how much
+      of the task was done instead of the total distance.
+      - I should add a new calculated value for "remaining task km" and then a
+          min stat for it
   - [x] Bring followedFlight forward (z-index) to avoid it being clobbered by
       other flights.
       - [ ] Flight marker (glider) zIndex should be above all traces!
@@ -18,6 +22,9 @@ Next up:
     - [ ] Should pad to flights max value
     - [ ] Should break evenly - every line should have the same number of
         flights
+  - [ ] Allow switching tasks
+    - From the ones available in the flights.
+    - Upload / Create a new one.
 
 - [ ] Stats
   - [ ] When flight group has more than one task, ask user to select a task to
@@ -51,13 +58,13 @@ Next up:
           to colour the flight track to show where you got the track wrong!
 
 - [ ] Summary
-  - Average vario, average glide angle, glide distance (distance between
+  - [ ] Average vario, average glide angle, glide distance (distance between
       thermals)
-  - High point, low point, altitude gain
-  - [ ] Make each flight a card - unknown regs are G-DOE
-  - [ ] Use this screen to show / hide flights & also upload new flights
+  - [ ] High point, low point, altitude gain
+  - [x] Make each flight a card - unknown regs are G-DOE
+  - [x] Use this screen to show / hide flights & also upload new flights
 
-- [ ] BGA
+- [x] BGA
   - [x] Airspace Layer
   - [x] Barrel config - this should come from the bga, maybe FAI vs BGA tps.
   - Engine detection:
@@ -67,7 +74,7 @@ Next up:
     - [x] Single trace
     - [x] Multiple traces (all broken, some broken)
   - [x] Flight stats
-  - [ ] Photos markers
+  - [x] Photos markers
   - [x] Clouds/Weather Layer
 
 Backlog of ideas:
