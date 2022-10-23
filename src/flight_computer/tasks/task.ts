@@ -136,7 +136,7 @@ export default class Task {
   }
 
   private rotateStartTurnpoint(tp: TaskTurnpoint, nextTp: TaskTurnpoint) {
-    let heading = tp.center.heading2DTo(nextTp.center);
+    let heading = tp.center.heading2DTo(nextTp.center).add(degrees(180));
     tp.rotate(heading);
   }
 

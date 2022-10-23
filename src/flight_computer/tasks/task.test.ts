@@ -68,17 +68,17 @@ describe('Task', () => {
 
     it('rotates two turnpoints correctly', () => {
       let task = new Task([tp1, tp2]);
-      expect(rotationDegrees(task.turnpoints[0])).toBeCloseTo(0);
+      expect(rotationDegrees(task.turnpoints[0])).toBeCloseTo(180);
       expect(rotationDegrees(task.turnpoints[1])).toBeCloseTo(0);
 
       task = new Task([tp2, tp1]);
-      expect(rotationDegrees(task.turnpoints[0])).toBeCloseTo(180);
+      expect(rotationDegrees(task.turnpoints[0])).toBeCloseTo(0);
       expect(rotationDegrees(task.turnpoints[1])).toBeCloseTo(180);
     });
 
     it('rotates three or more turnpoints correctly', () => {
       let task = new Task([tp1, tp2, tp3, tp4, tp5]);
-      expect(rotationDegrees(task.turnpoints[0])).toBeCloseTo(0);
+      expect(rotationDegrees(task.turnpoints[0])).toBeCloseTo(180);
       expect(rotationDegrees(task.turnpoints[1])).toBeCloseTo(360 - 45);
       expect(rotationDegrees(task.turnpoints[2])).toBeCloseTo(45);
       expect(rotationDegrees(task.turnpoints[3])).toBeCloseTo(135);
