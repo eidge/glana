@@ -13,6 +13,7 @@ export interface TaskTurnpoint {
   isCrossing(lastPosition: Position, position: Position): boolean;
   rotate(angle: Quantity<Angle>): void;
   toGeoJSON(): any;
+  isEqual(tp: TaskTurnpoint): boolean;
 }
 
 export default class Task {
@@ -77,6 +78,10 @@ export default class Task {
     const duration = this.getDuration();
     if (!duration) return null;
     return Speed.create(this.distance, duration);
+  }
+
+  isEqual(task: Task) {
+    return this.turnpoints.every((tp, i) => tp.isEqual(task.turnpoints[i]));
   }
 
   private startedAt() {

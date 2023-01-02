@@ -3,6 +3,7 @@ import { TaskTurnpoint } from '../task';
 import Quantity from '../../../units/quantity';
 import { Angle, degrees } from '../../../units/angle';
 import { unionGeoJSON } from '../../../math/geo';
+import { isEqual } from 'lodash';
 
 export interface TurnpointSegment {
   center: Position;
@@ -38,5 +39,12 @@ export default class Turnpoint implements TaskTurnpoint {
       .slice(1)
       .forEach(p => (geoJSON = unionGeoJSON(geoJSON, p.toGeoJSON())));
     return geoJSON;
+  }
+
+  isEqual(tp: Turnpoint) {
+    const selfGeo = this.toGeoJSON();
+    const otherGeo = tp.toGeoJSON();
+
+    return isEqual(selfGeo, otherGeo);
   }
 }

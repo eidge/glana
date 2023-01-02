@@ -96,7 +96,7 @@ describe('Task', () => {
     });
   });
 
-  describe('update', () => {
+  describe('#update', () => {
     describe('before starting task', () => {
       it('next turnpoint is first turnpoint', () => {
         let task = new Task([tp1, tp2]);
@@ -205,6 +205,60 @@ describe('Task', () => {
         expect(task.isFinished()).toBeTruthy();
         expect(task.getDuration()).toEqual(milliseconds(2000));
       });
+    });
+  });
+
+  describe('#isEqual', () => {
+    it('returns true when all turnpoints are the same', () => {
+      let initialPosition = new Position(degrees(51.934), degrees(-0.635333));
+
+      const tp1 = new Turnpoint('tp1', [buildSector(initialPosition)]);
+      const tp2 = new Turnpoint('tp2', [
+        buildSector(initialPosition.move(kilometers(10), degrees(0))),
+      ]);
+
+      const tp3 = new Turnpoint('tp3', [buildSector(initialPosition)]);
+      const tp4 = new Turnpoint('tp4', [
+        buildSector(initialPosition.move(kilometers(10), degrees(0))),
+      ]);
+
+      const task1 = new Task([tp1, tp2]);
+      const task2 = new Task([tp3, tp4]);
+
+      expect(task1.isEqual(task2)).toBeTruthy();
+    });
+
+    it('returns false when any turnpoints are different', () => {
+      let initialPosition = new Position(degrees(51.934), degrees(-0.635333));
+
+      const tp1 = new Turnpoint('tp1', [buildSector(initialPosition)]);
+      const tp2 = new Turnpoint('tp2', [
+        buildSector(initialPosition.move(kilometers(10), degrees(0))),
+      ]);
+
+      const tp3 = new Turnpoint('tp3', [buildSector(initialPosition)]);
+      const tp4 = new Turnpoint('tp4', [
+        buildSector(initialPosition.move(kilometers(10), degrees(10))),
+      ]);
+
+      const task1 = new Task([tp1, tp2]);
+      const task2 = new Task([tp3, tp4]);
+
+      expect(task1.isEqual(task2)).toBeFalsy();
+    });
+
+    it('returns false when turnpoints are in a different order', () => {
+      let initialPosition = new Position(degrees(51.934), degrees(-0.635333));
+
+      const tp1 = new Turnpoint('tp1', [buildSector(initialPosition)]);
+      const tp2 = new Turnpoint('tp2', [
+        buildSector(initialPosition.move(kilometers(10), degrees(0))),
+      ]);
+
+      const task1 = new Task([tp1, tp2]);
+      const task2 = new Task([tp2, tp1]);
+
+      expect(task1.isEqual(task2)).toBeFalsy();
     });
   });
 });
