@@ -1,6 +1,6 @@
 import Phase from './phase';
 import { PhaseType } from '.';
-import { TaskTurnpoint } from 'flight_computer/tasks/task';
+import { TaskTurnpoint } from '../../flight_computer/tasks/task';
 import { meters } from '../../units/length';
 
 export default class Turnpoint extends Phase {
