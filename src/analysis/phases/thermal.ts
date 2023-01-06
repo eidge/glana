@@ -1,11 +1,11 @@
 import Phase from './phase';
-import { GliderState } from '../../flight_computer/state_machine';
 import Quantity from '../../units/quantity';
 import { Length } from '../../units/length';
 import { Speed, metersPerSecond } from '../../units/speed';
+import { PhaseType } from '.';
 
 export default class Thermal extends Phase {
-  type: GliderState = 'thermalling';
+  type: PhaseType = 'thermalling';
 
   get altitudeGain(): Quantity<Length> {
     const d1 = this.flight.datums[this.startIndex];
