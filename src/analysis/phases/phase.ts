@@ -1,6 +1,6 @@
-import { GliderState } from '../../flight_computer/state_machine';
 import { seconds, milliseconds } from '../../units/duration';
 import SavedFlight from '../../saved_flight';
+import { PhaseType } from '.';
 
 export default abstract class Phase {
   startIndex: number;
@@ -8,12 +8,20 @@ export default abstract class Phase {
 
   protected flight: SavedFlight;
 
-  abstract type: GliderState;
+  abstract type: PhaseType;
 
   constructor(flight: SavedFlight, startIndex: number, endIndex: number) {
     this.flight = flight;
     this.startIndex = startIndex;
     this.endIndex = endIndex;
+  }
+
+  isEqual(otherPhase: Phase) {
+    return (
+      this.flight === otherPhase.flight &&
+      this.startIndex === otherPhase.startIndex &&
+      this.endIndex === otherPhase.endIndex
+    );
   }
 
   get startAt() {

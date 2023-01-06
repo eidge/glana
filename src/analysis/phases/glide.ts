@@ -1,12 +1,12 @@
 import Phase from './phase';
-import { GliderState } from '../../flight_computer/state_machine';
 import { dimensionless } from '../../units/dimensionless';
 import { meters, Meter } from '../../units/length';
 import { Speed, metersPerSecond } from '../../units/speed';
 import Quantity from '../../units/quantity';
+import { PhaseType } from '.';
 
 export default class Glide extends Phase {
-  type: GliderState = 'gliding';
+  type: PhaseType = 'gliding';
 
   private cachedDistance?: Quantity<Meter>;
 

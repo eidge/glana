@@ -84,6 +84,12 @@ export default class Task {
     return this.turnpoints.every((tp, i) => tp.isEqual(task.turnpoints[i]));
   }
 
+  getTurnpointsReachedAt(): Date[] {
+    return this.turnpoints
+      .map(tp => this.getTurnpointReachedAt(tp))
+      .filter(time => !!time) as Date[];
+  }
+
   private startedAt() {
     return this.getTurnpointReachedAt(this.turnpoints[0]);
   }
