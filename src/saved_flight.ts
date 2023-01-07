@@ -5,6 +5,7 @@ import Phase from './analysis/phases/phase';
 import { Duration, milliseconds } from './units/duration';
 import Quantity from './units/quantity';
 import Task, { TaskTurnpoint } from './flight_computer/tasks/task';
+import TaskStats from './analysis/task_stats';
 
 interface Metadata {
   pilotName?: string | null;
@@ -22,6 +23,7 @@ export default class SavedFlight {
   private _phases: Phase[] = [];
 
   private timeOffsetInMilliseconds: number;
+  private _taskStats: TaskStats | null = null;
 
   constructor(fixes: Fix[], task: Task | null = null, metadata: Metadata = {}) {
     this.id = Math.random()
@@ -46,6 +48,10 @@ export default class SavedFlight {
     return this;
   }
 
+  set taskStats(taskStats: TaskStats | null) {
+    this._taskStats = taskStats;
+  }
+
   set datums(datums: Datum[]) {
     this._datums = datums;
   }
@@ -62,6 +68,11 @@ export default class SavedFlight {
   get phases() {
     this.ensureAnalysisIsDone();
     return this._phases;
+  }
+
+  get taskStats(): TaskStats | null {
+    this.ensureAnalysisIsDone();
+    return this._taskStats;
   }
 
   get offsetInMilliseconds() {

@@ -3,6 +3,7 @@ import Phase from './phases/phase';
 import SavedFlight from '../saved_flight';
 import * as phases from './phases';
 import { PhaseType } from './phases';
+import TaskStats from './task_stats';
 
 export default class Analysis {
   private computer: FlightComputer;
@@ -19,6 +20,8 @@ export default class Analysis {
     const datums = this.buildDatums(flight);
     flight.datums = datums;
     flight.phases = this.buildPhases(flight, datums);
+    flight.taskStats = flight.task && new TaskStats(flight.task, flight.phases);
+
     return this;
   }
 

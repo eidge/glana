@@ -28,6 +28,24 @@ class Quantity<U extends Unit> {
     return new Quantity(this.value, this.unit);
   }
 
+  round() {
+    const newQuantity = this.clone();
+    newQuantity.value = Math.round(newQuantity.value);
+    return newQuantity;
+  }
+
+  floor() {
+    const newQuantity = this.clone();
+    newQuantity.value = Math.floor(newQuantity.value);
+    return newQuantity;
+  }
+
+  ceil() {
+    const newQuantity = this.clone();
+    newQuantity.value = Math.ceil(newQuantity.value);
+    return newQuantity;
+  }
+
   normalise() {
     const newQuantity = this.clone();
     newQuantity.value = this.unit.normalise(this.value);
